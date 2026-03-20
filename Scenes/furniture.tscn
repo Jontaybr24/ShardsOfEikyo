@@ -1,0 +1,22 @@
+[gd_scene load_steps=7 format=3 uid="uid://crd4qdwqewbr8"]
+
+[ext_resource type="Shader" uid="uid://brnmdm5y5w1mf" path="res://Shaders/pen-lined.gdshader" id="1_f3f6m"]
+[ext_resource type="Texture2D" uid="uid://dvqdfrp5k5ql" path="res://Shaders/new_noise_texture_2d.tres" id="2_d31sv"]
+[ext_resource type="Texture2D" uid="uid://byuwx7rcnnp6h" path="res://Temp Assets/Pixel Furnitures.png" id="2_kfg7n"]
+[ext_resource type="Texture2D" uid="uid://bhcwhorf5l1w0" path="res://Shaders/paper.jpg" id="3_wljjq"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_d31sv"]
+shader = ExtResource("1_f3f6m")
+shader_parameter/sensitivity = 2.0
+shader_parameter/Sobel_sensitivity = 1.5
+shader_parameter/NOISE_TEXTURE = ExtResource("2_d31sv")
+shader_parameter/PAPER_TEXTURE = ExtResource("3_wljjq")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wljjq"]
+atlas = ExtResource("2_kfg7n")
+region = Rect2(449, 196, 25, 44)
+
+[node name="Sprite2D" type="Sprite2D"]
+texture_filter = 1
+material = SubResource("ShaderMaterial_d31sv")
+texture = SubResource("AtlasTexture_wljjq")

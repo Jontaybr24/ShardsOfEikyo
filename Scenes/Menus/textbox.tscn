@@ -1,0 +1,82 @@
+[gd_scene format=3 uid="uid://bkqoygkcyrylh"]
+
+[ext_resource type="Script" uid="uid://dilw6y7i57lfe" path="res://Scripts/Menu/textbox.gd" id="1_psw4q"]
+[ext_resource type="FontFile" uid="uid://dt8du7xmx17a1" path="res://Assets/Fonts/IndieFlower/IndieFlower.ttf" id="2_i40gg"]
+[ext_resource type="Texture2D" uid="uid://bhcwhorf5l1w0" path="res://Shaders/paper.jpg" id="2_yyjux"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_crx6k"]
+bg_color = Color(0, 0, 0, 1)
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_g1jww"]
+texture = ExtResource("2_yyjux")
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+
+[node name="Textbox" type="CanvasLayer" unique_id=1172664379]
+script = ExtResource("1_psw4q")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1906387703]
+offset_left = 1.0
+offset_top = 323.0
+offset_right = 1152.0
+offset_bottom = 647.0
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="Panel2" type="Panel" parent="MarginContainer" unique_id=2023730415]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_crx6k")
+
+[node name="MarginContainer2" type="MarginContainer" parent="MarginContainer" unique_id=613014269]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="Panel" type="Panel" parent="MarginContainer/MarginContainer2" unique_id=1919681235]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_g1jww")
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/MarginContainer2" unique_id=136107710]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="Panel" type="Panel" parent="MarginContainer/MarginContainer2/MarginContainer" unique_id=788201184]
+visible = false
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/MarginContainer2/MarginContainer" unique_id=935819072]
+layout_mode = 2
+
+[node name="Start" type="Label" parent="MarginContainer/MarginContainer2/MarginContainer/HBoxContainer" unique_id=48335967]
+custom_minimum_size = Vector2(25, 0)
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 45
+
+[node name="Text" type="Label" parent="MarginContainer/MarginContainer2/MarginContainer/HBoxContainer" unique_id=839507085]
+custom_minimum_size = Vector2(0, 150)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_i40gg")
+theme_override_font_sizes/font_size = 45
+text = "Hello World! I'd really like to see what happens when I fill this box with text. Woo hoo there's so much text. Just a little more :)"
+autowrap_mode = 2
+
+[node name="End" type="Label" parent="MarginContainer/MarginContainer2/MarginContainer/HBoxContainer" unique_id=1307170375]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_i40gg")
+theme_override_font_sizes/font_size = 45
+text = "
+
+>"

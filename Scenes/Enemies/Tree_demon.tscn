@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://u4j2g4ka5xbt"]
+
+[ext_resource type="Script" uid="uid://vuuvgb8h5nke" path="res://Scripts/Enemies/tree_demon.gd" id="1_1skhr"]
+[ext_resource type="Texture2D" uid="uid://bkvn0rv1i7ebl" path="res://Temp Assets/tree4.png" id="2_kbv2x"]
+[ext_resource type="Script" uid="uid://djm45qu8y40qy" path="res://Scripts/States/state_machine.gd" id="3_5d2uf"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ui2gw"]
+size = Vector2(14.161776, 242.9191)
+
+[node name="TreeDemon" type="CharacterBody2D" unique_id=590050038 groups=["Attackable"]]
+script = ExtResource("1_1skhr")
+immunities = [2, 1]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1796802239]
+texture_filter = 1
+position = Vector2(-18, -367.00006)
+scale = Vector2(2.5340343, 2.5340345)
+texture = ExtResource("2_kbv2x")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=597415964]
+position = Vector2(5.500004, -574)
+scale = Vector2(7.838, 7.838)
+shape = SubResource("RectangleShape2D_ui2gw")
+
+[node name="State Machine" type="Node" parent="." unique_id=256707460]
+script = ExtResource("3_5d2uf")

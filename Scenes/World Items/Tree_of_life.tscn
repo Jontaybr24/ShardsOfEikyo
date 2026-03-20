@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://bi3luf7y5ub1p"]
+
+[ext_resource type="Texture2D" uid="uid://c5pn8d03m6uo4" path="res://Temp Assets/tree1.png" id="1_cghni"]
+[ext_resource type="Script" uid="uid://b5kl753kviset" path="res://Scripts/Entities/tree_of_life.gd" id="1_d16hd"]
+[ext_resource type="Shader" uid="uid://brnmdm5y5w1mf" path="res://Shaders/pen-lined.gdshader" id="1_ingk5"]
+[ext_resource type="Texture2D" uid="uid://dvqdfrp5k5ql" path="res://Shaders/new_noise_texture_2d.tres" id="2_lwikf"]
+[ext_resource type="Texture2D" uid="uid://bhcwhorf5l1w0" path="res://Shaders/paper.jpg" id="3_l31rg"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_danhb"]
+shader = ExtResource("1_ingk5")
+shader_parameter/sensitivity = 0.03
+shader_parameter/Sobel_sensitivity = 0.15
+shader_parameter/Strength = 1.0
+shader_parameter/NOISE_TEXTURE = ExtResource("2_lwikf")
+shader_parameter/PAPER_TEXTURE = ExtResource("3_l31rg")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_35yly"]
+size = Vector2(69.00001, 267.08813)
+
+[node name="StaticBody2D" type="StaticBody2D" unique_id=1507665620 groups=["Wall"]]
+script = ExtResource("1_d16hd")
+
+[node name="Tree2" type="Sprite2D" parent="." unique_id=489889540]
+material = SubResource("ShaderMaterial_danhb")
+scale = Vector2(0.99999994, 0.99999994)
+texture = ExtResource("1_cghni")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=511553670]
+position = Vector2(8, 124)
+scale = Vector2(0.9999998, 0.9999998)
+shape = SubResource("RectangleShape2D_35yly")

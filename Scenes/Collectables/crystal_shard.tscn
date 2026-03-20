@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://pad4mnxfr5el"]
+
+[ext_resource type="Script" uid="uid://duhbyafpqm37c" path="res://Scripts/Collectables/crystal_shard.gd" id="1_penym"]
+[ext_resource type="Texture2D" uid="uid://q0ddc2f61u1k" path="res://Temp Assets/shard.png" id="2_mx45u"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_msp4t"]
+radius = 7.0
+
+[node name="Crystal Shard" type="Area2D" unique_id=1247562560]
+collision_layer = 8
+collision_mask = 10
+script = ExtResource("1_penym")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1353904945]
+scale = Vector2(1.8000002, 1.8000002)
+shape = SubResource("CircleShape2D_msp4t")
+
+[node name="Inkshard" type="Sprite2D" parent="." unique_id=657177920]
+scale = Vector2(0.09350651, 0.093506455)
+texture = ExtResource("2_mx45u")
+
+[node name="VisibleOnScreenEnabler2D" type="VisibleOnScreenEnabler2D" parent="." unique_id=1238854827]
+rect = Rect2(-17, -21, 33, 42)
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="area_exited" from="." to="." method="_on_area_exited"]
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

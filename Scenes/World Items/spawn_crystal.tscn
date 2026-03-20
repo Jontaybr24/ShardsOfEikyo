@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://b641qljir7yua"]
+
+[ext_resource type="Script" uid="uid://7ya7o38aanru" path="res://Scripts/Gameplay/spawn_crystal.gd" id="1_uolfs"]
+[ext_resource type="Shader" uid="uid://brnmdm5y5w1mf" path="res://Shaders/pen-lined.gdshader" id="2_1hmf0"]
+[ext_resource type="Texture2D" uid="uid://dvqdfrp5k5ql" path="res://Shaders/new_noise_texture_2d.tres" id="3_k8qnc"]
+[ext_resource type="Texture2D" uid="uid://bhcwhorf5l1w0" path="res://Shaders/paper.jpg" id="4_aybgg"]
+[ext_resource type="Texture2D" uid="uid://q0ddc2f61u1k" path="res://Temp Assets/shard.png" id="5_qnpls"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_mmi52"]
+shader = ExtResource("2_1hmf0")
+shader_parameter/sensitivity = 0.04
+shader_parameter/Sobel_sensitivity = 0.15
+shader_parameter/Strength = 1.0
+shader_parameter/NOISE_TEXTURE = ExtResource("3_k8qnc")
+shader_parameter/PAPER_TEXTURE = ExtResource("4_aybgg")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mjkrb"]
+size = Vector2(219, 422)
+
+[node name="Checkpoint" type="Area2D" unique_id=264271652]
+scale = Vector2(0.336, 0.336)
+collision_mask = 3
+script = ExtResource("1_uolfs")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=192852611]
+material = SubResource("ShaderMaterial_mmi52")
+texture = ExtResource("5_qnpls")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1115682298]
+position = Vector2(-1.5, 1)
+shape = SubResource("RectangleShape2D_mjkrb")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

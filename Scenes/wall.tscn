@@ -1,0 +1,78 @@
+[gd_scene format=3 uid="uid://b23d6lqjmpfik"]
+
+[ext_resource type="PackedScene" uid="uid://3khmnypklfmm" path="res://Scenes/Enemies/entity.tscn" id="1_0dv0i"]
+[ext_resource type="Script" uid="uid://bxrow5r6qo6q0" path="res://Scripts/loot_entry.gd" id="2_0xsiy"]
+[ext_resource type="PackedScene" uid="uid://w8g84mdk4jvc" path="res://Scenes/Collectables/medium_crystal_shard.tscn" id="3_g4b4r"]
+[ext_resource type="Texture2D" uid="uid://q0ddc2f61u1k" path="res://Temp Assets/shard.png" id="4_jp0x0"]
+
+[sub_resource type="Resource" id="Resource_18a63"]
+script = ExtResource("2_0xsiy")
+scene = ExtResource("3_g4b4r")
+min = 5
+max = 7
+metadata/_custom_type_script = "uid://bxrow5r6qo6q0"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0dv0i"]
+size = Vector2(34, 60)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0xsiy"]
+size = Vector2(74, 187)
+
+[node name="Wall" unique_id=440473195 instance=ExtResource("1_0dv0i")]
+scale = Vector2(1.2142857, 1.2142857)
+loot_table = Array[ExtResource("2_0xsiy")]([SubResource("Resource_18a63")])
+immunities = [0, 2, 3, 4]
+base_type = 3
+immune_to_knockback = true
+
+[node name="Sprite2D" parent="." index="0" unique_id=1457843403]
+texture = ExtResource("4_jp0x0")
+
+[node name="Sprite2D2" type="Sprite2D" parent="." index="1" unique_id=599353801]
+position = Vector2(16, -29)
+scale = Vector2(0.22857143, 0.22857147)
+texture = ExtResource("4_jp0x0")
+
+[node name="Sprite2D3" type="Sprite2D" parent="." index="2" unique_id=212799823]
+position = Vector2(19, 8)
+scale = Vector2(0.22857143, 0.22857147)
+texture = ExtResource("4_jp0x0")
+
+[node name="Sprite2D4" type="Sprite2D" parent="." index="3" unique_id=621413705]
+position = Vector2(-9, -56)
+scale = Vector2(0.22857143, 0.22857147)
+texture = ExtResource("4_jp0x0")
+
+[node name="Sprite2D5" type="Sprite2D" parent="." index="4" unique_id=504540626]
+position = Vector2(22, -61.999996)
+scale = Vector2(0.22857143, 0.22857147)
+texture = ExtResource("4_jp0x0")
+
+[node name="Sprite2D6" type="Sprite2D" parent="." index="5" unique_id=1836048766]
+position = Vector2(-14, -2.0000038)
+scale = Vector2(0.22857143, 0.22857147)
+texture = ExtResource("4_jp0x0")
+
+[node name="Sprite2D7" type="Sprite2D" parent="." index="6" unique_id=1202506641]
+position = Vector2(4, 17)
+scale = Vector2(0.22857143, 0.22857147)
+texture = ExtResource("4_jp0x0")
+
+[node name="Sprite2D8" type="Sprite2D" parent="." index="7" unique_id=93481532]
+position = Vector2(7, -74)
+scale = Vector2(0.22857143, 0.22857147)
+texture = ExtResource("4_jp0x0")
+
+[node name="Interaction" parent="." index="9" unique_id=1166021074]
+collision_layer = 4
+collision_mask = 3
+
+[node name="CollisionShape2D" parent="Interaction" index="0" unique_id=892093961]
+shape = SubResource("RectangleShape2D_0dv0i")
+
+[node name="Hitbox" parent="." index="10" unique_id=1001144723]
+position = Vector2(6, -29.5)
+shape = SubResource("RectangleShape2D_0xsiy")
+
+[node name="Type Indicator" parent="." index="11" unique_id=650235984]
+visible = false

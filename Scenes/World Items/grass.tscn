@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://jhs1sabjo6mp"]
+
+[ext_resource type="Script" uid="uid://n6iciyfin4" path="res://Scripts/Entities/grass.gd" id="1_on02d"]
+[ext_resource type="Shader" uid="uid://brnmdm5y5w1mf" path="res://Shaders/pen-lined.gdshader" id="2_8gyqa"]
+[ext_resource type="Texture2D" uid="uid://lckaukpe1btt" path="res://Temp Assets/grass.png" id="2_qm417"]
+[ext_resource type="Texture2D" uid="uid://dvqdfrp5k5ql" path="res://Shaders/new_noise_texture_2d.tres" id="3_y1qba"]
+[ext_resource type="Texture2D" uid="uid://bhcwhorf5l1w0" path="res://Shaders/paper.jpg" id="4_vaoxa"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_gr604"]
+shader = ExtResource("2_8gyqa")
+shader_parameter/sensitivity = 0.03
+shader_parameter/Sobel_sensitivity = 0.15
+shader_parameter/Strength = 1.0
+shader_parameter/NOISE_TEXTURE = ExtResource("3_y1qba")
+shader_parameter/PAPER_TEXTURE = ExtResource("4_vaoxa")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qruad"]
+size = Vector2(544, 113)
+
+[node name="Grass" type="Area2D" unique_id=1502200006 groups=["Flammable", "Ink Source"]]
+z_index = 6
+scale = Vector2(0.2, 0.2)
+script = ExtResource("1_on02d")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=216091300]
+material = SubResource("ShaderMaterial_gr604")
+texture = ExtResource("2_qm417")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=689407527]
+position = Vector2(2, 74.5)
+shape = SubResource("RectangleShape2D_qruad")
+
+[node name="VisibleOnScreenEnabler2D" type="VisibleOnScreenEnabler2D" parent="." unique_id=831298123]
+position = Vector2(4.9999995, 0)
+rect = Rect2(-324.99997, -124.999985, 649.99994, 254.99997)

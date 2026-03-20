@@ -1,0 +1,32 @@
+extends PlayerState
+class_name PlayerDash
+
+# dash
+var dash_start_pos = 0
+var dash_cooldown = 0.5
+var dash_velocity = Vector2(2000, 0)
+var dash_distance = 200
+var last = 0
+var dir = 0
+
+func Enter():
+	super.Enter()
+	var new_dir = Input.get_axis("left", "right")
+	dash_start_pos = player.global_position.x
+	player.current_state = player.CONDITIONS.INVULNERABLE
+	player.collision.disabled = true
+	dir = player.last_dir if new_dir == 0 else sign(new_dir)
+	player.velocity = Vector2(dash_velocity[0] * dir, 0)
+	
+func Exit():
+	if abs(player.velocity.x) >= dash_velocity[0]:
+		player.velocity.x -= dash_velocity[0] * dir
+	player.current_state = player.CONDITIONS.DEFAULT
+	player.collision.disabled = false
+	player.dash_timer = dash_cooldown
+
+func Physics_Update(delta: float):
+	player.velocity.y = 0
+	if abs(player.global_position.x - dash_start_pos) > dash_distance or last == player.global_position.x:
+		Transitioned.emit(self, "listen")
+	last = player.global_position.x

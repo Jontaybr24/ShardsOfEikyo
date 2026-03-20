@@ -1,0 +1,41 @@
+[gd_scene format=3 uid="uid://2l303ia26y4e"]
+
+[ext_resource type="Script" uid="uid://dfj8t53mpff0o" path="res://Scripts/Menu/inventory.gd" id="1_wdn4f"]
+[ext_resource type="Texture2D" uid="uid://q0ddc2f61u1k" path="res://Temp Assets/shard.png" id="2_k5gp2"]
+
+[node name="Inventory" type="CanvasLayer" unique_id=611606700]
+script = ExtResource("1_wdn4f")
+
+[node name="Panel" type="Panel" parent="." unique_id=1851787128]
+offset_right = 1150.0
+offset_bottom = 647.0
+metadata/_edit_use_anchors_ = true
+
+[node name="Shard" type="Sprite2D" parent="Panel" unique_id=1051124769]
+position = Vector2(128, 185)
+scale = Vector2(0.26363635, 0.26363638)
+texture = ExtResource("2_k5gp2")
+
+[node name="Label2" type="Label" parent="Panel" unique_id=1988450507]
+layout_mode = 0
+offset_left = 181.0
+offset_top = 153.0
+offset_right = 452.0
+offset_bottom = 227.0
+theme_override_font_sizes/font_size = 48
+text = "CHANNEL"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="Panel" unique_id=121861162]
+layout_mode = 0
+offset_left = 461.0
+offset_top = 27.0
+offset_right = 732.0
+offset_bottom = 101.0
+theme_override_font_sizes/font_size = 48
+text = "INVENTORY"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true

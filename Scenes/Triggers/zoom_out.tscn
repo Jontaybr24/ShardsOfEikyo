@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://ojb8fgc4i6gc"]
+
+[ext_resource type="Script" uid="uid://8hh4xr8dnqdd" path="res://Scripts/zoom_out.gd" id="1_5xdt7"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_spyno"]
+
+[node name="Zoom out" type="Area2D" unique_id=1324010279]
+collision_mask = 3
+script = ExtResource("1_5xdt7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1861906418]
+shape = SubResource("CircleShape2D_spyno")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

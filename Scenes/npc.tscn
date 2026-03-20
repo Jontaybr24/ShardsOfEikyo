@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://lwdc4tcfycjm"]
+
+[ext_resource type="Texture2D" uid="uid://bbrgkj3t0uv6w" path="res://Temp Assets/bunny.png" id="1_acqhf"]
+[ext_resource type="Script" uid="uid://cl2ioub0j3xlf" path="res://Scripts/npc.gd" id="1_xxsvc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b0k6i"]
+size = Vector2(26, 32)
+
+[node name="Area2D" type="Area2D" unique_id=955784262 groups=["Interactable"]]
+script = ExtResource("1_xxsvc")
+
+[node name="Bunny" type="Sprite2D" parent="." unique_id=1862707663]
+position = Vector2(-1, -11)
+scale = Vector2(0.10161663, 0.10161666)
+texture = ExtResource("1_acqhf")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1266630038]
+position = Vector2(0, -5)
+shape = SubResource("RectangleShape2D_b0k6i")

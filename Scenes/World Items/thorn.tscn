@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://b12i5ou8yoss7"]
+
+[ext_resource type="Texture2D" uid="uid://daxvn7oegnxnw" path="res://Temp Assets/thorn.png" id="1_akj35"]
+[ext_resource type="Script" uid="uid://5gcsdm3rvka" path="res://Scripts/thorn.gd" id="1_ckuau"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ckuau"]
+size = Vector2(108, 28)
+
+[node name="Thorn" type="Area2D" unique_id=1914258742]
+collision_mask = 7
+script = ExtResource("1_ckuau")
+damage = 5
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=573707257]
+position = Vector2(-1, 2)
+scale = Vector2(1.2503356, 1.2503356)
+shape = SubResource("RectangleShape2D_ckuau")
+
+[node name="Thorn" type="Sprite2D" parent="." unique_id=398242031]
+position = Vector2(-0.99998474, -28)
+scale = Vector2(0.26395974, 0.26395977)
+texture = ExtResource("1_akj35")

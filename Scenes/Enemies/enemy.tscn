@@ -1,0 +1,119 @@
+[gd_scene format=3 uid="uid://b3jkcmkg7ln00"]
+
+[ext_resource type="Script" uid="uid://bxos1dxrcaecq" path="res://Scripts/Enemies/enemy.gd" id="1_haj6g"]
+[ext_resource type="Texture2D" uid="uid://bi5m0nhra6f01" path="res://Temp Assets/inkling.png" id="2_beuat"]
+[ext_resource type="Script" uid="uid://bxrow5r6qo6q0" path="res://Scripts/loot_entry.gd" id="2_pko3b"]
+[ext_resource type="PackedScene" uid="uid://cg08bdjycug3k" path="res://Scenes/Collectables/ink_crystal.tscn" id="2_ycxl0"]
+[ext_resource type="PackedScene" uid="uid://pad4mnxfr5el" path="res://Scenes/Collectables/crystal_shard.tscn" id="4_53ao7"]
+[ext_resource type="Texture2D" uid="uid://bsryb5srthmqs" path="res://Temp Assets/ink.png" id="5_beuat"]
+[ext_resource type="Script" uid="uid://djm45qu8y40qy" path="res://Scripts/States/state_machine.gd" id="5_l8da7"]
+[ext_resource type="Texture2D" uid="uid://dvbl4snskov8h" path="res://Temp Assets/wood_shield.png" id="6_53ao7"]
+[ext_resource type="Script" uid="uid://b1qyoqfexwkht" path="res://Scripts/States/Enemy/EnemyIdle.gd" id="6_haj6g"]
+[ext_resource type="Script" uid="uid://cuxn2s7nua7t2" path="res://Scripts/States/Enemy/EnemyFollow.gd" id="7_haj6g"]
+[ext_resource type="PackedScene" uid="uid://ctmsstd6uq73w" path="res://Scenes/Attacks/attack.tscn" id="7_ycxl0"]
+[ext_resource type="Script" uid="uid://v7yqgmo47ilg" path="res://Scripts/States/Enemy/EnemyAttack.gd" id="8_u0emo"]
+[ext_resource type="Script" uid="uid://doqdip8c8hjh2" path="res://Scripts/States/Enemy/EnemyRecharge.gd" id="9_tq087"]
+[ext_resource type="Script" uid="uid://bx77in28r1l35" path="res://Scripts/States/Enemy/EnemyKnockback.gd" id="10_4bcle"]
+[ext_resource type="PackedScene" uid="uid://uducaxmreo5a" path="res://Scenes/type_indicator.tscn" id="12_7ubbs"]
+
+[sub_resource type="Resource" id="Resource_53ao7"]
+script = ExtResource("2_pko3b")
+scene = ExtResource("2_ycxl0")
+min = 1
+max = 3
+metadata/_custom_type_script = "uid://bxrow5r6qo6q0"
+
+[sub_resource type="Resource" id="Resource_3hxf3"]
+script = ExtResource("2_pko3b")
+scene = ExtResource("4_53ao7")
+min = 1
+max = 1
+metadata/_custom_type_script = "uid://bxrow5r6qo6q0"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pimh3"]
+size = Vector2(50, 92)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1dp5w"]
+size = Vector2(44, 89)
+
+[node name="Enemy" type="CharacterBody2D" unique_id=1836850152 groups=["Attackable", "Enemy"]]
+collision_layer = 4
+script = ExtResource("1_haj6g")
+health = 35
+loot_table = Array[ExtResource("2_pko3b")]([SubResource("Resource_53ao7"), SubResource("Resource_3hxf3")])
+base_type = 1
+armor_type = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=987091329]
+position = Vector2(-3, -15)
+scale = Vector2(0.38581422, 0.38581428)
+texture = ExtResource("2_beuat")
+
+[node name="Armor" type="Sprite2D" parent="." unique_id=38444998]
+position = Vector2(-1, -3.0000002)
+scale = Vector2(0.093525186, 0.11636774)
+texture = ExtResource("6_53ao7")
+
+[node name="Interaction" type="Area2D" parent="." unique_id=1407103418 groups=["Enemy"]]
+collision_layer = 4
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interaction" unique_id=183674880]
+position = Vector2(-2, -17)
+shape = SubResource("RectangleShape2D_pimh3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1587398496]
+position = Vector2(-2, -17.5)
+shape = SubResource("RectangleShape2D_1dp5w")
+
+[node name="Attack Box" parent="." unique_id=1342017586 node_paths=PackedStringArray("parent") instance=ExtResource("7_ycxl0")]
+position = Vector2(-53.000004, -9)
+scale = Vector2(1.2159982, 1.5040002)
+collision_layer = 4
+collision_mask = 3
+parent = NodePath("..")
+type = 1
+duration = 0.2
+
+[node name="Sprite" type="Sprite2D" parent="Attack Box" unique_id=705572721]
+z_index = 2
+position = Vector2(9.046068, 0.6648935)
+scale = Vector2(0.108809315, 0.055021368)
+texture = ExtResource("5_beuat")
+
+[node name="State Machine" type="Node" parent="." unique_id=1143391703 node_paths=PackedStringArray("initial_state")]
+script = ExtResource("5_l8da7")
+initial_state = NodePath("Idle")
+
+[node name="Follow" type="Node" parent="State Machine" unique_id=1655472531 node_paths=PackedStringArray("enemy")]
+script = ExtResource("7_haj6g")
+enemy = NodePath("../..")
+metadata/_custom_type_script = "uid://cuxn2s7nua7t2"
+
+[node name="Idle" type="Node" parent="State Machine" unique_id=4158386 node_paths=PackedStringArray("enemy")]
+script = ExtResource("6_haj6g")
+enemy = NodePath("../..")
+metadata/_custom_type_script = "uid://b1qyoqfexwkht"
+
+[node name="Attack" type="Node" parent="State Machine" unique_id=1802339935 node_paths=PackedStringArray("enemy")]
+script = ExtResource("8_u0emo")
+enemy = NodePath("../..")
+metadata/_custom_type_script = "uid://v7yqgmo47ilg"
+
+[node name="Recharge" type="Node" parent="State Machine" unique_id=874021533 node_paths=PackedStringArray("enemy")]
+script = ExtResource("9_tq087")
+time_to_recharge = 1.0
+enemy = NodePath("../..")
+metadata/_custom_type_script = "uid://doqdip8c8hjh2"
+
+[node name="Knockback" type="Node" parent="State Machine" unique_id=2036787481 node_paths=PackedStringArray("enemy")]
+script = ExtResource("10_4bcle")
+enemy = NodePath("../..")
+metadata/_custom_type_script = "uid://bx77in28r1l35"
+
+[node name="Type Indicator" parent="." unique_id=650235984 node_paths=PackedStringArray("parent") instance=ExtResource("12_7ubbs")]
+position = Vector2(0, -77)
+parent = NodePath("..")
+
+[node name="VisibleOnScreenEnabler2D" type="VisibleOnScreenEnabler2D" parent="." unique_id=1322709687]
+rect = Rect2(-26, -62, 48, 91)

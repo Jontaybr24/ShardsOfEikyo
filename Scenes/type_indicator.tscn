@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://uducaxmreo5a"]
+
+[ext_resource type="Script" uid="uid://coe5enug7u53p" path="res://Scripts/type_indicator.gd" id="1_pitct"]
+[ext_resource type="Texture2D" uid="uid://drxtjrij1lpsl" path="res://Temp Assets/inkpot.png" id="2_summr"]
+[ext_resource type="Texture2D" uid="uid://dpuv6sm431qvw" path="res://Temp Assets/wood.png" id="3_axkbq"]
+[ext_resource type="Texture2D" uid="uid://q0ddc2f61u1k" path="res://Temp Assets/shard.png" id="4_dtxk1"]
+
+[node name="Type Indicator" type="Node2D" unique_id=650235984]
+script = ExtResource("1_pitct")
+
+[node name="Ink" type="Sprite2D" parent="." unique_id=41491706]
+scale = Vector2(0.016560227, 0.016560227)
+texture = ExtResource("2_summr")
+
+[node name="Root" type="Sprite2D" parent="." unique_id=1072699829]
+scale = Vector2(0.03291885, 0.032918856)
+texture = ExtResource("3_axkbq")
+
+[node name="Shard" type="Sprite2D" parent="." unique_id=411483989]
+scale = Vector2(0.035326857, 0.03532686)
+texture = ExtResource("4_dtxk1")

@@ -1,0 +1,197 @@
+[gd_scene format=3 uid="uid://cjafwy2udaunt"]
+
+[ext_resource type="Script" uid="uid://do05bsbviqpwu" path="res://Scripts/Gameplay/camera.gd" id="1_6ii2q"]
+[ext_resource type="Texture2D" uid="uid://crtaqmuhmw81n" path="res://Temp Assets/headspace.jpg" id="2_gql8c"]
+[ext_resource type="PackedScene" uid="uid://1yxwbn1lok2i" path="res://Scenes/naiko.tscn" id="3_7aw3l"]
+[ext_resource type="Texture2D" uid="uid://ckpfvowwrt6do" path="res://Temp Assets/box.png" id="4_ry2yl"]
+[ext_resource type="Script" uid="uid://c7j2mxc7rr0xf" path="res://Scripts/Gameplay/wave_manager.gd" id="5_4qb3o"]
+[ext_resource type="PackedScene" uid="uid://u4j2g4ka5xbt" path="res://Scenes/Enemies/Tree_demon.tscn" id="5_7aw3l"]
+[ext_resource type="PackedScene" uid="uid://ccgkc2vkx7bxg" path="res://Scenes/wave.tscn" id="6_1ro0w"]
+[ext_resource type="PackedScene" uid="uid://bd53ynllc0vex" path="res://Scenes/Enemies/quick_inkling.tscn" id="8_7aw3l"]
+[ext_resource type="Shader" uid="uid://m1sf6khknajr" path="res://Shaders/outline.gdshader" id="8_gql8c"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jf5ke"]
+size = Vector2(4.0476904, 241)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gql8c"]
+size = Vector2(4.0476904, 241)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_7aw3l"]
+shader = ExtResource("8_gql8c")
+shader_parameter/outline_color = Color(0.660196, 0.61179674, 0.9578678, 1)
+shader_parameter/thickness = 3.0
+
+[node name="play area" type="Node2D" unique_id=1531822525]
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=792781924]
+position = Vector2(0, 1)
+position_smoothing_speed = 10.0
+script = ExtResource("1_6ii2q")
+
+[node name="Background" type="Sprite2D" parent="Camera2D" unique_id=1479933211]
+z_index = -2000
+texture_filter = 1
+scale = Vector2(2.343694, 2.6170347)
+texture = ExtResource("2_gql8c")
+
+[node name="Naiko" parent="." unique_id=1398396257 instance=ExtResource("3_7aw3l")]
+z_index = 1
+position = Vector2(-12, 6)
+
+[node name="Grounds" type="Node" parent="." unique_id=1125928237]
+
+[node name="Ground" type="StaticBody2D" parent="Grounds" unique_id=1037639914]
+position = Vector2(16128, 197)
+scale = Vector2(10000, 1)
+
+[node name="Box" type="Sprite2D" parent="Grounds/Ground" unique_id=1133690846]
+scale = Vector2(0.015935509, 1)
+texture = ExtResource("4_ry2yl")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Grounds/Ground" unique_id=1664808903]
+shape = SubResource("RectangleShape2D_jf5ke")
+one_way_collision = true
+
+[node name="Ground10" type="StaticBody2D" parent="Grounds" unique_id=862935408]
+position = Vector2(-55.000004, -163)
+rotation = -3.1415927
+scale = Vector2(200, -0.219)
+
+[node name="Box" type="Sprite2D" parent="Grounds/Ground10" unique_id=1628012532]
+scale = Vector2(0.015935509, 1)
+texture = ExtResource("4_ry2yl")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Grounds/Ground10" unique_id=358758143]
+position = Vector2(-0.00033569336, 0)
+scale = Vector2(0.9999998, 0.9999998)
+shape = SubResource("RectangleShape2D_gql8c")
+one_way_collision = true
+
+[node name="Ground11" type="StaticBody2D" parent="Grounds" unique_id=2127563276]
+position = Vector2(-99, -468)
+rotation = -3.1415927
+scale = Vector2(200, -0.219)
+
+[node name="Box" type="Sprite2D" parent="Grounds/Ground11" unique_id=1756159498]
+scale = Vector2(0.015935509, 1)
+texture = ExtResource("4_ry2yl")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Grounds/Ground11" unique_id=2083706865]
+position = Vector2(-0.00033569336, 0)
+scale = Vector2(0.9999998, 0.9999998)
+shape = SubResource("RectangleShape2D_gql8c")
+one_way_collision = true
+
+[node name="Ground12" type="StaticBody2D" parent="Grounds" unique_id=1081264460]
+position = Vector2(-105.00001, -749)
+rotation = -3.1415927
+scale = Vector2(200, -0.219)
+
+[node name="Box" type="Sprite2D" parent="Grounds/Ground12" unique_id=2070548471]
+scale = Vector2(0.015935509, 1)
+texture = ExtResource("4_ry2yl")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Grounds/Ground12" unique_id=1312210118]
+position = Vector2(-0.00033569336, 0)
+scale = Vector2(0.9999998, 0.9999998)
+shape = SubResource("RectangleShape2D_gql8c")
+one_way_collision = true
+
+[node name="Ground13" type="StaticBody2D" parent="Grounds" unique_id=21661889]
+position = Vector2(-82.00001, -1036)
+rotation = -3.1415927
+scale = Vector2(200, -0.219)
+
+[node name="Box" type="Sprite2D" parent="Grounds/Ground13" unique_id=1471932004]
+scale = Vector2(0.015935509, 1)
+texture = ExtResource("4_ry2yl")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Grounds/Ground13" unique_id=2105242907]
+position = Vector2(-0.00033569336, 0)
+scale = Vector2(0.9999998, 0.9999998)
+shape = SubResource("RectangleShape2D_gql8c")
+one_way_collision = true
+
+[node name="Ground14" type="StaticBody2D" parent="Grounds" unique_id=981338533]
+position = Vector2(-75, -1327)
+rotation = -3.1415927
+scale = Vector2(200, -0.219)
+
+[node name="Box" type="Sprite2D" parent="Grounds/Ground14" unique_id=885879052]
+scale = Vector2(0.015935509, 1)
+texture = ExtResource("4_ry2yl")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Grounds/Ground14" unique_id=1208418614]
+position = Vector2(-0.00033569336, 0)
+scale = Vector2(0.9999998, 0.9999998)
+shape = SubResource("RectangleShape2D_gql8c")
+one_way_collision = true
+
+[node name="Ground15" type="StaticBody2D" parent="Grounds" unique_id=443012395]
+position = Vector2(-78, -1628)
+rotation = -3.1415927
+scale = Vector2(200, -0.219)
+
+[node name="Box" type="Sprite2D" parent="Grounds/Ground15" unique_id=1837811662]
+scale = Vector2(0.015935509, 1)
+texture = ExtResource("4_ry2yl")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Grounds/Ground15" unique_id=1827918697]
+position = Vector2(-0.00033569336, 0)
+scale = Vector2(0.9999998, 0.9999998)
+shape = SubResource("RectangleShape2D_gql8c")
+one_way_collision = true
+
+[node name="Ground16" type="StaticBody2D" parent="Grounds" unique_id=1079953129]
+position = Vector2(-85, -1926.0001)
+rotation = -3.1415927
+scale = Vector2(200, -0.219)
+
+[node name="Box" type="Sprite2D" parent="Grounds/Ground16" unique_id=533113256]
+scale = Vector2(0.015935509, 1)
+texture = ExtResource("4_ry2yl")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Grounds/Ground16" unique_id=953989818]
+position = Vector2(-0.00033569336, 0)
+scale = Vector2(0.9999998, 0.9999998)
+shape = SubResource("RectangleShape2D_gql8c")
+one_way_collision = true
+
+[node name="Ground17" type="StaticBody2D" parent="Grounds" unique_id=874456701]
+position = Vector2(-113, -2186)
+rotation = -3.1415927
+scale = Vector2(200, -0.219)
+
+[node name="Box" type="Sprite2D" parent="Grounds/Ground17" unique_id=306118068]
+scale = Vector2(0.015935509, 1)
+texture = ExtResource("4_ry2yl")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Grounds/Ground17" unique_id=147377027]
+position = Vector2(-0.00033569336, 0)
+scale = Vector2(0.9999998, 0.9999998)
+shape = SubResource("RectangleShape2D_gql8c")
+one_way_collision = true
+
+[node name="Tree2" parent="Grounds" unique_id=590050038 instance=ExtResource("5_7aw3l")]
+position = Vector2(-433.00003, -250.00006)
+scale = Vector2(0.15999937, 0.15999937)
+
+[node name="Tree3" parent="Grounds" unique_id=456826110 instance=ExtResource("5_7aw3l")]
+position = Vector2(283, -568)
+
+[node name="Projectile Layer" type="Node" parent="." unique_id=1091424815 groups=["Projectile Layer"]]
+
+[node name="Wave Manager" type="Node" parent="." unique_id=352595696 node_paths=PackedStringArray("default")]
+script = ExtResource("5_4qb3o")
+default = NodePath("1")
+
+[node name="1" parent="Wave Manager" unique_id=1056837958 instance=ExtResource("6_1ro0w")]
+position = Vector2(-8, -21)
+
+[node name="Speedster" parent="Wave Manager/1" unique_id=1710381249 instance=ExtResource("8_7aw3l")]
+position = Vector2(649, 20)
+health = 6000
+armor = 20
+
+[node name="Collectables" type="CanvasGroup" parent="." unique_id=1355193836 groups=["Collectable Layer"]]
+material = SubResource("ShaderMaterial_7aw3l")

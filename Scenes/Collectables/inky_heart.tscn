@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://o6ty2lct7t4n"]
+
+[ext_resource type="Texture2D" uid="uid://d3gqqyb1yostd" path="res://Temp Assets/inky_heart.png" id="1_4d8xq"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_wl0oy"]
+
+[node name="Inky Heart" type="Area2D" unique_id=1472082080 groups=["Ink Heart"]]
+
+[node name="InkyHeart" type="Sprite2D" parent="." unique_id=1820236151]
+position = Vector2(2, 1)
+scale = Vector2(0.10270266, 0.10270269)
+texture = ExtResource("1_4d8xq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=829963375]
+shape = SubResource("CircleShape2D_wl0oy")
+
+[node name="VisibleOnScreenEnabler2D" type="VisibleOnScreenEnabler2D" parent="." unique_id=146874303]

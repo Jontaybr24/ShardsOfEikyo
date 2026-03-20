@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://3khmnypklfmm"]
+
+[ext_resource type="Script" uid="uid://c83au1lrrouxt" path="res://Scripts/Enemies/entity.gd" id="1_egtqx"]
+[ext_resource type="PackedScene" uid="uid://uducaxmreo5a" path="res://Scenes/type_indicator.tscn" id="2_ob7ta"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pimh3"]
+size = Vector2(34, 60)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_egtqx"]
+size = Vector2(28.25, 51)
+
+[node name="Entity" type="CharacterBody2D" unique_id=440473195 groups=["Attackable", "Enemy"]]
+script = ExtResource("1_egtqx")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1457843403]
+scale = Vector2(0.22857143, 0.22857147)
+
+[node name="Armor" type="Sprite2D" parent="." unique_id=58413009]
+position = Vector2(-1.0000005, 1.0000007)
+scale = Vector2(0.15555556, 0.1935484)
+
+[node name="Interaction" type="Area2D" parent="." unique_id=1166021074 groups=["Enemy"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interaction" unique_id=892093961]
+shape = SubResource("RectangleShape2D_pimh3")
+
+[node name="Hitbox" type="CollisionShape2D" parent="." unique_id=1001144723]
+shape = SubResource("RectangleShape2D_egtqx")
+
+[node name="Type Indicator" parent="." unique_id=650235984 instance=ExtResource("2_ob7ta")]

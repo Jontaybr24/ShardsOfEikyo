@@ -1,0 +1,34 @@
+[gd_scene format=3 uid="uid://dt2ly7hup1bs7"]
+
+[ext_resource type="Texture2D" uid="uid://bn3tj52alphrs" path="res://Temp Assets/vines.png" id="1_hl6mt"]
+[ext_resource type="Shader" uid="uid://brnmdm5y5w1mf" path="res://Shaders/pen-lined.gdshader" id="1_xaa8b"]
+[ext_resource type="Texture2D" uid="uid://dvqdfrp5k5ql" path="res://Shaders/new_noise_texture_2d.tres" id="2_7m2wk"]
+[ext_resource type="Texture2D" uid="uid://bhcwhorf5l1w0" path="res://Shaders/paper.jpg" id="3_olpjk"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_5s51e"]
+shader = ExtResource("1_xaa8b")
+shader_parameter/sensitivity = 0.03
+shader_parameter/Sobel_sensitivity = 0.35
+shader_parameter/Strength = 0.0
+shader_parameter/NOISE_TEXTURE = ExtResource("2_7m2wk")
+shader_parameter/PAPER_TEXTURE = ExtResource("3_olpjk")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6slj2"]
+size = Vector2(162, 950)
+
+[node name="Vine" type="Area2D" unique_id=2039597802 groups=["Climbable"]]
+
+[node name="Vines" type="Sprite2D" parent="." unique_id=826762403]
+material = SubResource("ShaderMaterial_5s51e")
+position = Vector2(358, 600)
+texture = ExtResource("1_hl6mt")
+
+[node name="Vines2" type="Sprite2D" parent="." unique_id=55836838]
+material = SubResource("ShaderMaterial_5s51e")
+position = Vector2(-311, 600)
+scale = Vector2(-1, 1)
+texture = ExtResource("1_hl6mt")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1250409765]
+position = Vector2(21, 475)
+shape = SubResource("RectangleShape2D_6slj2")

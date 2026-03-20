@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://4lfbxb8xjk1h"]
+
+[ext_resource type="Script" uid="uid://ci4kxu575kuc5" path="res://Scripts/interactable.gd" id="1_8s6bd"]
+[ext_resource type="Texture2D" uid="uid://dfxtgjvioem67" path="res://Temp Assets/sign.png" id="2_pmsje"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g2old"]
+size = Vector2(30, 30)
+
+[node name="Interactable" type="Area2D" unique_id=1607527648 groups=["Interactable"]]
+script = ExtResource("1_8s6bd")
+
+[node name="Sign" type="Sprite2D" parent="." unique_id=1811253682]
+scale = Vector2(0.053333335, 0.053333335)
+texture = ExtResource("2_pmsje")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1141105017]
+shape = SubResource("RectangleShape2D_g2old")

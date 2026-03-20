@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://w8g84mdk4jvc"]
+
+[ext_resource type="PackedScene" uid="uid://pad4mnxfr5el" path="res://Scenes/Collectables/crystal_shard.tscn" id="1_7c3i1"]
+
+[node name="Medium Crystal Shard" unique_id=1247562560 instance=ExtResource("1_7c3i1")]
+scale = Vector2(1.4799999, 1.4799999)
+worth = 5

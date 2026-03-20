@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://ccgkc2vkx7bxg"]
+
+[ext_resource type="Script" uid="uid://cjkufjnq5e2pk" path="res://Scripts/Gameplay/wave.gd" id="1_7diof"]
+[ext_resource type="PackedScene" uid="uid://b641qljir7yua" path="res://Scenes/World Items/spawn_crystal.tscn" id="2_pvwu5"]
+
+[node name="Wave" type="Node2D" unique_id=1056837958]
+script = ExtResource("1_7diof")
+
+[node name="checkpoint" parent="." unique_id=481196051 groups=["Checkpoint"] instance=ExtResource("2_pvwu5")]

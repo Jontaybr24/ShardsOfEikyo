@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://iddpscnahepo"]
+
+[ext_resource type="Script" uid="uid://cycafluqclp4y" path="res://Scripts/Menu/pause_menu.gd" id="1_emv3i"]
+
+[node name="Pause Menu" type="CanvasLayer"]
+script = ExtResource("1_emv3i")
+
+[node name="Panel" type="Panel" parent="."]
+offset_right = 1150.0
+offset_bottom = 647.0
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 491.0
+offset_top = 234.0
+offset_right = 676.0
+offset_bottom = 308.0
+theme_override_font_sizes/font_size = 48
+text = "PAUSED"
+horizontal_alignment = 1
+vertical_alignment = 1

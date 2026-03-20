@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://wwr0tjw2kvoo"]
+
+[ext_resource type="Texture2D" uid="uid://ckpfvowwrt6do" path="res://Temp Assets/box.png" id="1_688p1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jf5ke"]
+size = Vector2(4.0476904, 241)
+
+[node name="Ground10" type="StaticBody2D" unique_id=1645827944]
+rotation = -3.1415927
+scale = Vector2(200, -0.219)
+
+[node name="Box" type="Sprite2D" parent="." unique_id=1780105390]
+scale = Vector2(0.015935509, 1)
+texture = ExtResource("1_688p1")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="." unique_id=153868794]
+position = Vector2(-0.0003323555, 0)
+scale = Vector2(0.9999999, 0.9999998)
+shape = SubResource("RectangleShape2D_jf5ke")

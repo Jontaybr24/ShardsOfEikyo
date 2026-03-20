@@ -1,0 +1,86 @@
+[gd_scene format=3 uid="uid://c54walp1wq66d"]
+
+[ext_resource type="Script" uid="uid://eirtb0po2cvp" path="res://Scripts/Enemies/shooter.gd" id="1_em7em"]
+[ext_resource type="Script" uid="uid://bxrow5r6qo6q0" path="res://Scripts/loot_entry.gd" id="2_gw3vm"]
+[ext_resource type="Texture2D" uid="uid://q0ddc2f61u1k" path="res://Temp Assets/shard.png" id="2_n5ife"]
+[ext_resource type="Texture2D" uid="uid://bsibkr1lwtye" path="res://Temp Assets/Screenshot 2025-11-10 210536.png" id="3_flciy"]
+[ext_resource type="PackedScene" uid="uid://cg08bdjycug3k" path="res://Scenes/Collectables/ink_crystal.tscn" id="3_to03w"]
+[ext_resource type="PackedScene" uid="uid://uducaxmreo5a" path="res://Scenes/type_indicator.tscn" id="4_n5ife"]
+[ext_resource type="PackedScene" uid="uid://pad4mnxfr5el" path="res://Scenes/Collectables/crystal_shard.tscn" id="4_vjror"]
+[ext_resource type="Script" uid="uid://djm45qu8y40qy" path="res://Scripts/States/state_machine.gd" id="5_tmvw0"]
+[ext_resource type="Script" uid="uid://brepgy7uw6ws6" path="res://Scripts/States/Enemy/EnemySit.gd" id="6_1svgy"]
+[ext_resource type="Script" uid="uid://bbf6a2ubyk7d0" path="res://Scripts/States/Enemy/EnemyShoot.gd" id="7_k1do7"]
+[ext_resource type="Script" uid="uid://bx77in28r1l35" path="res://Scripts/States/Enemy/EnemyKnockback.gd" id="8_k1do7"]
+
+[sub_resource type="Resource" id="Resource_3a1vv"]
+script = ExtResource("2_gw3vm")
+scene = ExtResource("3_to03w")
+min = 1
+max = 1
+metadata/_custom_type_script = "uid://bxrow5r6qo6q0"
+
+[sub_resource type="Resource" id="Resource_c247d"]
+script = ExtResource("2_gw3vm")
+scene = ExtResource("4_vjror")
+min = 5
+max = 8
+metadata/_custom_type_script = "uid://bxrow5r6qo6q0"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pimh3"]
+size = Vector2(34, 97)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_egtqx"]
+size = Vector2(28.5, 94)
+
+[node name="Shooter" type="CharacterBody2D" unique_id=440473195 groups=["Attackable", "Enemy"]]
+collision_layer = 4
+script = ExtResource("1_em7em")
+loot_table = Array[ExtResource("2_gw3vm")]([SubResource("Resource_3a1vv"), SubResource("Resource_c247d")])
+base_type = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1457843403]
+scale = Vector2(0.22857143, 0.22857147)
+texture = ExtResource("2_n5ife")
+
+[node name="Armor" type="Sprite2D" parent="." unique_id=58413009]
+z_index = 2
+position = Vector2(-1.0000005, 1.0000007)
+scale = Vector2(0.15555556, 0.1935484)
+texture = ExtResource("3_flciy")
+
+[node name="Interaction" type="Area2D" parent="." unique_id=1166021074 groups=["Enemy"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interaction" unique_id=892093961]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_pimh3")
+
+[node name="Hitbox" type="CollisionShape2D" parent="." unique_id=1001144723]
+position = Vector2(0.25, 1)
+shape = SubResource("RectangleShape2D_egtqx")
+
+[node name="Type Indicator" parent="." unique_id=650235984 node_paths=PackedStringArray("parent") instance=ExtResource("4_n5ife")]
+position = Vector2(0, -63)
+parent = NodePath("..")
+
+[node name="State Machine" type="Node" parent="." unique_id=2124279021 node_paths=PackedStringArray("initial_state")]
+script = ExtResource("5_tmvw0")
+initial_state = NodePath("Idle")
+
+[node name="Idle" type="Node" parent="State Machine" unique_id=815164354 node_paths=PackedStringArray("enemy")]
+script = ExtResource("6_1svgy")
+enemy = NodePath("../..")
+metadata/_custom_type_script = "uid://brepgy7uw6ws6"
+
+[node name="Shoot" type="Node" parent="State Machine" unique_id=1262546165 node_paths=PackedStringArray("enemy")]
+script = ExtResource("7_k1do7")
+shot_count = 1000
+enemy = NodePath("../..")
+metadata/_custom_type_script = "uid://bbf6a2ubyk7d0"
+
+[node name="Knockback" type="Node" parent="State Machine" unique_id=698466371 node_paths=PackedStringArray("enemy")]
+script = ExtResource("8_k1do7")
+enemy = NodePath("../..")
+metadata/_custom_type_script = "uid://bx77in28r1l35"
+
+[node name="VisibleOnScreenEnabler2D" type="VisibleOnScreenEnabler2D" parent="." unique_id=1542280891]
+rect = Rect2(-17, -48, 36, 98)

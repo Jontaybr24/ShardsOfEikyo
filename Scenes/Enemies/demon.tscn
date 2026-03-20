@@ -1,0 +1,128 @@
+[gd_scene format=3 uid="uid://drmhxvgxqxnfs"]
+
+[ext_resource type="Script" uid="uid://dp8f8wtbn1wkk" path="res://Scripts/Enemies/demon.gd" id="1_rjha3"]
+[ext_resource type="Texture2D" uid="uid://b87qc5u32bytm" path="res://Temp Assets/darkbowser.png" id="2_040qw"]
+[ext_resource type="Texture2D" uid="uid://dvbl4snskov8h" path="res://Temp Assets/wood_shield.png" id="3_868kw"]
+[ext_resource type="Script" uid="uid://djm45qu8y40qy" path="res://Scripts/States/state_machine.gd" id="5_4ku7m"]
+[ext_resource type="Script" uid="uid://b1qyoqfexwkht" path="res://Scripts/States/Enemy/EnemyIdle.gd" id="6_748kp"]
+[ext_resource type="PackedScene" uid="uid://uducaxmreo5a" path="res://Scenes/type_indicator.tscn" id="6_ywd1k"]
+[ext_resource type="PackedScene" uid="uid://ctmsstd6uq73w" path="res://Scenes/Attacks/attack.tscn" id="7_h6kdc"]
+[ext_resource type="Script" uid="uid://bq1c532do3okh" path="res://Scripts/States/Demon/DemonWait.gd" id="8_868kw"]
+[ext_resource type="Script" uid="uid://v7yqgmo47ilg" path="res://Scripts/States/Enemy/EnemyAttack.gd" id="8_nhx2d"]
+[ext_resource type="Script" uid="uid://ccmttsy6mgk2p" path="res://Scripts/States/Demon/DemonFollow.gd" id="9_nhx2d"]
+[ext_resource type="Script" uid="uid://doqdip8c8hjh2" path="res://Scripts/States/Enemy/EnemyRecharge.gd" id="9_oqhpx"]
+[ext_resource type="Script" uid="uid://j0cg8hyxe6ge" path="res://Scripts/States/Demon/DemonJump.gd" id="10_oqhpx"]
+[ext_resource type="Script" uid="uid://c1mnff2ulus6v" path="res://Scripts/States/Enemy/EnemyFalling.gd" id="11_vc1bc"]
+[ext_resource type="Script" uid="uid://bx77in28r1l35" path="res://Scripts/States/Enemy/EnemyKnockback.gd" id="12_4qey5"]
+[ext_resource type="Texture2D" uid="uid://mmqipgldlgam" path="res://Temp Assets/slash.png" id="14_ywd1k"]
+[ext_resource type="Script" uid="uid://bbf6a2ubyk7d0" path="res://Scripts/States/Enemy/EnemyShoot.gd" id="15_fxvw0"]
+[ext_resource type="Script" uid="uid://2npvertng78n" path="res://Scripts/States/Demon/DemonSmash.gd" id="17_vo656"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pimh3"]
+size = Vector2(185, 243)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1dp5w"]
+size = Vector2(153, 242)
+
+[node name="Demon" type="CharacterBody2D" unique_id=1051879583 groups=["Attackable", "Enemy"]]
+collision_layer = 4
+script = ExtResource("1_rjha3")
+health = 400
+immunities = [4]
+base_type = 3
+armor_type = 2
+immune_to_knockback = true
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=454315020]
+scale = Vector2(0.38581422, 0.38581428)
+texture = ExtResource("2_040qw")
+
+[node name="Armor" type="Sprite2D" parent="." unique_id=854308195]
+position = Vector2(0, 40)
+scale = Vector2(0.29856116, 0.3151966)
+texture = ExtResource("3_868kw")
+
+[node name="Interaction" type="Area2D" parent="." unique_id=150101525 groups=["Enemy"]]
+position = Vector2(27, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interaction" unique_id=702201397]
+shape = SubResource("RectangleShape2D_pimh3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1177468145]
+position = Vector2(27, 13)
+shape = SubResource("RectangleShape2D_1dp5w")
+
+[node name="Type Indicator" parent="." unique_id=650235984 node_paths=PackedStringArray("parent") instance=ExtResource("6_ywd1k")]
+position = Vector2(0, -164.99998)
+scale = Vector2(1.7999995, 1.7999995)
+parent = NodePath("..")
+
+[node name="Attack Box" parent="." unique_id=692507478 node_paths=PackedStringArray("parent") instance=ExtResource("7_h6kdc")]
+position = Vector2(-223, 25)
+scale = Vector2(9.145427, 5.6390305)
+parent = NodePath("..")
+damage = 15
+type = 3
+start_delay = 0.6
+
+[node name="Sprite" type="Sprite2D" parent="Attack Box" unique_id=1490012199]
+position = Vector2(1.2027874, 0.17733574)
+rotation = 3.1415927
+scale = Vector2(0.10934427, -0.17733544)
+texture = ExtResource("14_ywd1k")
+
+[node name="State Machine" type="Node" parent="." unique_id=1540834749 node_paths=PackedStringArray("initial_state")]
+script = ExtResource("5_4ku7m")
+initial_state = NodePath("Wait")
+
+[node name="Wait" type="Node" parent="State Machine" unique_id=1059160935 node_paths=PackedStringArray("enemy")]
+script = ExtResource("8_868kw")
+enemy = NodePath("../..")
+metadata/_custom_type_script = "uid://bq1c532do3okh"
+
+[node name="Idle" type="Node" parent="State Machine" unique_id=700087201 node_paths=PackedStringArray("enemy")]
+script = ExtResource("6_748kp")
+enemy = NodePath("../..")
+metadata/_custom_type_script = "uid://b1qyoqfexwkht"
+
+[node name="Attack" type="Node" parent="State Machine" unique_id=521915525 node_paths=PackedStringArray("enemy")]
+script = ExtResource("8_nhx2d")
+enemy = NodePath("../..")
+metadata/_custom_type_script = "uid://v7yqgmo47ilg"
+
+[node name="Recharge" type="Node" parent="State Machine" unique_id=2024666405 node_paths=PackedStringArray("enemy")]
+script = ExtResource("9_oqhpx")
+enemy = NodePath("../..")
+metadata/_custom_type_script = "uid://doqdip8c8hjh2"
+
+[node name="Follow" type="Node" parent="State Machine" unique_id=701826416 node_paths=PackedStringArray("enemy")]
+script = ExtResource("9_nhx2d")
+enemy = NodePath("../..")
+metadata/_custom_type_script = "uid://ccmttsy6mgk2p"
+
+[node name="Jump" type="Node" parent="State Machine" unique_id=1253071411 node_paths=PackedStringArray("enemy")]
+script = ExtResource("10_oqhpx")
+enemy = NodePath("../..")
+metadata/_custom_type_script = "uid://j0cg8hyxe6ge"
+
+[node name="Falling" type="Node" parent="State Machine" unique_id=318778812 node_paths=PackedStringArray("enemy")]
+script = ExtResource("11_vc1bc")
+enemy = NodePath("../..")
+metadata/_custom_type_script = "uid://c1mnff2ulus6v"
+
+[node name="Knockback" type="Node" parent="State Machine" unique_id=1291943058 node_paths=PackedStringArray("enemy")]
+script = ExtResource("12_4qey5")
+enemy = NodePath("../..")
+metadata/_custom_type_script = "uid://bx77in28r1l35"
+
+[node name="Fire" type="Node" parent="State Machine" unique_id=1289384013 node_paths=PackedStringArray("enemy")]
+script = ExtResource("15_fxvw0")
+offset = Vector2(200, 112)
+exit_delay = 4
+enemy = NodePath("../..")
+metadata/_custom_type_script = "uid://bbf6a2ubyk7d0"
+
+[node name="Smash" type="Node" parent="State Machine" unique_id=1739717477 node_paths=PackedStringArray("enemy")]
+script = ExtResource("17_vo656")
+enemy = NodePath("../..")
+metadata/_custom_type_script = "uid://2npvertng78n"

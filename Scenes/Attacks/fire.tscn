@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://b88bjvuibg8uq"]
+
+[ext_resource type="PackedScene" uid="uid://ctmsstd6uq73w" path="res://Scenes/Attacks/attack.tscn" id="1_1vx5t"]
+[ext_resource type="Texture2D" uid="uid://cuwgvv6qrsy6j" path="res://Temp Assets/fire.png" id="2_fvgtw"]
+[ext_resource type="Script" uid="uid://d4fuhdocyhmho" path="res://Scripts/Attacks/fire.gd" id="2_om6no"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1vx5t"]
+size = Vector2(422, 35)
+
+[node name="Fire" unique_id=692507478 instance=ExtResource("1_1vx5t")]
+z_index = 6
+script = ExtResource("2_om6no")
+permanent = false
+damage = 5
+type = 4
+duration = 8.0
+
+[node name="CollisionShape2D" parent="." index="0" unique_id=399664981]
+position = Vector2(0, 4.5)
+shape = SubResource("RectangleShape2D_1vx5t")
+
+[node name="Fire" type="Sprite2D" parent="." index="1" unique_id=1321457903 groups=["Enemy"]]
+position = Vector2(0, -65.515)
+scale = Vector2(0.35238096, 0.35238096)
+texture = ExtResource("2_fvgtw")
