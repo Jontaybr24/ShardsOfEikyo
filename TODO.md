@@ -28,23 +28,42 @@
 - [X] HUD
 - [X] Boss
 - [X] Damage Types
+- [ ] Inventory
 
 
-## Kai Things
+## Story Things
 
 - [X] Dailogue
 - [ ] Characters
-- [ ] Backpack
 
 
 ## Sprites
 
 - [ ] Naiko
-- [ ] Kai
 - [ ] Trees
 - [ ] Enemies
+    * Inkling
+    * Fast Inkling
+    * Shard Shooter
+    * Boss
 - [ ] Grass
 
-## Music
+## Sound Design
 
 - [ ] Music
+
+
+## Prototype 1 Feedback Checklist
+
+- [ ] Typing Sounds
+- [ ] Movement Feel
+    * Jump
+    * Dash
+    * Pogo
+- [X] Channel Rework
+- [ ] Better Blur Shader
+- [ ] Less Motion Sickness
+- [ ] 
+- [ ] 
+- [ ] 
+- [ ]  
