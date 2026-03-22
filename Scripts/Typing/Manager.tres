@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="TypeManager" format=3 uid="uid://fqti7lw54fsw"]
 
 [ext_resource type="Script" uid="uid://1rwfw650cgm7" path="res://Scripts/Typing/Element.gd" id="1_16qu8"]
-[ext_resource type="Script" uid="uid://cw01ctbbpk3b4" path="res://Scripts/Typing/TypeManager.gd" id="2_np7x8"]
+[ext_resource type="Script" uid="uid://cw01ctbbpk3b4" path="res://Scripts/Typing/type_manager.gd" id="2_np7x8"]
 [ext_resource type="Resource" uid="uid://cds8jksrfgbvo" path="res://Scripts/Typing/INK.tres" id="2_oib5m"]
 [ext_resource type="Resource" uid="uid://cb5l3whvbpti4" path="res://Scripts/Typing/WOOD.tres" id="3_1fs0p"]
 [ext_resource type="Resource" uid="uid://de8mbysd7owpa" path="res://Scripts/Typing/SHARD.tres" id="4_i0nh3"]
