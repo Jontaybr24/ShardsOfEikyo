@@ -8,13 +8,13 @@ func Enter():
 		return
 	player.shield.show()
 	player.sprite.play("Block")
-	player.type = GameManager.ELEMENTS.ROOT
+	player.type = TypeManager.ELEMENTS.WOOD
 	player.indicator.update()
 	player.current_state = player.CONDITIONS.BLOCK
 
 func Exit():
 	player.shield.hide()
-	player.type = GameManager.ELEMENTS.INK
+	player.type = TypeManager.ELEMENTS.INK
 	player.indicator.update()
 	player.current_state = player.CONDITIONS.DEFAULT
 

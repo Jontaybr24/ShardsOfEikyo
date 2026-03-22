@@ -10,16 +10,16 @@ extends Node2D
 func _ready():
 	hide_all()
 	if parent:
-		if parent.type == GameManager.ELEMENTS.INK: ink.show()
-		elif parent.type == GameManager.ELEMENTS.ROOT: root.show()
-		elif parent.type == GameManager.ELEMENTS.SHARD: shard.show()
+		if parent.type == TypeManager.ELEMENTS.INK: ink.show()
+		elif parent.type == TypeManager.ELEMENTS.WOOD: root.show()
+		elif parent.type == TypeManager.ELEMENTS.SHARD: shard.show()
 
 func update():
 	hide_all()
 	if parent:
-		if parent.type == GameManager.ELEMENTS.INK: ink.show()
-		elif parent.type == GameManager.ELEMENTS.ROOT: root.show()
-		elif parent.type == GameManager.ELEMENTS.SHARD: shard.show()
+		if parent.type == TypeManager.ELEMENTS.INK: ink.show()
+		elif parent.type == TypeManager.ELEMENTS.WOOD: root.show()
+		elif parent.type == TypeManager.ELEMENTS.SHARD: shard.show()
 
 func hide_all():
 	ink.hide()

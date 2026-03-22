@@ -10,7 +10,7 @@ func _init():
 	health = 300
 	armor = 0
 	armor_type = null
-	type = ELEMENTS.ROOT
+	type = TypeManager.ELEMENTS.WOOD
 
 func _process(delta: float) -> void:
 	pass

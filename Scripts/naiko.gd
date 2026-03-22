@@ -8,7 +8,7 @@ var dir = 0
 var last_dir = 1
 var frozen = false
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity") * 2.5
-var type = GameManager.ELEMENTS.INK
+var type = TypeManager.ELEMENTS.INK
 var current_type = type
 var current_attack = null
 var heal_source = null
@@ -43,13 +43,6 @@ enum CONDITIONS {
 	SUSPENDED
 }
 
-enum ELEMENTS {
-	NONE,
-	INK,
-	ROOT,
-	SHARD,
-	FIRE,
-}
 var current_state = CONDITIONS.DEFAULT
 
 # shield
@@ -113,7 +106,7 @@ var data = {
 	"max_ink": max_ink
 }
 
-var DMG_TYPE = GameManager.ELEMENTS.ROOT
+var DMG_TYPE = TypeManager.ELEMENTS.WOOD
 
 func _init():
 	sprint_multiplier = 1
@@ -231,53 +224,17 @@ func add_ink(amount):
 func add_shards(amount):
 	data.shards += amount
 	emit_signal("shards_changed", data.shards)
-	
-func damage_scaling(typ, dmg_type):
-	var multiplier = 1
-	var color
-	if typ == ELEMENTS.SHARD:
-		if dmg_type == ELEMENTS.ROOT:
-			multiplier = .5
-			color = Color.DARK_MAGENTA
-		elif dmg_type == ELEMENTS.INK:
-			multiplier = 1.5
-			color = Color.GOLD
-	elif typ == ELEMENTS.ROOT:
-		if dmg_type == ELEMENTS.SHARD:
-			multiplier = 1.5
-			color = Color.GOLD
-		elif dmg_type == ELEMENTS.INK:
-			multiplier = .5
-			color = Color.DARK_MAGENTA
-		elif dmg_type == ELEMENTS.FIRE:
-			multiplier = 2
-	elif typ == ELEMENTS.INK:
-		if dmg_type == ELEMENTS.ROOT:
-			multiplier = 1.5
-			color = Color.GOLD
-		elif dmg_type == ELEMENTS.SHARD:
-			multiplier = .5
-			color = Color.DARK_MAGENTA
-	else:
-		print('No Element Type')
-	if multiplier == 1:
-		color = Color.RED
-	
-	return {
-		"multiplier": multiplier,
-		"color": color
-		} 
 
 func take_damage(dmg, typ, source, kb = Vector2()):
 	if current_state == CONDITIONS.INVULNERABLE: return
-	var res = damage_scaling(type, typ)
+	var scalar = TypeManager.get_scalar(typ, type)
 	var distance = global_position.x - source.x
 	var dir = sign(distance)
 	if kb == Vector2():
 		kb = knockback
 		
 	if current_state == CONDITIONS.BLOCK and current_shield > 0:
-		current_shield = clamp(current_shield - (dmg * res.multiplier), 0, max_shield)
+		current_shield = clamp(current_shield - (dmg * scalar), 0, max_shield)
 		if current_shield > 0:
 			shield.material.set_shader_parameter("tint", Color.PINK)
 			await get_tree().create_timer(iframes).timeout
@@ -291,7 +248,7 @@ func take_damage(dmg, typ, source, kb = Vector2()):
 			add_knockback(kb, dir)
 			return
 	add_knockback(kb, dir)
-	current_ink -= clamp((dmg * res.multiplier), 0, data.max_ink)
+	current_ink -= clamp((dmg * scalar), 0, data.max_ink)
 	emit_signal("ink_changed", current_ink)
 
 func add_knockback(vel, direction):

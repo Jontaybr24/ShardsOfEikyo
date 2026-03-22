@@ -3,7 +3,7 @@ class_name Projectile
 
 @export var move_speed = 800
 @export var damage = 5
-@export var type = GameManager.ELEMENTS.SHARD
+@export var type = TypeManager.ELEMENTS.SHARD
 var dir = -1
 var end_of_life = 5
 var lifetime = 0

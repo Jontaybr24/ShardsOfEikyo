@@ -19,14 +19,6 @@ var player_data = {}
 var deaths = 0
 var respawn_time = 3
 
-enum ELEMENTS {
-	NONE,
-	INK,
-	ROOT,
-	SHARD,
-	FIRE,
-}
-
 enum State {
 	INACTIVE,
 	ACTIVE,

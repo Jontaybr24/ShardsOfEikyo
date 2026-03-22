@@ -6,9 +6,13 @@
 [ext_resource type="Texture2D" uid="uid://crtaqmuhmw81n" path="res://Temp Assets/headspace.jpg" id="4_nahes"]
 [ext_resource type="Script" uid="uid://do05bsbviqpwu" path="res://Scripts/Gameplay/camera.gd" id="5_47d5m"]
 [ext_resource type="PackedScene" uid="uid://1yxwbn1lok2i" path="res://Scenes/naiko.tscn" id="6_ppd2x"]
+[ext_resource type="PackedScene" uid="uid://b3jkcmkg7ln00" path="res://Scenes/Enemies/enemy.tscn" id="11_bfq8o"]
+[ext_resource type="PackedScene" uid="uid://c54walp1wq66d" path="res://Scenes/Enemies/shooter.tscn" id="12_x3kke"]
+[ext_resource type="PackedScene" uid="uid://bd53ynllc0vex" path="res://Scenes/Enemies/quick_inkling.tscn" id="13_7c6lk"]
 [ext_resource type="PackedScene" uid="uid://wwr0tjw2kvoo" path="res://Scenes/World Items/ground.tscn" id="14_7s8jf"]
 [ext_resource type="Script" uid="uid://c7j2mxc7rr0xf" path="res://Scripts/Gameplay/wave_manager.gd" id="16_d4lni"]
 [ext_resource type="PackedScene" uid="uid://ccgkc2vkx7bxg" path="res://Scenes/wave.tscn" id="17_atgkg"]
+[ext_resource type="Shader" uid="uid://m1sf6khknajr" path="res://Shaders/outline.gdshader" id="17_x3kke"]
 [ext_resource type="PackedScene" uid="uid://drmhxvgxqxnfs" path="res://Scenes/Enemies/demon.tscn" id="21_e66l6"]
 [ext_resource type="Script" uid="uid://brt8caet1iqrx" path="res://Scripts/Gameplay/Background/Parallax_manager.gd" id="22_hnc3n"]
 [ext_resource type="Shader" uid="uid://cngb2m4008xec" path="res://Shaders/group_blur.gdshader" id="23_21u3h"]
@@ -43,6 +47,11 @@ shader_parameter/samples = 5
 shader = ExtResource("23_21u3h")
 shader_parameter/blur_size = 0.0
 shader_parameter/samples = 5
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_7c6lk"]
+shader = ExtResource("17_x3kke")
+shader_parameter/outline_color = Color(0.660196, 0.61179674, 0.9578678, 1)
+shader_parameter/thickness = 3.0
 
 [node name="play area" type="Node2D" unique_id=1531822525]
 
@@ -105,6 +114,27 @@ position = Vector2(843, 45)
 position = Vector2(16.000002, 211.00003)
 scale = Vector2(7450.8013, -0.94523835)
 
+[node name="Enemy" parent="Wave Manager" unique_id=1836850152 instance=ExtResource("11_bfq8o")]
+position = Vector2(756, 38)
+
+[node name="Enemy2" parent="Wave Manager" unique_id=478100882 instance=ExtResource("11_bfq8o")]
+position = Vector2(1204, 38)
+armor = 20
+
+[node name="Shooter" parent="Wave Manager" unique_id=440473195 instance=ExtResource("12_x3kke")]
+position = Vector2(1636, 24)
+
+[node name="Shooter2" parent="Wave Manager" unique_id=1558449846 instance=ExtResource("12_x3kke")]
+position = Vector2(2032, 17)
+armor = 20
+
+[node name="Speedster" parent="Wave Manager" unique_id=1710381249 instance=ExtResource("13_7c6lk")]
+position = Vector2(2548, 3)
+
+[node name="Speedster2" parent="Wave Manager" unique_id=81573204 instance=ExtResource("13_7c6lk")]
+position = Vector2(3209, 5)
+armor = 20
+
 [node name="Parallax" type="Node2D" parent="." unique_id=1195304366]
 visible = false
 position = Vector2(0, 85)
@@ -164,3 +194,6 @@ num_trees = 400
 
 [node name="CanvasGroup" type="CanvasGroup" parent="Parallax/Parallax2D5" unique_id=17015388]
 material = SubResource("ShaderMaterial_v5exg")
+
+[node name="Collectables" type="CanvasGroup" parent="." unique_id=641774950 groups=["Collectable Layer"]]
+material = SubResource("ShaderMaterial_7c6lk")

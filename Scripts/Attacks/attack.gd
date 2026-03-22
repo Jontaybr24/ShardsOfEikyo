@@ -9,7 +9,7 @@ var bonus = 0
 var dir = 1
 @export var parent: Node2D
 @export var damage = 10
-@export var type = GameManager.ELEMENTS.NONE
+@export var type = TypeManager.ELEMENTS.NONE
 @export var start_delay = .1
 @export var duration = 0.1
 @export var tic_rate = .2
@@ -56,11 +56,11 @@ func inflict_damage(target):
 func _on_area_entered(area: Area2D) -> void:
 	var target = area.get_parent()
 	if area.is_in_group("Projectile"):
-		if area.type == GameManager.ELEMENTS.SHARD and type == GameManager.ELEMENTS.SHARD:
+		if area.type == TypeManager.ELEMENTS.SHARD and type == TypeManager.ELEMENTS.SHARD:
 			area.dir *= -1
 			area.parried = true
 		return
-	if type == GameManager.ELEMENTS.FIRE and area.is_in_group("Flammable"):
+	if type == TypeManager.ELEMENTS.FIRE and area.is_in_group("Flammable"):
 		area.take_damage(damage)
 	if area.name != "Interaction":
 		return

@@ -8,9 +8,9 @@ signal died
 @export var damage = 5
 @export var loot_table : Array[LootEntry]
 @export var knockback = Vector2(150, -200)
-@export var immunities = [ELEMENTS.NONE]
-@export var base_type = ELEMENTS.NONE
-@export var armor_type = ELEMENTS.NONE
+@export var immunities = [TypeManager.ELEMENTS.NONE]
+@export var base_type = TypeManager.ELEMENTS.NONE
+@export var armor_type = TypeManager.ELEMENTS.NONE
 @export var immune_to_knockback = false
 @onready var sprite: Sprite2D = $Sprite2D
 
@@ -25,18 +25,11 @@ var direction = 1
 var drop_variance = 25
 var kb_timer = 0
 
-enum ELEMENTS {
-	NONE,
-	INK,
-	ROOT,
-	SHARD,
-	FIRE,
-}
 @onready var armor_sprite = $Armor
 @onready var indicator: Node2D = $"Type Indicator"
 @onready var interaction: Area2D = $Interaction
 
-var type = GameManager.ELEMENTS.NONE
+var type = TypeManager.ELEMENTS.NONE
 
 func _ready():
 	process_mode = Node.PROCESS_MODE_PAUSABLE
@@ -75,46 +68,13 @@ func _physics_process(delta: float) -> void:
 		interaction.position.x = abs(interaction.position.x) * -direction
 	move_and_slide()
 	
-func damage_scaling(type, dmg_type):
-	var multiplier = 1
-	var color
-	if type == ELEMENTS.SHARD:
-		if dmg_type == ELEMENTS.ROOT:
-			multiplier = .5
-			color = Color.DARK_MAGENTA
-		elif dmg_type == ELEMENTS.INK:
-			multiplier = 1.5
-			color = Color.GOLD
-	elif type == ELEMENTS.ROOT:
-		if dmg_type == ELEMENTS.SHARD:
-			multiplier = 1.5
-			color = Color.GOLD
-		elif dmg_type == ELEMENTS.INK:
-			multiplier = .5
-			color = Color.DARK_MAGENTA
-	elif type == ELEMENTS.INK:
-		if dmg_type == ELEMENTS.ROOT:
-			multiplier = 1.5
-			color = Color.GOLD
-		elif dmg_type == ELEMENTS.SHARD:
-			multiplier = .5
-			color = Color.DARK_MAGENTA
-	else:
-		print('No Element Type')
-	if multiplier == 1:
-		color = Color.RED
-	
-	return {
-		"multiplier": multiplier,
-		"color": color
-		} 
 
 func take_damage(dmg, dmg_type, pos, kb = data.knockback):
 	if dmg_type in data.immunities:
 		return
 	var total_dmg = 0
-	var res = damage_scaling(type, dmg_type)
-	total_dmg = dmg * res.multiplier
+	var scalar = TypeManager.get_scalar(dmg_type, type)
+	total_dmg = dmg * scalar
 	
 	if (armor > 0): 
 		armor -= total_dmg
@@ -131,12 +91,6 @@ func take_damage(dmg, dmg_type, pos, kb = data.knockback):
 	var spri = sprite
 	
 	if armor > 0 and armor_sprite: spri = armor_sprite
-	spri.modulate = res.color
-	
-	
-	await get_tree().create_timer(.2).timeout
-	
-	spri.modulate = Color.WHITE
 	
 	if (health <= 0):
 		die()
@@ -148,7 +102,7 @@ func set_data(meta_data):
 	armor = data.armor
 
 func contact(p):
-	p.take_damage(data.damage, ELEMENTS.NONE, global_position)
+	p.take_damage(data.damage, TypeManager.ELEMENTS.NONE, global_position)
 
 func die():
 	for item in loot_table:

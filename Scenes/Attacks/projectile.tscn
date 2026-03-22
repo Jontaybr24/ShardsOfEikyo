@@ -9,7 +9,6 @@
 collision_layer = 4
 collision_mask = 3
 script = ExtResource("1_xvusd")
-damage = 10
 
 [node name="Sprite" type="Sprite2D" parent="." unique_id=1562052610]
 rotation = 1.5707964
