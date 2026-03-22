@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="Element" format=3 uid="uid://de8mbysd7owpa"]
+
+[ext_resource type="Script" uid="uid://1rwfw650cgm7" path="res://Scripts/Typing/Element.gd" id="1_lecnx"]
+[ext_resource type="Resource" uid="uid://cb5l3whvbpti4" path="res://Scripts/Typing/WOOD.tres" id="2_ujpd2"]
+[ext_resource type="Resource" uid="uid://cds8jksrfgbvo" path="res://Scripts/Typing/INK.tres" id="3_cys62"]
+
+[resource]
+script = ExtResource("1_lecnx")
+name = "shard"
+strengths = Array[ExtResource("1_lecnx")]([ExtResource("2_ujpd2")])
+weakness = Array[ExtResource("1_lecnx")]([ExtResource("3_cys62")])
+metadata/_custom_type_script = "uid://1rwfw650cgm7"

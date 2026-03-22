@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://uducaxmreo5a"]
 
-[ext_resource type="Script" uid="uid://coe5enug7u53p" path="res://Scripts/type_indicator.gd" id="1_pitct"]
+[ext_resource type="Script" uid="uid://coe5enug7u53p" path="res://Scripts/Typing/type_indicator.gd" id="1_pitct"]
 [ext_resource type="Texture2D" uid="uid://drxtjrij1lpsl" path="res://Temp Assets/inkpot.png" id="2_summr"]
 [ext_resource type="Texture2D" uid="uid://dpuv6sm431qvw" path="res://Temp Assets/wood.png" id="3_axkbq"]
 [ext_resource type="Texture2D" uid="uid://q0ddc2f61u1k" path="res://Temp Assets/shard.png" id="4_dtxk1"]

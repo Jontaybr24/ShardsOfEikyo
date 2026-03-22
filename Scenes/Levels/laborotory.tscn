@@ -102,7 +102,7 @@ position = Vector2(14106, -2279)
 position = Vector2(843, 45)
 
 [node name="Ground10" parent="Wave Manager" unique_id=1645827944 instance=ExtResource("14_7s8jf")]
-position = Vector2(-278, 342)
+position = Vector2(16.000002, 211.00003)
 scale = Vector2(7450.8013, -0.94523835)
 
 [node name="Parallax" type="Node2D" parent="." unique_id=1195304366]

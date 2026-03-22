@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://bpny00ew7jxf1"]
+
+[ext_resource type="Script" uid="uid://cx1vdd7mjq0qo" path="res://type_test.gd" id="1_kfkje"]
+[ext_resource type="Script" uid="uid://1rwfw650cgm7" path="res://Scripts/Typing/Element.gd" id="2_xki5m"]
+[ext_resource type="Script" uid="uid://cw01ctbbpk3b4" path="res://Scripts/Typing/TypeManager.gd" id="3_srrk6"]
+
+[sub_resource type="Resource" id="Resource_beaks"]
+script = ExtResource("3_srrk6")
+metadata/_custom_type_script = "uid://cw01ctbbpk3b4"
+
+[node name="Node2D" type="Node2D" unique_id=769587945]
+script = ExtResource("1_kfkje")
+type_manager = SubResource("Resource_beaks")
