@@ -1,0 +1,166 @@
+[gd_scene format=3 uid="uid://sln7yvjuoj8q"]
+
+[ext_resource type="PackedScene" uid="uid://qxvhka4atcik" path="res://Scenes/Menus/hud.tscn" id="1_psl4k"]
+[ext_resource type="PackedScene" uid="uid://iddpscnahepo" path="res://Scenes/Menus/pause_menu.tscn" id="2_rcu0p"]
+[ext_resource type="PackedScene" uid="uid://bkqoygkcyrylh" path="res://Scenes/Menus/textbox.tscn" id="3_hc2g5"]
+[ext_resource type="Texture2D" uid="uid://crtaqmuhmw81n" path="res://Temp Assets/headspace.jpg" id="4_nahes"]
+[ext_resource type="Script" uid="uid://do05bsbviqpwu" path="res://Scripts/Gameplay/camera.gd" id="5_47d5m"]
+[ext_resource type="PackedScene" uid="uid://1yxwbn1lok2i" path="res://Scenes/naiko.tscn" id="6_ppd2x"]
+[ext_resource type="PackedScene" uid="uid://wwr0tjw2kvoo" path="res://Scenes/World Items/ground.tscn" id="14_7s8jf"]
+[ext_resource type="Script" uid="uid://c7j2mxc7rr0xf" path="res://Scripts/Gameplay/wave_manager.gd" id="16_d4lni"]
+[ext_resource type="PackedScene" uid="uid://ccgkc2vkx7bxg" path="res://Scenes/wave.tscn" id="17_atgkg"]
+[ext_resource type="PackedScene" uid="uid://drmhxvgxqxnfs" path="res://Scenes/Enemies/demon.tscn" id="21_e66l6"]
+[ext_resource type="Script" uid="uid://brt8caet1iqrx" path="res://Scripts/Gameplay/Background/Parallax_manager.gd" id="22_hnc3n"]
+[ext_resource type="Shader" uid="uid://cngb2m4008xec" path="res://Shaders/group_blur.gdshader" id="23_21u3h"]
+[ext_resource type="Shader" uid="uid://byuwfoibi2drm" path="res://Shaders/background_blur_h.gdshader" id="24_ywv2q"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_hjuiu"]
+shader = ExtResource("23_21u3h")
+shader_parameter/blur_size = 4.0
+shader_parameter/samples = 5
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_0vsvg"]
+shader = ExtResource("24_ywv2q")
+shader_parameter/blur_size = 4.0
+shader_parameter/samples = 5
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_yj43f"]
+shader = ExtResource("23_21u3h")
+shader_parameter/blur_size = 3.0
+shader_parameter/samples = 5
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_jr36q"]
+shader = ExtResource("23_21u3h")
+shader_parameter/blur_size = 2.0
+shader_parameter/samples = 5
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_kuwnp"]
+shader = ExtResource("23_21u3h")
+shader_parameter/blur_size = 1.0
+shader_parameter/samples = 5
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_v5exg"]
+shader = ExtResource("23_21u3h")
+shader_parameter/blur_size = 0.0
+shader_parameter/samples = 5
+
+[node name="play area" type="Node2D" unique_id=1531822525]
+
+[node name="UI" type="Control" parent="." unique_id=978631702]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+metadata/_edit_use_anchors_ = true
+
+[node name="HUD" parent="UI" unique_id=2142861497 instance=ExtResource("1_psl4k")]
+visible = false
+
+[node name="Pause Menu" parent="UI" unique_id=1262961576 instance=ExtResource("2_rcu0p")]
+visible = false
+
+[node name="Textbox" parent="UI" unique_id=408672722 instance=ExtResource("3_hc2g5")]
+
+[node name="Background" type="CanvasLayer" parent="UI" unique_id=1858014858]
+layer = -100
+
+[node name="TextureRect" type="TextureRect" parent="UI/Background" unique_id=797164391]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_nahes")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=792781924]
+position = Vector2(0, 1)
+position_smoothing_enabled = true
+position_smoothing_speed = 10.0
+script = ExtResource("5_47d5m")
+
+[node name="Naiko" parent="." unique_id=1398396257 instance=ExtResource("6_ppd2x")]
+z_index = 1
+position = Vector2(-12, 6)
+
+[node name="Foreground" type="Node" parent="." unique_id=26641160]
+
+[node name="Grounds" type="Node" parent="." unique_id=1125928237]
+
+[node name="Projectile Layer" type="Node" parent="." unique_id=1091424815 groups=["Projectile Layer"]]
+
+[node name="Wave Manager" type="Node" parent="." unique_id=352595696 node_paths=PackedStringArray("default")]
+script = ExtResource("16_d4lni")
+default = NodePath("1")
+
+[node name="1" parent="Wave Manager" unique_id=1056837958 instance=ExtResource("17_atgkg")]
+position = Vector2(-8, -21)
+
+[node name="Boss" parent="Wave Manager" unique_id=1145347499 instance=ExtResource("17_atgkg")]
+position = Vector2(14106, -2279)
+
+[node name="Demon" parent="Wave Manager/Boss" unique_id=1051879583 instance=ExtResource("21_e66l6")]
+position = Vector2(843, 45)
+
+[node name="Ground10" parent="Wave Manager" unique_id=1645827944 instance=ExtResource("14_7s8jf")]
+position = Vector2(-278, 342)
+scale = Vector2(7450.8013, -0.94523835)
+
+[node name="Parallax" type="Node2D" parent="." unique_id=1195304366]
+visible = false
+position = Vector2(0, 85)
+
+[node name="Parallax2D" type="Parallax2D" parent="Parallax" unique_id=785762124]
+modulate = Color(1, 0.019607844, 1, 1)
+z_index = -1000
+scroll_scale = Vector2(0, 0)
+follow_viewport = false
+script = ExtResource("22_hnc3n")
+num_trees = 400
+
+[node name="CanvasGroup" type="CanvasGroup" parent="Parallax/Parallax2D" unique_id=705969819]
+material = SubResource("ShaderMaterial_hjuiu")
+position = Vector2(123, 36)
+
+[node name="Parallax2D2" type="Parallax2D" parent="Parallax" unique_id=471970800]
+z_index = -1000
+material = SubResource("ShaderMaterial_0vsvg")
+scroll_scale = Vector2(0.1, 0)
+follow_viewport = false
+script = ExtResource("22_hnc3n")
+num_trees = 400
+
+[node name="CanvasGroup" type="CanvasGroup" parent="Parallax/Parallax2D2" unique_id=1269415613]
+material = SubResource("ShaderMaterial_yj43f")
+
+[node name="Parallax2D3" type="Parallax2D" parent="Parallax" unique_id=536774272]
+z_index = -1000
+material = SubResource("ShaderMaterial_0vsvg")
+scroll_scale = Vector2(0.2, 0)
+follow_viewport = false
+script = ExtResource("22_hnc3n")
+num_trees = 400
+
+[node name="CanvasGroup" type="CanvasGroup" parent="Parallax/Parallax2D3" unique_id=1513980157]
+material = SubResource("ShaderMaterial_jr36q")
+
+[node name="Parallax2D4" type="Parallax2D" parent="Parallax" unique_id=1111745935]
+z_index = -1000
+material = SubResource("ShaderMaterial_0vsvg")
+scroll_scale = Vector2(0.3, 0)
+follow_viewport = false
+script = ExtResource("22_hnc3n")
+num_trees = 400
+
+[node name="CanvasGroup" type="CanvasGroup" parent="Parallax/Parallax2D4" unique_id=1404157273]
+material = SubResource("ShaderMaterial_kuwnp")
+
+[node name="Parallax2D5" type="Parallax2D" parent="Parallax" unique_id=2122972183]
+z_index = -1000
+material = SubResource("ShaderMaterial_0vsvg")
+scroll_scale = Vector2(0.4, 0)
+follow_viewport = false
+script = ExtResource("22_hnc3n")
+num_trees = 400
+
+[node name="CanvasGroup" type="CanvasGroup" parent="Parallax/Parallax2D5" unique_id=17015388]
+material = SubResource("ShaderMaterial_v5exg")
