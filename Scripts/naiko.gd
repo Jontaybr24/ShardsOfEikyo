@@ -227,14 +227,14 @@ func add_shards(amount):
 
 func take_damage(dmg, typ, source, kb = Vector2()):
 	if current_state == CONDITIONS.INVULNERABLE: return
-	var scalar = TypeManager.get_scalar(typ, type)
+	var res = TypeManager.get_matchup(typ, type)
 	var distance = global_position.x - source.x
 	var dir = sign(distance)
 	if kb == Vector2():
 		kb = knockback
 		
 	if current_state == CONDITIONS.BLOCK and current_shield > 0:
-		current_shield = clamp(current_shield - (dmg * scalar), 0, max_shield)
+		current_shield = clamp(current_shield - (dmg * res.scalar), 0, max_shield)
 		if current_shield > 0:
 			shield.material.set_shader_parameter("tint", Color.PINK)
 			await get_tree().create_timer(iframes).timeout
@@ -248,7 +248,7 @@ func take_damage(dmg, typ, source, kb = Vector2()):
 			add_knockback(kb, dir)
 			return
 	add_knockback(kb, dir)
-	current_ink -= clamp((dmg * scalar), 0, data.max_ink)
+	current_ink -= clamp((dmg * res.scalar), 0, data.max_ink)
 	emit_signal("ink_changed", current_ink)
 
 func add_knockback(vel, direction):

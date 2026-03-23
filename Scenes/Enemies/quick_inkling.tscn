@@ -8,10 +8,12 @@
 [ext_resource type="Script" uid="uid://djm45qu8y40qy" path="res://Scripts/States/state_machine.gd" id="5_1fama"]
 [ext_resource type="PackedScene" uid="uid://w8g84mdk4jvc" path="res://Scenes/Collectables/medium_crystal_shard.tscn" id="5_2xf4f"]
 [ext_resource type="Script" uid="uid://b1qyoqfexwkht" path="res://Scripts/States/Enemy/EnemyIdle.gd" id="6_daoxt"]
+[ext_resource type="AudioStream" uid="uid://b44bd307qtdsc" path="res://Assets/Audio/ShardFX1.wav" id="6_lutx7"]
 [ext_resource type="Script" uid="uid://cuxn2s7nua7t2" path="res://Scripts/States/Enemy/EnemyFollow.gd" id="6_rljve"]
 [ext_resource type="PackedScene" uid="uid://uducaxmreo5a" path="res://Scenes/type_indicator.tscn" id="6_udkui"]
 [ext_resource type="Texture2D" uid="uid://c2l6s25njlh8b" path="res://Temp Assets/Reinforced_Diamond_Chestplate.webp" id="7_2xf4f"]
 [ext_resource type="PackedScene" uid="uid://ctmsstd6uq73w" path="res://Scenes/Attacks/attack.tscn" id="7_udkui"]
+[ext_resource type="AudioStream" uid="uid://cailld5whp0r4" path="res://Assets/Audio/BadHitFX.wav" id="7_ytbtl"]
 [ext_resource type="Script" uid="uid://v7yqgmo47ilg" path="res://Scripts/States/Enemy/EnemyAttack.gd" id="8_cu4ai"]
 [ext_resource type="Script" uid="uid://doqdip8c8hjh2" path="res://Scripts/States/Enemy/EnemyRecharge.gd" id="9_d0hj1"]
 [ext_resource type="Script" uid="uid://bx77in28r1l35" path="res://Scripts/States/Enemy/EnemyKnockback.gd" id="10_cu4ai"]
@@ -43,7 +45,7 @@ size = Vector2(114, 128)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rljve"]
 size = Vector2(124.000015, 110.000015)
 
-[node name="Speedster" type="CharacterBody2D" unique_id=1710381249 groups=["Attackable", "Enemy"]]
+[node name="Speedster" type="CharacterBody2D" unique_id=1710381249 node_paths=PackedStringArray("audio_player") groups=["Attackable", "Enemy"]]
 collision_layer = 4
 script = ExtResource("1_vffms")
 max_combo = 3
@@ -51,6 +53,9 @@ health = 60
 loot_table = Array[ExtResource("2_55nwv")]([SubResource("Resource_rbluy"), SubResource("Resource_2xf4f"), SubResource("Resource_p74hp")])
 base_type = 2
 armor_type = 3
+audio_player = NodePath("AudioStreamPlayer2D")
+good_hit = ExtResource("6_lutx7")
+bad_hit = ExtResource("7_ytbtl")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1022558088]
 scale = Vector2(-0.386, 0.386)
@@ -123,3 +128,5 @@ metadata/_custom_type_script = "uid://bx77in28r1l35"
 
 [node name="VisibleOnScreenEnabler2D" type="VisibleOnScreenEnabler2D" parent="." unique_id=455652828]
 rect = Rect2(-61, -68, 131, 139)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=306357247]

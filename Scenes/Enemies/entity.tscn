@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://c83au1lrrouxt" path="res://Scripts/Enemies/entity.gd" id="1_egtqx"]
 [ext_resource type="PackedScene" uid="uid://uducaxmreo5a" path="res://Scenes/type_indicator.tscn" id="2_ob7ta"]
+[ext_resource type="AudioStream" uid="uid://cailld5whp0r4" path="res://Assets/Audio/BadHitFX.wav" id="3_l6vru"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pimh3"]
 size = Vector2(34, 60)
@@ -28,3 +29,6 @@ shape = SubResource("RectangleShape2D_pimh3")
 shape = SubResource("RectangleShape2D_egtqx")
 
 [node name="Type Indicator" parent="." unique_id=650235984 instance=ExtResource("2_ob7ta")]
+
+[node name="FXplayer" type="AudioStreamPlayer2D" parent="." unique_id=1204300861]
+stream = ExtResource("3_l6vru")

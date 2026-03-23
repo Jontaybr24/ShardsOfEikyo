@@ -3,6 +3,7 @@ class_name Entity
 
 signal died
 
+@export_group("Stats")
 @export var health = 30
 @export var armor = 0
 @export var damage = 5
@@ -12,6 +13,12 @@ signal died
 @export var base_type = TypeManager.ELEMENTS.NONE
 @export var armor_type = TypeManager.ELEMENTS.NONE
 @export var immune_to_knockback = false
+
+@export_group("Data")
+@export var audio_player : AudioStreamPlayer2D
+@export var good_hit : AudioStream
+@export var bad_hit : AudioStream
+
 @onready var sprite: Sprite2D = $Sprite2D
 
 var move_speed = 0
@@ -73,8 +80,20 @@ func take_damage(dmg, dmg_type, pos, kb = data.knockback):
 	if dmg_type in data.immunities:
 		return
 	var total_dmg = 0
-	var scalar = TypeManager.get_scalar(dmg_type, type)
+	var res = TypeManager.get_matchup(dmg_type, type)
+	var scalar = res.scalar
 	total_dmg = dmg * scalar
+	
+	if scalar > 1:
+		#play good sound
+		audio_player.stream = good_hit
+		print("Strong Hit")
+	elif scalar < 1:
+		#play bad sound
+		audio_player.stream = bad_hit
+		print("Weak Hit")
+	
+	audio_player.play()
 	
 	if (armor > 0): 
 		armor -= total_dmg

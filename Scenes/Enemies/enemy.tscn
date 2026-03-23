@@ -5,8 +5,10 @@
 [ext_resource type="Script" uid="uid://bxrow5r6qo6q0" path="res://Scripts/loot_entry.gd" id="2_pko3b"]
 [ext_resource type="PackedScene" uid="uid://cg08bdjycug3k" path="res://Scenes/Collectables/ink_crystal.tscn" id="2_ycxl0"]
 [ext_resource type="PackedScene" uid="uid://pad4mnxfr5el" path="res://Scenes/Collectables/crystal_shard.tscn" id="4_53ao7"]
+[ext_resource type="AudioStream" uid="uid://cailld5whp0r4" path="res://Assets/Audio/BadHitFX.wav" id="5_3hxf3"]
 [ext_resource type="Texture2D" uid="uid://bsryb5srthmqs" path="res://Temp Assets/ink.png" id="5_beuat"]
 [ext_resource type="Script" uid="uid://djm45qu8y40qy" path="res://Scripts/States/state_machine.gd" id="5_l8da7"]
+[ext_resource type="AudioStream" uid="uid://b44bd307qtdsc" path="res://Assets/Audio/ShardFX1.wav" id="5_xedeb"]
 [ext_resource type="Texture2D" uid="uid://dvbl4snskov8h" path="res://Temp Assets/wood_shield.png" id="6_53ao7"]
 [ext_resource type="Script" uid="uid://b1qyoqfexwkht" path="res://Scripts/States/Enemy/EnemyIdle.gd" id="6_haj6g"]
 [ext_resource type="Script" uid="uid://cuxn2s7nua7t2" path="res://Scripts/States/Enemy/EnemyFollow.gd" id="7_haj6g"]
@@ -36,13 +38,16 @@ size = Vector2(50, 92)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1dp5w"]
 size = Vector2(44, 89)
 
-[node name="Enemy" type="CharacterBody2D" unique_id=1836850152 groups=["Attackable", "Enemy"]]
+[node name="Enemy" type="CharacterBody2D" unique_id=1836850152 node_paths=PackedStringArray("audio_player") groups=["Attackable", "Enemy"]]
 collision_layer = 4
 script = ExtResource("1_haj6g")
 health = 35
 loot_table = Array[ExtResource("2_pko3b")]([SubResource("Resource_53ao7"), SubResource("Resource_3hxf3")])
 base_type = 1
 armor_type = 2
+audio_player = NodePath("AudioStreamPlayer2D")
+good_hit = ExtResource("5_xedeb")
+bad_hit = ExtResource("5_3hxf3")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=987091329]
 position = Vector2(-3, -15)
@@ -117,3 +122,5 @@ parent = NodePath("..")
 
 [node name="VisibleOnScreenEnabler2D" type="VisibleOnScreenEnabler2D" parent="." unique_id=1322709687]
 rect = Rect2(-26, -62, 48, 91)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1452596092]
