@@ -130,3 +130,4 @@ metadata/_custom_type_script = "uid://bx77in28r1l35"
 rect = Rect2(-61, -68, 131, 139)
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=306357247]
+bus = &"SFX"

@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://dvbl4snskov8h" path="res://Temp Assets/wood_shield.png" id="6_53ao7"]
 [ext_resource type="Script" uid="uid://b1qyoqfexwkht" path="res://Scripts/States/Enemy/EnemyIdle.gd" id="6_haj6g"]
 [ext_resource type="Script" uid="uid://cuxn2s7nua7t2" path="res://Scripts/States/Enemy/EnemyFollow.gd" id="7_haj6g"]
+[ext_resource type="AudioStream" uid="uid://cfthl3b7lb48c" path="res://Assets/Audio/BarkBreakFX.wav" id="7_kx2d8"]
 [ext_resource type="PackedScene" uid="uid://ctmsstd6uq73w" path="res://Scenes/Attacks/attack.tscn" id="7_ycxl0"]
 [ext_resource type="Script" uid="uid://v7yqgmo47ilg" path="res://Scripts/States/Enemy/EnemyAttack.gd" id="8_u0emo"]
 [ext_resource type="Script" uid="uid://doqdip8c8hjh2" path="res://Scripts/States/Enemy/EnemyRecharge.gd" id="9_tq087"]
@@ -48,6 +49,7 @@ armor_type = 2
 audio_player = NodePath("AudioStreamPlayer2D")
 good_hit = ExtResource("5_xedeb")
 bad_hit = ExtResource("5_3hxf3")
+shield_break = ExtResource("7_kx2d8")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=987091329]
 position = Vector2(-3, -15)
@@ -124,3 +126,4 @@ parent = NodePath("..")
 rect = Rect2(-26, -62, 48, 91)
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1452596092]
+bus = &"SFX"

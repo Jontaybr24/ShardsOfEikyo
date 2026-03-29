@@ -25,8 +25,12 @@ signal unlocked_spell()
 @onready var collision: CollisionShape2D = $Interaction/CollisionShape2D
 @onready var state_machine = $"State Machine"
 @onready var indicator: Node2D = $"Type Indicator"
+@onready var audio_player: AudioStreamPlayer2D = $AudioStreamPlayer2D
 
 @export var unlock_abilities = false
+
+@export_group("Sounds")
+@export var shield_break : AudioStream
 
 
 # health stats
@@ -241,6 +245,8 @@ func take_damage(dmg, typ, source, kb = Vector2()):
 			shield.material.set_shader_parameter("tint", Color.WHITE)
 			return
 		else:
+			audio_player.stream = shield_break
+			audio_player.play()
 			shield_broke = true
 			shield.material.set_shader_parameter("tint", Color.RED)
 			emit_signal("shield_changed", not shield_broke)

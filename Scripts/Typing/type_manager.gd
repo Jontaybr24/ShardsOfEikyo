@@ -10,17 +10,17 @@ enum ELEMENTS {
 
 # [Attacking Type, Defending Type]
 var matchups = {
-	[ELEMENTS.INK  , ELEMENTS.SHARD]: {"scalar": 2.0, "SFX": "Ink to Shard"},
-	[ELEMENTS.INK  , ELEMENTS.WOOD ]: {"scalar": 0.5, "SFX": "Ink to Wood"},
-	[ELEMENTS.SHARD, ELEMENTS.INK  ]: {"scalar": 0.5, "SFX": "Shard to Ink"},
-	[ELEMENTS.SHARD, ELEMENTS.WOOD ]: {"scalar": 2.0, "SFX": "Shard to Wood"},
-	[ELEMENTS.SHARD, ELEMENTS.SHARD]: {"scalar": 1.0, "SFX": "Shard to Shard"},
-	[ELEMENTS.WOOD , ELEMENTS.INK  ]: {"scalar": 2.0, "SFX": "Wood to Ink"},
-	[ELEMENTS.WOOD , ELEMENTS.SHARD]: {"scalar": 0.5, "SFX": "Wood to Shard"},
-	[ELEMENTS.FIRE , ELEMENTS.WOOD ]: {"scalar": 2.5, "SFX": "Fire to Wood"},
+	[ELEMENTS.INK  , ELEMENTS.SHARD]: {"scalar": 2.0, "SFX": preload("res://Assets/Audio/ShardFX10.wav")},
+	[ELEMENTS.INK  , ELEMENTS.WOOD ]: {"scalar": 0.5, "SFX": preload("res://Assets/Audio/WoodFX2.wav")},
+	[ELEMENTS.SHARD, ELEMENTS.INK  ]: {"scalar": 0.5, "SFX": preload("res://Assets/Audio/BadHitFX.wav")},
+	[ELEMENTS.SHARD, ELEMENTS.WOOD ]: {"scalar": 2.0, "SFX": preload("res://Assets/Audio/DigFX2.wav")},
+	[ELEMENTS.SHARD, ELEMENTS.SHARD]: {"scalar": 1.0, "SFX": preload("res://Assets/Audio/ShardFX1.wav")},
+	[ELEMENTS.WOOD , ELEMENTS.INK  ]: {"scalar": 2.0, "SFX": preload("res://Assets/Audio/BadHitFX.wav")},
+	[ELEMENTS.WOOD , ELEMENTS.SHARD]: {"scalar": 0.5, "SFX": preload("res://Assets/Audio/ShardFX14.wav")},
+	[ELEMENTS.FIRE , ELEMENTS.WOOD ]: {"scalar": 2.5, "SFX": preload("res://Assets/Audio/SwipeFX2.wav")},
 }
 
-var DEFAULT = {"scalar": 1.0, "SFX": "Default Sound"}
+var DEFAULT = {"scalar": 1.0, "SFX": preload("res://Assets/Audio/HitFX1.wav")}
 
 func get_matchup(atk_type, def_type) -> Dictionary:
 	return matchups.get([atk_type, def_type], DEFAULT)

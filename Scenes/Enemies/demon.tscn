@@ -133,3 +133,4 @@ enemy = NodePath("../..")
 metadata/_custom_type_script = "uid://2npvertng78n"
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=852533633]
+bus = &"SFX"

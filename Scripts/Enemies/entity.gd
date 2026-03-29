@@ -18,6 +18,7 @@ signal died
 @export var audio_player : AudioStreamPlayer2D
 @export var good_hit : AudioStream
 @export var bad_hit : AudioStream
+@export var shield_break : AudioStream
 
 @onready var sprite: Sprite2D = $Sprite2D
 
@@ -83,7 +84,8 @@ func take_damage(dmg, dmg_type, pos, kb = data.knockback):
 	var res = TypeManager.get_matchup(dmg_type, type)
 	var scalar = res.scalar
 	total_dmg = dmg * scalar
-	
+	audio_player.stream = res.SFX
+	audio_player.play()
 	if scalar > 1:
 		#play good sound
 		audio_player.stream = good_hit
@@ -97,7 +99,10 @@ func take_damage(dmg, dmg_type, pos, kb = data.knockback):
 	
 	if (armor > 0): 
 		armor -= total_dmg
-		if armor <= 0: armor_sprite.hide()
+		if armor <= 0:
+			audio_player.stream = shield_break
+			audio_player.play()
+			armor_sprite.hide()
 	else: 
 		health -= total_dmg
 		var distance = pos.x - global_position.x
@@ -124,6 +129,8 @@ func contact(p):
 	p.take_damage(data.damage, TypeManager.ELEMENTS.NONE, global_position)
 
 func die():
+	audio_player.reparent(get_parent())
+	audio_player.finished.connect(audio_player.queue_free)
 	for item in loot_table:
 		var num = randi_range(item.min, item.max)
 		for i in range(num):

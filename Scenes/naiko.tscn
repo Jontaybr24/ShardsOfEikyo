@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://c2pimcsh8k2s0" path="res://Scripts/naiko.gd" id="1_83ox1"]
 [ext_resource type="Texture2D" uid="uid://0infi56aaey4" path="res://Temp Assets/paper_mario_spritesheet.png" id="1_pdjod"]
+[ext_resource type="AudioStream" uid="uid://cfthl3b7lb48c" path="res://Assets/Audio/BarkBreakFX.wav" id="2_jhgqk"]
 [ext_resource type="PackedScene" uid="uid://ctmsstd6uq73w" path="res://Scenes/Attacks/attack.tscn" id="3_6xrbi"]
 [ext_resource type="Script" uid="uid://oryqcrbtfp66" path="res://Scripts/Attacks/player_attack.gd" id="4_0di8p"]
 [ext_resource type="Texture2D" uid="uid://2ehh2vnqxs7g" path="res://Temp Assets/shield.png" id="4_3kuo7"]
@@ -516,6 +517,7 @@ collision_layer = 2
 collision_mask = 9
 script = ExtResource("1_83ox1")
 unlock_abilities = true
+shield_break = ExtResource("2_jhgqk")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=604031444]
 material = SubResource("ShaderMaterial_6xrbi")
@@ -787,6 +789,8 @@ collision_mask = 8
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Collection Magnet" unique_id=264863265]
 shape = SubResource("CircleShape2D_1gk4c")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1173889767]
 
 [connection signal="area_entered" from="Interaction" to="." method="_on_interaction_area_entered"]
 [connection signal="area_exited" from="Interaction" to="." method="_on_interaction_area_exited"]
