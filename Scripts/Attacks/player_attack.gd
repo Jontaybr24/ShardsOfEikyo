@@ -2,7 +2,7 @@ extends Attack
 class_name AttackPlayer
 
 @export var cost = 0
-@export var freeze_player = true
+@export var freeze_on_start = false
 @export var freeze_on_success = false
 
 func _ready():

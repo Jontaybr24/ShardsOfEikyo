@@ -20,6 +20,8 @@ var dir = 1
 var tic_time = 0
 var hits = []
 
+signal hit_successful(target)
+
 func _ready():
 	visible = false
 	monitoring = false
@@ -65,4 +67,5 @@ func _on_area_entered(area: Area2D) -> void:
 	if area.name != "Interaction":
 		return
 	hits.append(target)
+	hit_successful.emit(target)
 	inflict_damage(target)

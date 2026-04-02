@@ -13,6 +13,7 @@
 [ext_resource type="Script" uid="uid://c7j2mxc7rr0xf" path="res://Scripts/Gameplay/wave_manager.gd" id="16_d4lni"]
 [ext_resource type="PackedScene" uid="uid://ccgkc2vkx7bxg" path="res://Scenes/wave.tscn" id="17_atgkg"]
 [ext_resource type="Shader" uid="uid://m1sf6khknajr" path="res://Shaders/outline.gdshader" id="17_x3kke"]
+[ext_resource type="PackedScene" uid="uid://jhs1sabjo6mp" path="res://Scenes/World Items/grass.tscn" id="18_7c6lk"]
 [ext_resource type="PackedScene" uid="uid://drmhxvgxqxnfs" path="res://Scenes/Enemies/demon.tscn" id="21_e66l6"]
 [ext_resource type="Script" uid="uid://brt8caet1iqrx" path="res://Scripts/Gameplay/Background/Parallax_manager.gd" id="22_hnc3n"]
 [ext_resource type="Shader" uid="uid://cngb2m4008xec" path="res://Shaders/group_blur.gdshader" id="23_21u3h"]
@@ -197,3 +198,39 @@ material = SubResource("ShaderMaterial_v5exg")
 
 [node name="Collectables" type="CanvasGroup" parent="." unique_id=641774950 groups=["Collectable Layer"]]
 material = SubResource("ShaderMaterial_7c6lk")
+
+[node name="Grass" parent="." unique_id=1502200006 instance=ExtResource("18_7c6lk")]
+position = Vector2(296, 72)
+
+[node name="Grass2" parent="." unique_id=2096391192 instance=ExtResource("18_7c6lk")]
+position = Vector2(507, 72)
+
+[node name="Grass3" parent="." unique_id=1995409106 instance=ExtResource("18_7c6lk")]
+position = Vector2(730, 72)
+
+[node name="Grass4" parent="." unique_id=600947513 instance=ExtResource("18_7c6lk")]
+position = Vector2(912, 72)
+
+[node name="Grass5" parent="." unique_id=405438138 instance=ExtResource("18_7c6lk")]
+position = Vector2(1134, 72)
+
+[node name="Grass6" parent="." unique_id=1151651900 instance=ExtResource("18_7c6lk")]
+position = Vector2(1353, 72)
+
+[node name="Grass7" parent="." unique_id=1082740286 instance=ExtResource("18_7c6lk")]
+position = Vector2(1527.9999, 72)
+
+[node name="Grass8" parent="." unique_id=1593501743 instance=ExtResource("18_7c6lk")]
+position = Vector2(1738.9999, 72)
+
+[node name="Grass9" parent="." unique_id=253541466 instance=ExtResource("18_7c6lk")]
+position = Vector2(1961.9999, 72)
+
+[node name="Grass10" parent="." unique_id=11440120 instance=ExtResource("18_7c6lk")]
+position = Vector2(2144, 72)
+
+[node name="Grass11" parent="." unique_id=10248502 instance=ExtResource("18_7c6lk")]
+position = Vector2(2366, 72)
+
+[node name="Grass12" parent="." unique_id=1627105289 instance=ExtResource("18_7c6lk")]
+position = Vector2(2585, 72)
