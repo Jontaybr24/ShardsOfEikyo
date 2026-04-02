@@ -267,6 +267,7 @@ func add_knockback(vel, direction):
 func freeze():
 	current_state = CONDITIONS.SUSPENDED
 	velocity = Vector2(velocity.x, 0)
+	print("PLAYER FROZEN")
 
 func unfreeze():
 	current_state = CONDITIONS.DEFAULT
