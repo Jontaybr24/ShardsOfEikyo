@@ -326,7 +326,7 @@ func _on_interaction_area_entered(area: Area2D) -> void:
 		GameManager.text_request("Max Ink Increased")
 
 func _on_interaction_area_exited(area: Area2D) -> void:
-	if area == heal_source:
+	if area.is_in_group("Ink Source"):
 		healing_objects.erase(area)
 	elif area.is_in_group("Climbable"):
 		can_climb = false

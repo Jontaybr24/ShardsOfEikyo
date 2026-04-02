@@ -32,6 +32,7 @@ func Enter():
 			await get_tree().process_frame
 			Transitioned.emit(self, "listen")
 			return
+
 		if !buffer():
 			#print("Done with attack(No Buffer)", attack)
 			Transitioned.emit(self, "listen")
