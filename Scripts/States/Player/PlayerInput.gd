@@ -38,7 +38,7 @@ func Update(delta: float):
 	elif jump_ready and Input.is_action_just_pressed("jump") and player.has_second_jump:
 		jump_ready = false
 		player.has_second_jump = false
-		player.velocity.y = player.jump_velocity
+		player.jump()
 	
 	if Input.is_action_just_released("jump"): jump_ready = true
 	
