@@ -1,7 +1,7 @@
 extends State
 class_name PlayerState
 
-@export var player : Node2D
+@export var player : Player
 var buffer_timer = 0
 var buffer_time = .3
 

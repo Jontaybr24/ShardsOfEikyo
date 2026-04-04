@@ -19,11 +19,14 @@ func Update(delta: float):
 		interaction_timer -= delta
 	
 	if Input.is_action_just_pressed("jump") and player.is_on_floor() and player.interactables.size() == 0:
-		player.velocity.y = player.jump_velocity
+		player.jump()
 	
 	if player.buffered_input == 'jump' and (player.is_on_floor() or player.jump_ready):
-		player.velocity.y = player.jump_velocity
+		player.jump()
 		player.buffered_input = ''
+	
+	if Input.is_action_just_released("jump"):
+		player.boosting_jump = false
 	
 	player.dir = Input.get_axis("left", "right")
 	var speed = player.move_speed * (player.sprint_multiplier if Input.is_action_pressed("dash") else 1.0)

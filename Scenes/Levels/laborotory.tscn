@@ -14,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://ccgkc2vkx7bxg" path="res://Scenes/wave.tscn" id="17_atgkg"]
 [ext_resource type="Shader" uid="uid://m1sf6khknajr" path="res://Shaders/outline.gdshader" id="17_x3kke"]
 [ext_resource type="PackedScene" uid="uid://jhs1sabjo6mp" path="res://Scenes/World Items/grass.tscn" id="18_7c6lk"]
+[ext_resource type="Texture2D" uid="uid://ckpfvowwrt6do" path="res://Temp Assets/box.png" id="19_rdjgw"]
 [ext_resource type="PackedScene" uid="uid://drmhxvgxqxnfs" path="res://Scenes/Enemies/demon.tscn" id="21_e66l6"]
 [ext_resource type="Script" uid="uid://brt8caet1iqrx" path="res://Scripts/Gameplay/Background/Parallax_manager.gd" id="22_hnc3n"]
 [ext_resource type="Shader" uid="uid://cngb2m4008xec" path="res://Shaders/group_blur.gdshader" id="23_21u3h"]
@@ -234,3 +235,8 @@ position = Vector2(2366, 72)
 
 [node name="Grass12" parent="." unique_id=1627105289 instance=ExtResource("18_7c6lk")]
 position = Vector2(2585, 72)
+
+[node name="Box" type="Sprite2D" parent="." unique_id=432150394]
+position = Vector2(133.94698, 21.499998)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")

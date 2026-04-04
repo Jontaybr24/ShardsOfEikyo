@@ -1,8 +1,14 @@
 extends CharacterBody2D
+class_name Player
 
 var move_speed = 300
 var sprint_multiplier = 1.5
-var jump_velocity = -900
+var jump_velocity = -600
+var jump_timer = 0
+var boost_timer = 0
+var max_boost_time = .6
+var boost_gravity_reduction = .5
+
 var sprite: AnimatedSprite2D
 var dir = 0
 var last_dir = 1
@@ -27,6 +33,7 @@ signal unlocked_spell()
 @onready var indicator: Node2D = $"Type Indicator"
 @onready var audio_player: AudioStreamPlayer2D = $AudioStreamPlayer2D
 
+@export_category("Overides")
 @export var unlock_abilities = false
 
 @export_group("Sounds")
@@ -44,7 +51,8 @@ enum CONDITIONS {
 	BLOCK,
 	INVULNERABLE,
 	CHANNEL,
-	SUSPENDED
+	SUSPENDED,
+	JUMPING,
 }
 
 var current_state = CONDITIONS.DEFAULT
@@ -94,6 +102,7 @@ var jump_ready = false
 var decay_velocity = false
 var kill_velocity = 50
 var can_climb = false
+var boosting_jump = false
 
 # dash
 var dash_timer = 0
@@ -168,7 +177,19 @@ func _physics_process(delta):
 	
 	if not is_on_floor() \
 	and not current_state == CONDITIONS.SUSPENDED:
-		velocity.y += gravity * delta
+		var new_grav = gravity * delta * (boost_gravity_reduction if boosting_jump else 1)
+		velocity.y += new_grav
+	
+	if current_state == CONDITIONS.JUMPING and is_on_floor() and jump_timer > .05:
+		current_state = CONDITIONS.DEFAULT
+	
+	if current_state == CONDITIONS.JUMPING and boost_timer > 0\
+	and Input.is_action_pressed("jump"):
+		boosting_jump = true
+		print(boost_timer)
+	
+	if boost_timer < 0 or is_on_floor(): 
+		boosting_jump = false
 	
 	# get the sign of last dir when it isn't a whole number
 	last_dir = last_dir / abs(last_dir)
@@ -184,6 +205,9 @@ func _physics_process(delta):
 	attack_timer -= delta
 	reset_timer -= delta
 	dash_timer -= delta
+	if current_state == CONDITIONS.JUMPING:
+		jump_timer += delta
+		boost_timer -= delta
 	
 	if reset_timer < 0: combo = 0
 	if combo >= max_combo:
@@ -274,6 +298,12 @@ func unfreeze():
 
 func die():
 	GameManager.respawn_player()
+
+func jump(percentage = 1.0):
+	velocity = jump_velocity * Vector2(0, percentage)
+	current_state = CONDITIONS.JUMPING
+	boost_timer = max_boost_time
+	jump_timer = 0
 
 func CheckAttackTime():
 	return attack_timer < 0
