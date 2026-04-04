@@ -6,7 +6,7 @@ var sprint_multiplier = 1.5
 var jump_velocity = -600
 var jump_timer = 0
 var boost_timer = 0
-var max_boost_time = .6
+var max_boost_time = .5
 var boost_gravity_reduction = .5
 
 var sprite: AnimatedSprite2D
