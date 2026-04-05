@@ -42,3 +42,12 @@ func Exit():
 		attack.hit_successful.disconnect(player.freeze)
 	player.current_attack = null
 	player.unfreeze()
+
+func Update(delta: float):
+	if player.current_state != player.CONDITIONS.SUSPENDED:
+		player.dir = Input.get_axis("left", "right")
+		var speed = player.move_speed * (player.sprint_multiplier if player.sprinting else 1.0)
+		player.position.x += player.dir * speed * delta
+	
+	if Input.is_action_just_released("dash"):
+		player.sprinting = false

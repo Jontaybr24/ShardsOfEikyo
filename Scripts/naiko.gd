@@ -173,13 +173,9 @@ func _physics_process(delta):
 	else:
 		channel_aura.hide()
 	
-	
 	for enemy in enemies:
 		if enemy.contact_damage: enemy.contact(self)
-	
-	#if is_on_floor() and dir == 0:
-		#velocity.x = 0
-	
+		
 	if not is_on_floor() \
 	and not current_state == CONDITIONS.SUSPENDED:
 		var new_grav = gravity * delta * (boost_gravity_reduction if boosting_jump else 1)
@@ -290,12 +286,11 @@ func add_knockback(vel, direction):
 	velocity.y = vel[1]
 	state_machine.on_child_transition(state_machine.current_state, "knockback")
 	decay_velocity = true
-	
 
 func freeze():
 	current_state = CONDITIONS.SUSPENDED
 	velocity = Vector2(velocity.x, 0)
-	print("PLAYER FROZEN")
+	sprinting = false
 
 func unfreeze():
 	current_state = CONDITIONS.DEFAULT

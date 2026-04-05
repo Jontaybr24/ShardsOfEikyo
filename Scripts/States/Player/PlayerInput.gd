@@ -5,6 +5,7 @@ var jump_ready = false
 var channel_timer = 0
 var interaction_delay = .2
 var interaction_timer = 0
+var perserve_sprint = false
 
 func Enter():
 	super.Enter()
@@ -14,7 +15,7 @@ func Enter():
 func Exit():
 	player.boosting_jump = false
 	player.channeling = false
-	player.sprinting = false
+	if not perserve_sprint: player.sprinting = false
 
 func Update(delta: float):
 	if not player:
@@ -69,6 +70,7 @@ func Update(delta: float):
 				player.current_attack = player.attacks.get_node("Pogo")
 		else:
 			player.current_attack = player.CheckCombo()
+		perserve_sprint = true
 		Transitioned.emit(self, "attack")
 		
 	if Input.is_action_just_released('attack'):
