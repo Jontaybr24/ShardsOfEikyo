@@ -115,7 +115,7 @@ var data = {
 	"Shield": false,
 	"Dash": false,
 	"Dash_mult": 1,
-	"shards": 0,
+	"shards": 100,
 	"max_ink": max_ink
 }
 
@@ -186,7 +186,6 @@ func _physics_process(delta):
 	if current_state == CONDITIONS.JUMPING and boost_timer > 0\
 	and Input.is_action_pressed("jump"):
 		boosting_jump = true
-		print(boost_timer)
 	
 	if boost_timer < 0 or is_on_floor(): 
 		boosting_jump = false

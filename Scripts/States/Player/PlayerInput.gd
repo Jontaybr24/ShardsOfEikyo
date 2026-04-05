@@ -11,6 +11,10 @@ func Enter():
 	if player and player.sprite:
 		player.sprite.play("Idle")
 
+func Exit():
+	player.boosting_jump = false
+	player.channeling = false
+
 func Update(delta: float):
 	if not player:
 		return
@@ -29,7 +33,7 @@ func Update(delta: float):
 		player.boosting_jump = false
 	
 	player.dir = Input.get_axis("left", "right")
-	var speed = player.move_speed * (player.sprint_multiplier if Input.is_action_pressed("dash") else 1.0)
+	var speed = player.move_speed * (player.sprint_multiplier if Input.is_action_pressed("dash") and player.is_on_floor() else 1.0)
 	player.position.x += player.dir * speed * delta
 	
 	if player.is_on_floor():
