@@ -103,6 +103,7 @@ var decay_velocity = false
 var kill_velocity = 50
 var can_climb = false
 var boosting_jump = false
+var sprinting = false
 
 # dash
 var dash_timer = 0
@@ -172,8 +173,12 @@ func _physics_process(delta):
 	else:
 		channel_aura.hide()
 	
+	
 	for enemy in enemies:
 		if enemy.contact_damage: enemy.contact(self)
+	
+	#if is_on_floor() and dir == 0:
+		#velocity.x = 0
 	
 	if not is_on_floor() \
 	and not current_state == CONDITIONS.SUSPENDED:
@@ -241,7 +246,7 @@ func unlock_ability(ability):
 		"channel":
 			data.Channel = true
 		"dash":
-			data.Dash_mult = 2
+			data.Dash_mult = 1.75
 			data.Dash = true
 
 func add_ink(amount):

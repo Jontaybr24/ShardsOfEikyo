@@ -101,7 +101,7 @@ position = Vector2(-12, 6)
 
 [node name="Wave Manager" type="Node" parent="." unique_id=352595696 node_paths=PackedStringArray("default")]
 script = ExtResource("16_d4lni")
-default = NodePath("Boss")
+default = NodePath("1")
 
 [node name="1" parent="Wave Manager" unique_id=1056837958 instance=ExtResource("17_atgkg")]
 position = Vector2(-8, -21)
@@ -381,6 +381,2113 @@ position = Vector2(9434, 72)
 position = Vector2(9653, 72)
 
 [node name="Box" type="Sprite2D" parent="." unique_id=432150394]
-position = Vector2(133.94698, 21.499998)
+position = Vector2(136, 21.999998)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box2" type="Sprite2D" parent="." unique_id=220193168]
+modulate = Color(0, 0.14509805, 0.20392157, 1)
+position = Vector2(288, 21.999998)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box4" type="Sprite2D" parent="." unique_id=1528960391]
+modulate = Color(0, 0.14509805, 0.20392157, 1)
+position = Vector2(136.05304, -129.5)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box5" type="Sprite2D" parent="." unique_id=1559912546]
+position = Vector2(440, 21.999998)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box6" type="Sprite2D" parent="." unique_id=1944624452]
+modulate = Color(0, 0.14509805, 0.20392157, 1)
+position = Vector2(592, 21.999998)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box7" type="Sprite2D" parent="." unique_id=2076851611]
+position = Vector2(288.05304, -129.5)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box8" type="Sprite2D" parent="." unique_id=957452719]
+modulate = Color(0, 0.14509805, 0.20392157, 1)
+position = Vector2(440.05304, -129.5)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box9" type="Sprite2D" parent="." unique_id=1438934892]
+position = Vector2(745, 21.999998)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box10" type="Sprite2D" parent="." unique_id=1949492141]
+modulate = Color(0, 0.14509805, 0.20392157, 1)
+position = Vector2(897, 21.999998)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box11" type="Sprite2D" parent="." unique_id=139967156]
+position = Vector2(593.05304, -129.5)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box12" type="Sprite2D" parent="." unique_id=171318556]
+modulate = Color(0, 0.14509805, 0.20392157, 1)
+position = Vector2(745.05304, -129.5)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box13" type="Sprite2D" parent="." unique_id=1123874053]
+position = Vector2(1049, 21.999998)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box15" type="Sprite2D" parent="." unique_id=1106352575]
+position = Vector2(897.05304, -129.5)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box16" type="Sprite2D" parent="." unique_id=2009492728]
+modulate = Color(0, 0.14509805, 0.20392157, 1)
+position = Vector2(1049.053, -129.5)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box3" type="Sprite2D" parent="." unique_id=1463546786]
+position = Vector2(136, -282)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box14" type="Sprite2D" parent="." unique_id=783194757]
+modulate = Color(0, 0.14509805, 0.20392157, 1)
+position = Vector2(288, -282)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box17" type="Sprite2D" parent="." unique_id=278501862]
+modulate = Color(0, 0.14509805, 0.20392157, 1)
+position = Vector2(136.05304, -433.5)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box18" type="Sprite2D" parent="." unique_id=190947173]
+position = Vector2(440, -282)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box19" type="Sprite2D" parent="." unique_id=951284130]
+modulate = Color(0, 0.14509805, 0.20392157, 1)
+position = Vector2(592, -282)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box20" type="Sprite2D" parent="." unique_id=172264326]
+position = Vector2(288.05304, -433.5)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box21" type="Sprite2D" parent="." unique_id=1949822838]
+modulate = Color(0, 0.14509805, 0.20392157, 1)
+position = Vector2(440.05304, -433.5)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box22" type="Sprite2D" parent="." unique_id=1794612195]
+position = Vector2(745, -282)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box23" type="Sprite2D" parent="." unique_id=1995068690]
+modulate = Color(0, 0.14509805, 0.20392157, 1)
+position = Vector2(897, -282)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box24" type="Sprite2D" parent="." unique_id=2101270938]
+position = Vector2(593.05304, -433.5)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box25" type="Sprite2D" parent="." unique_id=2017606776]
+modulate = Color(0, 0.14509805, 0.20392157, 1)
+position = Vector2(745.05304, -433.5)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box26" type="Sprite2D" parent="." unique_id=632193540]
+position = Vector2(1049, -282)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box27" type="Sprite2D" parent="." unique_id=41787316]
+position = Vector2(897.05304, -433.5)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box28" type="Sprite2D" parent="." unique_id=210534805]
+modulate = Color(0, 0.14509805, 0.20392157, 1)
+position = Vector2(1049.053, -433.5)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box30" type="Sprite2D" parent="." unique_id=501149147]
+modulate = Color(0, 0.14509805, 0.20392157, 1)
+position = Vector2(1200.053, 21.999998)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box32" type="Sprite2D" parent="." unique_id=1363912289]
+position = Vector2(1352.053, 21.999998)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box33" type="Sprite2D" parent="." unique_id=775675140]
+modulate = Color(0, 0.14509805, 0.20392157, 1)
+position = Vector2(1504.053, 21.999998)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box34" type="Sprite2D" parent="." unique_id=713607530]
+position = Vector2(1200.106, -129.5)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box35" type="Sprite2D" parent="." unique_id=1093670309]
+modulate = Color(0, 0.14509805, 0.20392157, 1)
+position = Vector2(1352.106, -129.5)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box36" type="Sprite2D" parent="." unique_id=392463050]
+position = Vector2(1657.053, 21.999998)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box37" type="Sprite2D" parent="." unique_id=954009743]
+modulate = Color(0, 0.14509805, 0.20392157, 1)
+position = Vector2(1809.053, 21.999998)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box38" type="Sprite2D" parent="." unique_id=1030801054]
+position = Vector2(1505.106, -129.5)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box39" type="Sprite2D" parent="." unique_id=2063102350]
+modulate = Color(0, 0.14509805, 0.20392157, 1)
+position = Vector2(1657.106, -129.5)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box41" type="Sprite2D" parent="." unique_id=166455922]
+position = Vector2(1809.106, -129.5)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box44" type="Sprite2D" parent="." unique_id=2120137707]
+modulate = Color(0, 0.14509805, 0.20392157, 1)
+position = Vector2(1200.053, -282)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box46" type="Sprite2D" parent="." unique_id=1477610938]
+position = Vector2(1352.053, -282)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box47" type="Sprite2D" parent="." unique_id=154104407]
+modulate = Color(0, 0.14509805, 0.20392157, 1)
+position = Vector2(1504.053, -282)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box48" type="Sprite2D" parent="." unique_id=1065304494]
+position = Vector2(1200.106, -433.5)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box49" type="Sprite2D" parent="." unique_id=89114349]
+modulate = Color(0, 0.14509805, 0.20392157, 1)
+position = Vector2(1352.106, -433.5)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box50" type="Sprite2D" parent="." unique_id=1826413658]
+position = Vector2(1657.053, -282)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box51" type="Sprite2D" parent="." unique_id=606029068]
+modulate = Color(0, 0.14509805, 0.20392157, 1)
+position = Vector2(1809.053, -282)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box52" type="Sprite2D" parent="." unique_id=849025857]
+position = Vector2(1505.106, -433.5)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box53" type="Sprite2D" parent="." unique_id=1672645471]
+modulate = Color(0, 0.14509805, 0.20392157, 1)
+position = Vector2(1657.106, -433.5)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box55" type="Sprite2D" parent="." unique_id=1260779416]
+position = Vector2(1809.106, -433.5)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box29" type="Sprite2D" parent="." unique_id=1788893118]
+position = Vector2(1969.053, 21.999998)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box31" type="Sprite2D" parent="." unique_id=140155458]
+modulate = Color(0, 0.14509805, 0.20392157, 1)
+position = Vector2(2121.053, 21.999998)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box40" type="Sprite2D" parent="." unique_id=1197111348]
+modulate = Color(0, 0.14509805, 0.20392157, 1)
+position = Vector2(1969.106, -129.5)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box42" type="Sprite2D" parent="." unique_id=1926318750]
+position = Vector2(2273.053, 21.999998)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box43" type="Sprite2D" parent="." unique_id=1933245444]
+modulate = Color(0, 0.14509805, 0.20392157, 1)
+position = Vector2(2425.053, 21.999998)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box45" type="Sprite2D" parent="." unique_id=494486635]
+position = Vector2(2121.106, -129.5)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box54" type="Sprite2D" parent="." unique_id=586201709]
+modulate = Color(0, 0.14509805, 0.20392157, 1)
+position = Vector2(2273.106, -129.5)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box56" type="Sprite2D" parent="." unique_id=1244296010]
+position = Vector2(2578.053, 21.999998)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box57" type="Sprite2D" parent="." unique_id=559534651]
+modulate = Color(0, 0.14509805, 0.20392157, 1)
+position = Vector2(2730.053, 21.999998)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box58" type="Sprite2D" parent="." unique_id=16313910]
+position = Vector2(2426.106, -129.5)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box59" type="Sprite2D" parent="." unique_id=1124774692]
+modulate = Color(0, 0.14509805, 0.20392157, 1)
+position = Vector2(2578.106, -129.5)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box60" type="Sprite2D" parent="." unique_id=1663486039]
+position = Vector2(2882.053, 21.999998)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box61" type="Sprite2D" parent="." unique_id=1263343017]
+position = Vector2(2730.106, -129.5)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box62" type="Sprite2D" parent="." unique_id=2144484524]
+modulate = Color(0, 0.14509805, 0.20392157, 1)
+position = Vector2(2882.106, -129.5)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box63" type="Sprite2D" parent="." unique_id=1312736778]
+position = Vector2(1969.053, -282)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box64" type="Sprite2D" parent="." unique_id=455061301]
+modulate = Color(0, 0.14509805, 0.20392157, 1)
+position = Vector2(2121.053, -282)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box65" type="Sprite2D" parent="." unique_id=1237817150]
+modulate = Color(0, 0.14509805, 0.20392157, 1)
+position = Vector2(1969.106, -433.5)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box66" type="Sprite2D" parent="." unique_id=317882125]
+position = Vector2(2273.053, -282)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box67" type="Sprite2D" parent="." unique_id=914449133]
+modulate = Color(0, 0.14509805, 0.20392157, 1)
+position = Vector2(2425.053, -282)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box68" type="Sprite2D" parent="." unique_id=1678575781]
+position = Vector2(2121.106, -433.5)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box69" type="Sprite2D" parent="." unique_id=1096714989]
+modulate = Color(0, 0.14509805, 0.20392157, 1)
+position = Vector2(2273.106, -433.5)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box70" type="Sprite2D" parent="." unique_id=593828769]
+position = Vector2(2578.053, -282)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box71" type="Sprite2D" parent="." unique_id=779689029]
+modulate = Color(0, 0.14509805, 0.20392157, 1)
+position = Vector2(2730.053, -282)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box72" type="Sprite2D" parent="." unique_id=1410967731]
+position = Vector2(2426.106, -433.5)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box73" type="Sprite2D" parent="." unique_id=555756176]
+modulate = Color(0, 0.14509805, 0.20392157, 1)
+position = Vector2(2578.106, -433.5)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box74" type="Sprite2D" parent="." unique_id=1106603337]
+position = Vector2(2882.053, -282)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box75" type="Sprite2D" parent="." unique_id=1199212101]
+position = Vector2(2730.106, -433.5)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box76" type="Sprite2D" parent="." unique_id=1082471995]
+modulate = Color(0, 0.14509805, 0.20392157, 1)
+position = Vector2(2882.106, -433.5)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box77" type="Sprite2D" parent="." unique_id=784089581]
+modulate = Color(0, 0.14509805, 0.20392157, 1)
+position = Vector2(3033.106, 21.999998)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box78" type="Sprite2D" parent="." unique_id=238091545]
+position = Vector2(3185.106, 21.999998)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box79" type="Sprite2D" parent="." unique_id=259176197]
+modulate = Color(0, 0.14509805, 0.20392157, 1)
+position = Vector2(3337.106, 21.999998)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box80" type="Sprite2D" parent="." unique_id=1429570731]
+position = Vector2(3033.159, -129.5)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box81" type="Sprite2D" parent="." unique_id=1235368706]
+modulate = Color(0, 0.14509805, 0.20392157, 1)
+position = Vector2(3185.159, -129.5)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box82" type="Sprite2D" parent="." unique_id=1396188422]
+position = Vector2(3490.106, 21.999998)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box83" type="Sprite2D" parent="." unique_id=1789694527]
+modulate = Color(0, 0.14509805, 0.20392157, 1)
+position = Vector2(3642.106, 21.999998)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box84" type="Sprite2D" parent="." unique_id=1119960080]
+position = Vector2(3338.159, -129.5)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box85" type="Sprite2D" parent="." unique_id=761864634]
+modulate = Color(0, 0.14509805, 0.20392157, 1)
+position = Vector2(3490.159, -129.5)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box86" type="Sprite2D" parent="." unique_id=1149355037]
+position = Vector2(3642.159, -129.5)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box87" type="Sprite2D" parent="." unique_id=810138201]
+modulate = Color(0, 0.14509805, 0.20392157, 1)
+position = Vector2(3033.106, -282)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box88" type="Sprite2D" parent="." unique_id=1944129028]
+position = Vector2(3185.106, -282)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box89" type="Sprite2D" parent="." unique_id=1128623327]
+modulate = Color(0, 0.14509805, 0.20392157, 1)
+position = Vector2(3337.106, -282)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box90" type="Sprite2D" parent="." unique_id=1732665082]
+position = Vector2(3033.159, -433.5)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box91" type="Sprite2D" parent="." unique_id=1484803801]
+modulate = Color(0, 0.14509805, 0.20392157, 1)
+position = Vector2(3185.159, -433.5)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box92" type="Sprite2D" parent="." unique_id=951316759]
+position = Vector2(3490.106, -282)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box93" type="Sprite2D" parent="." unique_id=1070545507]
+modulate = Color(0, 0.14509805, 0.20392157, 1)
+position = Vector2(3642.106, -282)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box94" type="Sprite2D" parent="." unique_id=1072064097]
+position = Vector2(3338.159, -433.5)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box95" type="Sprite2D" parent="." unique_id=1283644411]
+modulate = Color(0, 0.14509805, 0.20392157, 1)
+position = Vector2(3490.159, -433.5)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box96" type="Sprite2D" parent="." unique_id=2103948643]
+position = Vector2(3642.159, -433.5)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box97" type="Sprite2D" parent="." unique_id=1679902417]
+position = Vector2(-3524.947, 21.999998)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box98" type="Sprite2D" parent="." unique_id=617413653]
+modulate = Color(0, 0.14509805, 0.20392157, 1)
+position = Vector2(-3372.947, 21.999998)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box99" type="Sprite2D" parent="." unique_id=1005038614]
+modulate = Color(0, 0.14509805, 0.20392157, 1)
+position = Vector2(-3524.894, -129.5)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box100" type="Sprite2D" parent="." unique_id=1396169812]
+position = Vector2(-3220.947, 21.999998)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box101" type="Sprite2D" parent="." unique_id=1877546378]
+modulate = Color(0, 0.14509805, 0.20392157, 1)
+position = Vector2(-3068.947, 21.999998)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box102" type="Sprite2D" parent="." unique_id=1634655428]
+position = Vector2(-3372.894, -129.5)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box103" type="Sprite2D" parent="." unique_id=1170673613]
+modulate = Color(0, 0.14509805, 0.20392157, 1)
+position = Vector2(-3220.894, -129.5)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box104" type="Sprite2D" parent="." unique_id=1478314896]
+position = Vector2(-2915.947, 21.999998)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box105" type="Sprite2D" parent="." unique_id=1307721044]
+modulate = Color(0, 0.14509805, 0.20392157, 1)
+position = Vector2(-2763.947, 21.999998)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box106" type="Sprite2D" parent="." unique_id=1978837231]
+position = Vector2(-3067.894, -129.5)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box107" type="Sprite2D" parent="." unique_id=2032336124]
+modulate = Color(0, 0.14509805, 0.20392157, 1)
+position = Vector2(-2915.894, -129.5)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box108" type="Sprite2D" parent="." unique_id=878079290]
+position = Vector2(-2611.947, 21.999998)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box109" type="Sprite2D" parent="." unique_id=849360272]
+position = Vector2(-2763.894, -129.5)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box110" type="Sprite2D" parent="." unique_id=1273917953]
+modulate = Color(0, 0.14509805, 0.20392157, 1)
+position = Vector2(-2611.894, -129.5)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box111" type="Sprite2D" parent="." unique_id=2050088954]
+position = Vector2(-3524.947, -282)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box112" type="Sprite2D" parent="." unique_id=73947606]
+modulate = Color(0, 0.14509805, 0.20392157, 1)
+position = Vector2(-3372.947, -282)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box113" type="Sprite2D" parent="." unique_id=1936861670]
+modulate = Color(0, 0.14509805, 0.20392157, 1)
+position = Vector2(-3524.894, -433.5)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box114" type="Sprite2D" parent="." unique_id=1972107696]
+position = Vector2(-3220.947, -282)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box115" type="Sprite2D" parent="." unique_id=1819722087]
+modulate = Color(0, 0.14509805, 0.20392157, 1)
+position = Vector2(-3068.947, -282)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box116" type="Sprite2D" parent="." unique_id=266373450]
+position = Vector2(-3372.894, -433.5)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box117" type="Sprite2D" parent="." unique_id=1945882876]
+modulate = Color(0, 0.14509805, 0.20392157, 1)
+position = Vector2(-3220.894, -433.5)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box118" type="Sprite2D" parent="." unique_id=1932865218]
+position = Vector2(-2915.947, -282)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box119" type="Sprite2D" parent="." unique_id=722908754]
+modulate = Color(0, 0.14509805, 0.20392157, 1)
+position = Vector2(-2763.947, -282)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box120" type="Sprite2D" parent="." unique_id=1254715065]
+position = Vector2(-3067.894, -433.5)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box121" type="Sprite2D" parent="." unique_id=972613360]
+modulate = Color(0, 0.14509805, 0.20392157, 1)
+position = Vector2(-2915.894, -433.5)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box122" type="Sprite2D" parent="." unique_id=968776211]
+position = Vector2(-2611.947, -282)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box123" type="Sprite2D" parent="." unique_id=382612556]
+position = Vector2(-2763.894, -433.5)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box124" type="Sprite2D" parent="." unique_id=382728839]
+modulate = Color(0, 0.14509805, 0.20392157, 1)
+position = Vector2(-2611.894, -433.5)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box125" type="Sprite2D" parent="." unique_id=717967733]
+modulate = Color(0, 0.14509805, 0.20392157, 1)
+position = Vector2(-2460.894, 21.999998)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box126" type="Sprite2D" parent="." unique_id=575914056]
+position = Vector2(-2308.894, 21.999998)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box127" type="Sprite2D" parent="." unique_id=1260051556]
+modulate = Color(0, 0.14509805, 0.20392157, 1)
+position = Vector2(-2156.894, 21.999998)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box128" type="Sprite2D" parent="." unique_id=1499756564]
+position = Vector2(-2460.841, -129.5)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box129" type="Sprite2D" parent="." unique_id=582340568]
+modulate = Color(0, 0.14509805, 0.20392157, 1)
+position = Vector2(-2308.841, -129.5)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box130" type="Sprite2D" parent="." unique_id=2130883877]
+position = Vector2(-2003.894, 21.999998)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box131" type="Sprite2D" parent="." unique_id=1112852100]
+modulate = Color(0, 0.14509805, 0.20392157, 1)
+position = Vector2(-1851.894, 21.999998)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box132" type="Sprite2D" parent="." unique_id=328017541]
+position = Vector2(-2155.841, -129.5)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box133" type="Sprite2D" parent="." unique_id=343395457]
+modulate = Color(0, 0.14509805, 0.20392157, 1)
+position = Vector2(-2003.8411, -129.5)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box134" type="Sprite2D" parent="." unique_id=1766419613]
+position = Vector2(-1851.8411, -129.5)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box135" type="Sprite2D" parent="." unique_id=1051501878]
+modulate = Color(0, 0.14509805, 0.20392157, 1)
+position = Vector2(-2460.894, -282)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box136" type="Sprite2D" parent="." unique_id=1358921206]
+position = Vector2(-2308.894, -282)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box137" type="Sprite2D" parent="." unique_id=1778119460]
+modulate = Color(0, 0.14509805, 0.20392157, 1)
+position = Vector2(-2156.894, -282)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box138" type="Sprite2D" parent="." unique_id=1556219577]
+position = Vector2(-2460.841, -433.5)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box139" type="Sprite2D" parent="." unique_id=1407426546]
+modulate = Color(0, 0.14509805, 0.20392157, 1)
+position = Vector2(-2308.841, -433.5)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box140" type="Sprite2D" parent="." unique_id=984075049]
+position = Vector2(-2003.894, -282)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box141" type="Sprite2D" parent="." unique_id=393644815]
+modulate = Color(0, 0.14509805, 0.20392157, 1)
+position = Vector2(-1851.894, -282)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box142" type="Sprite2D" parent="." unique_id=613038142]
+position = Vector2(-2155.841, -433.5)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box143" type="Sprite2D" parent="." unique_id=1620590889]
+modulate = Color(0, 0.14509805, 0.20392157, 1)
+position = Vector2(-2003.8411, -433.5)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box144" type="Sprite2D" parent="." unique_id=1727960553]
+position = Vector2(-1851.8411, -433.5)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box145" type="Sprite2D" parent="." unique_id=436565967]
+position = Vector2(-1691.894, 21.999998)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box146" type="Sprite2D" parent="." unique_id=193403207]
+modulate = Color(0, 0.14509805, 0.20392157, 1)
+position = Vector2(-1539.894, 21.999998)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box147" type="Sprite2D" parent="." unique_id=136895905]
+modulate = Color(0, 0.14509805, 0.20392157, 1)
+position = Vector2(-1691.8411, -129.5)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box148" type="Sprite2D" parent="." unique_id=715692269]
+position = Vector2(-1387.894, 21.999998)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box149" type="Sprite2D" parent="." unique_id=1387125750]
+modulate = Color(0, 0.14509805, 0.20392157, 1)
+position = Vector2(-1235.894, 21.999998)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box150" type="Sprite2D" parent="." unique_id=1536376288]
+position = Vector2(-1539.8411, -129.5)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box151" type="Sprite2D" parent="." unique_id=265724256]
+modulate = Color(0, 0.14509805, 0.20392157, 1)
+position = Vector2(-1387.8411, -129.5)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box152" type="Sprite2D" parent="." unique_id=1161587463]
+position = Vector2(-1082.894, 21.999998)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box153" type="Sprite2D" parent="." unique_id=1990593079]
+modulate = Color(0, 0.14509805, 0.20392157, 1)
+position = Vector2(-930.89404, 21.999998)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box154" type="Sprite2D" parent="." unique_id=291939340]
+position = Vector2(-1234.8411, -129.5)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box155" type="Sprite2D" parent="." unique_id=700898890]
+modulate = Color(0, 0.14509805, 0.20392157, 1)
+position = Vector2(-1082.8411, -129.5)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box156" type="Sprite2D" parent="." unique_id=2117488540]
+position = Vector2(-778.89404, 21.999998)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box157" type="Sprite2D" parent="." unique_id=1896785769]
+position = Vector2(-930.84106, -129.5)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box158" type="Sprite2D" parent="." unique_id=686838082]
+modulate = Color(0, 0.14509805, 0.20392157, 1)
+position = Vector2(-778.84106, -129.5)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box159" type="Sprite2D" parent="." unique_id=232278863]
+position = Vector2(-1691.894, -282)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box160" type="Sprite2D" parent="." unique_id=1695256529]
+modulate = Color(0, 0.14509805, 0.20392157, 1)
+position = Vector2(-1539.894, -282)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box161" type="Sprite2D" parent="." unique_id=1432844308]
+modulate = Color(0, 0.14509805, 0.20392157, 1)
+position = Vector2(-1691.8411, -433.5)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box162" type="Sprite2D" parent="." unique_id=202820837]
+position = Vector2(-1387.894, -282)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box163" type="Sprite2D" parent="." unique_id=693744285]
+modulate = Color(0, 0.14509805, 0.20392157, 1)
+position = Vector2(-1235.894, -282)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box164" type="Sprite2D" parent="." unique_id=119417155]
+position = Vector2(-1539.8411, -433.5)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box165" type="Sprite2D" parent="." unique_id=909984357]
+modulate = Color(0, 0.14509805, 0.20392157, 1)
+position = Vector2(-1387.8411, -433.5)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box166" type="Sprite2D" parent="." unique_id=800918890]
+position = Vector2(-1082.894, -282)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box167" type="Sprite2D" parent="." unique_id=141395560]
+modulate = Color(0, 0.14509805, 0.20392157, 1)
+position = Vector2(-930.89404, -282)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box168" type="Sprite2D" parent="." unique_id=1640543064]
+position = Vector2(-1234.8411, -433.5)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box169" type="Sprite2D" parent="." unique_id=2036093169]
+modulate = Color(0, 0.14509805, 0.20392157, 1)
+position = Vector2(-1082.8411, -433.5)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box170" type="Sprite2D" parent="." unique_id=635498181]
+position = Vector2(-778.89404, -282)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box171" type="Sprite2D" parent="." unique_id=1078154993]
+position = Vector2(-930.84106, -433.5)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box172" type="Sprite2D" parent="." unique_id=229497503]
+modulate = Color(0, 0.14509805, 0.20392157, 1)
+position = Vector2(-778.84106, -433.5)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box173" type="Sprite2D" parent="." unique_id=2010463381]
+modulate = Color(0, 0.14509805, 0.20392157, 1)
+position = Vector2(-627.84106, 21.999998)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box174" type="Sprite2D" parent="." unique_id=1200965532]
+position = Vector2(-475.84106, 21.999998)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box175" type="Sprite2D" parent="." unique_id=1084764974]
+modulate = Color(0, 0.14509805, 0.20392157, 1)
+position = Vector2(-323.84106, 21.999998)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box176" type="Sprite2D" parent="." unique_id=534441842]
+position = Vector2(-627.7881, -129.5)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box177" type="Sprite2D" parent="." unique_id=747227166]
+modulate = Color(0, 0.14509805, 0.20392157, 1)
+position = Vector2(-475.7881, -129.5)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box178" type="Sprite2D" parent="." unique_id=443507086]
+position = Vector2(-170.84106, 21.999998)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box179" type="Sprite2D" parent="." unique_id=1196073233]
+modulate = Color(0, 0.14509805, 0.20392157, 1)
+position = Vector2(-18.841064, 21.999998)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box180" type="Sprite2D" parent="." unique_id=1054645237]
+position = Vector2(-322.7881, -129.5)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box181" type="Sprite2D" parent="." unique_id=1680553139]
+modulate = Color(0, 0.14509805, 0.20392157, 1)
+position = Vector2(-170.78809, -129.5)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box182" type="Sprite2D" parent="." unique_id=624812059]
+position = Vector2(-18.788086, -129.5)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box183" type="Sprite2D" parent="." unique_id=1297119197]
+modulate = Color(0, 0.14509805, 0.20392157, 1)
+position = Vector2(-627.84106, -282)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box184" type="Sprite2D" parent="." unique_id=1307920659]
+position = Vector2(-475.84106, -282)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box185" type="Sprite2D" parent="." unique_id=1295534526]
+modulate = Color(0, 0.14509805, 0.20392157, 1)
+position = Vector2(-323.84106, -282)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box186" type="Sprite2D" parent="." unique_id=1021694337]
+position = Vector2(-627.7881, -433.5)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box187" type="Sprite2D" parent="." unique_id=1692335305]
+modulate = Color(0, 0.14509805, 0.20392157, 1)
+position = Vector2(-475.7881, -433.5)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box188" type="Sprite2D" parent="." unique_id=484611490]
+position = Vector2(-170.84106, -282)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box189" type="Sprite2D" parent="." unique_id=302832334]
+modulate = Color(0, 0.14509805, 0.20392157, 1)
+position = Vector2(-18.841064, -282)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box190" type="Sprite2D" parent="." unique_id=814557754]
+position = Vector2(-322.7881, -433.5)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box191" type="Sprite2D" parent="." unique_id=280368982]
+modulate = Color(0, 0.14509805, 0.20392157, 1)
+position = Vector2(-170.78809, -433.5)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box192" type="Sprite2D" parent="." unique_id=1086261105]
+position = Vector2(-18.788086, -433.5)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box193" type="Sprite2D" parent="." unique_id=1570085937]
+position = Vector2(136, -582)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box194" type="Sprite2D" parent="." unique_id=2089312408]
+modulate = Color(0, 0.14509805, 0.20392157, 1)
+position = Vector2(288, -582)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box195" type="Sprite2D" parent="." unique_id=1013593029]
+modulate = Color(0, 0.14509805, 0.20392157, 1)
+position = Vector2(136.05304, -733.5)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box196" type="Sprite2D" parent="." unique_id=1644545952]
+position = Vector2(440, -582)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box197" type="Sprite2D" parent="." unique_id=1126350649]
+modulate = Color(0, 0.14509805, 0.20392157, 1)
+position = Vector2(592, -582)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box198" type="Sprite2D" parent="." unique_id=1204010876]
+position = Vector2(288.05304, -733.5)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box199" type="Sprite2D" parent="." unique_id=1267319287]
+modulate = Color(0, 0.14509805, 0.20392157, 1)
+position = Vector2(440.05304, -733.5)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box200" type="Sprite2D" parent="." unique_id=1295683909]
+position = Vector2(745, -582)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box201" type="Sprite2D" parent="." unique_id=1443226804]
+modulate = Color(0, 0.14509805, 0.20392157, 1)
+position = Vector2(897, -582)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box202" type="Sprite2D" parent="." unique_id=1978339222]
+position = Vector2(593.05304, -733.5)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box203" type="Sprite2D" parent="." unique_id=1446037144]
+modulate = Color(0, 0.14509805, 0.20392157, 1)
+position = Vector2(745.05304, -733.5)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box204" type="Sprite2D" parent="." unique_id=1396101264]
+position = Vector2(1049, -582)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box205" type="Sprite2D" parent="." unique_id=1903566024]
+position = Vector2(897.05304, -733.5)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box206" type="Sprite2D" parent="." unique_id=2138082167]
+modulate = Color(0, 0.14509805, 0.20392157, 1)
+position = Vector2(1049.053, -733.5)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box207" type="Sprite2D" parent="." unique_id=239870630]
+position = Vector2(136, -886)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box208" type="Sprite2D" parent="." unique_id=1154833651]
+modulate = Color(0, 0.14509805, 0.20392157, 1)
+position = Vector2(288, -886)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box209" type="Sprite2D" parent="." unique_id=1879844826]
+modulate = Color(0, 0.14509805, 0.20392157, 1)
+position = Vector2(136.05304, -1037.5)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box210" type="Sprite2D" parent="." unique_id=868930779]
+position = Vector2(440, -886)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box211" type="Sprite2D" parent="." unique_id=1834557500]
+modulate = Color(0, 0.14509805, 0.20392157, 1)
+position = Vector2(592, -886)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box212" type="Sprite2D" parent="." unique_id=717855363]
+position = Vector2(288.05304, -1037.5)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box213" type="Sprite2D" parent="." unique_id=506030807]
+modulate = Color(0, 0.14509805, 0.20392157, 1)
+position = Vector2(440.05304, -1037.5)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box214" type="Sprite2D" parent="." unique_id=334571282]
+position = Vector2(745, -886)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box215" type="Sprite2D" parent="." unique_id=618103044]
+modulate = Color(0, 0.14509805, 0.20392157, 1)
+position = Vector2(897, -886)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box216" type="Sprite2D" parent="." unique_id=1533835299]
+position = Vector2(593.05304, -1037.5)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box217" type="Sprite2D" parent="." unique_id=1810101377]
+modulate = Color(0, 0.14509805, 0.20392157, 1)
+position = Vector2(745.05304, -1037.5)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box218" type="Sprite2D" parent="." unique_id=1819567668]
+position = Vector2(1049, -886)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box219" type="Sprite2D" parent="." unique_id=921982647]
+position = Vector2(897.05304, -1037.5)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box220" type="Sprite2D" parent="." unique_id=789114564]
+modulate = Color(0, 0.14509805, 0.20392157, 1)
+position = Vector2(1049.053, -1037.5)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box221" type="Sprite2D" parent="." unique_id=963361567]
+modulate = Color(0, 0.14509805, 0.20392157, 1)
+position = Vector2(1200.053, -582)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box222" type="Sprite2D" parent="." unique_id=1671471480]
+position = Vector2(1352.053, -582)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box223" type="Sprite2D" parent="." unique_id=1271947360]
+modulate = Color(0, 0.14509805, 0.20392157, 1)
+position = Vector2(1504.053, -582)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box224" type="Sprite2D" parent="." unique_id=2045957496]
+position = Vector2(1200.106, -733.5)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box225" type="Sprite2D" parent="." unique_id=1180347343]
+modulate = Color(0, 0.14509805, 0.20392157, 1)
+position = Vector2(1352.106, -733.5)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box226" type="Sprite2D" parent="." unique_id=990923913]
+position = Vector2(1657.053, -582)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box227" type="Sprite2D" parent="." unique_id=2018068368]
+modulate = Color(0, 0.14509805, 0.20392157, 1)
+position = Vector2(1809.053, -582)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box228" type="Sprite2D" parent="." unique_id=169197148]
+position = Vector2(1505.106, -733.5)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box229" type="Sprite2D" parent="." unique_id=728941114]
+modulate = Color(0, 0.14509805, 0.20392157, 1)
+position = Vector2(1657.106, -733.5)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box230" type="Sprite2D" parent="." unique_id=754563547]
+position = Vector2(1809.106, -733.5)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box231" type="Sprite2D" parent="." unique_id=1984250477]
+modulate = Color(0, 0.14509805, 0.20392157, 1)
+position = Vector2(1200.053, -886)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box232" type="Sprite2D" parent="." unique_id=523120200]
+position = Vector2(1352.053, -886)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box233" type="Sprite2D" parent="." unique_id=1973892700]
+modulate = Color(0, 0.14509805, 0.20392157, 1)
+position = Vector2(1504.053, -886)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box234" type="Sprite2D" parent="." unique_id=730322301]
+position = Vector2(1200.106, -1037.5)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box235" type="Sprite2D" parent="." unique_id=692549750]
+modulate = Color(0, 0.14509805, 0.20392157, 1)
+position = Vector2(1352.106, -1037.5)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box236" type="Sprite2D" parent="." unique_id=1691194440]
+position = Vector2(1657.053, -886)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box237" type="Sprite2D" parent="." unique_id=1860448361]
+modulate = Color(0, 0.14509805, 0.20392157, 1)
+position = Vector2(1809.053, -886)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box238" type="Sprite2D" parent="." unique_id=1819813225]
+position = Vector2(1505.106, -1037.5)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box239" type="Sprite2D" parent="." unique_id=151296292]
+modulate = Color(0, 0.14509805, 0.20392157, 1)
+position = Vector2(1657.106, -1037.5)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box240" type="Sprite2D" parent="." unique_id=2105204603]
+position = Vector2(1809.106, -1037.5)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box241" type="Sprite2D" parent="." unique_id=1056669205]
+position = Vector2(1969.053, -582)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box242" type="Sprite2D" parent="." unique_id=1515492425]
+modulate = Color(0, 0.14509805, 0.20392157, 1)
+position = Vector2(2121.053, -582)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box243" type="Sprite2D" parent="." unique_id=104515402]
+modulate = Color(0, 0.14509805, 0.20392157, 1)
+position = Vector2(1969.106, -733.5)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box244" type="Sprite2D" parent="." unique_id=716802868]
+position = Vector2(2273.053, -582)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box245" type="Sprite2D" parent="." unique_id=789524281]
+modulate = Color(0, 0.14509805, 0.20392157, 1)
+position = Vector2(2425.053, -582)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box246" type="Sprite2D" parent="." unique_id=1049422538]
+position = Vector2(2121.106, -733.5)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box247" type="Sprite2D" parent="." unique_id=1760959964]
+modulate = Color(0, 0.14509805, 0.20392157, 1)
+position = Vector2(2273.106, -733.5)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box248" type="Sprite2D" parent="." unique_id=193648682]
+position = Vector2(2578.053, -582)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box249" type="Sprite2D" parent="." unique_id=1482785580]
+modulate = Color(0, 0.14509805, 0.20392157, 1)
+position = Vector2(2730.053, -582)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box250" type="Sprite2D" parent="." unique_id=2024062960]
+position = Vector2(2426.106, -733.5)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box251" type="Sprite2D" parent="." unique_id=2104681065]
+modulate = Color(0, 0.14509805, 0.20392157, 1)
+position = Vector2(2578.106, -733.5)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box252" type="Sprite2D" parent="." unique_id=654536377]
+position = Vector2(2882.053, -582)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box253" type="Sprite2D" parent="." unique_id=1434379902]
+position = Vector2(2730.106, -733.5)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box254" type="Sprite2D" parent="." unique_id=1641834428]
+modulate = Color(0, 0.14509805, 0.20392157, 1)
+position = Vector2(2882.106, -733.5)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box255" type="Sprite2D" parent="." unique_id=1138652920]
+position = Vector2(1969.053, -886)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box256" type="Sprite2D" parent="." unique_id=1046299651]
+modulate = Color(0, 0.14509805, 0.20392157, 1)
+position = Vector2(2121.053, -886)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box257" type="Sprite2D" parent="." unique_id=558901496]
+modulate = Color(0, 0.14509805, 0.20392157, 1)
+position = Vector2(1969.106, -1037.5)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box258" type="Sprite2D" parent="." unique_id=647218680]
+position = Vector2(2273.053, -886)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box259" type="Sprite2D" parent="." unique_id=1643117901]
+modulate = Color(0, 0.14509805, 0.20392157, 1)
+position = Vector2(2425.053, -886)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box260" type="Sprite2D" parent="." unique_id=350790545]
+position = Vector2(2121.106, -1037.5)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box261" type="Sprite2D" parent="." unique_id=49231615]
+modulate = Color(0, 0.14509805, 0.20392157, 1)
+position = Vector2(2273.106, -1037.5)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box262" type="Sprite2D" parent="." unique_id=2136740130]
+position = Vector2(2578.053, -886)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box263" type="Sprite2D" parent="." unique_id=69545211]
+modulate = Color(0, 0.14509805, 0.20392157, 1)
+position = Vector2(2730.053, -886)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box264" type="Sprite2D" parent="." unique_id=1648444307]
+position = Vector2(2426.106, -1037.5)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box265" type="Sprite2D" parent="." unique_id=639234556]
+modulate = Color(0, 0.14509805, 0.20392157, 1)
+position = Vector2(2578.106, -1037.5)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box266" type="Sprite2D" parent="." unique_id=799496048]
+position = Vector2(2882.053, -886)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box267" type="Sprite2D" parent="." unique_id=478413404]
+position = Vector2(2730.106, -1037.5)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box268" type="Sprite2D" parent="." unique_id=1002314935]
+modulate = Color(0, 0.14509805, 0.20392157, 1)
+position = Vector2(2882.106, -1037.5)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box269" type="Sprite2D" parent="." unique_id=1081072159]
+modulate = Color(0, 0.14509805, 0.20392157, 1)
+position = Vector2(3033.106, -582)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box270" type="Sprite2D" parent="." unique_id=20782461]
+position = Vector2(3185.106, -582)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box271" type="Sprite2D" parent="." unique_id=882870710]
+modulate = Color(0, 0.14509805, 0.20392157, 1)
+position = Vector2(3337.106, -582)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box272" type="Sprite2D" parent="." unique_id=1424228803]
+position = Vector2(3033.159, -733.5)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box273" type="Sprite2D" parent="." unique_id=1092899150]
+modulate = Color(0, 0.14509805, 0.20392157, 1)
+position = Vector2(3185.159, -733.5)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box274" type="Sprite2D" parent="." unique_id=1295815614]
+position = Vector2(3490.106, -582)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box275" type="Sprite2D" parent="." unique_id=2064921594]
+modulate = Color(0, 0.14509805, 0.20392157, 1)
+position = Vector2(3642.106, -582)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box276" type="Sprite2D" parent="." unique_id=759307700]
+position = Vector2(3338.159, -733.5)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box277" type="Sprite2D" parent="." unique_id=14735932]
+modulate = Color(0, 0.14509805, 0.20392157, 1)
+position = Vector2(3490.159, -733.5)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box278" type="Sprite2D" parent="." unique_id=1633930436]
+position = Vector2(3642.159, -733.5)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box279" type="Sprite2D" parent="." unique_id=548801130]
+modulate = Color(0, 0.14509805, 0.20392157, 1)
+position = Vector2(3033.106, -886)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box280" type="Sprite2D" parent="." unique_id=2025173152]
+position = Vector2(3185.106, -886)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box281" type="Sprite2D" parent="." unique_id=1293431019]
+modulate = Color(0, 0.14509805, 0.20392157, 1)
+position = Vector2(3337.106, -886)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box282" type="Sprite2D" parent="." unique_id=367549990]
+position = Vector2(3033.159, -1037.5)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box283" type="Sprite2D" parent="." unique_id=2021201552]
+modulate = Color(0, 0.14509805, 0.20392157, 1)
+position = Vector2(3185.159, -1037.5)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box284" type="Sprite2D" parent="." unique_id=358043134]
+position = Vector2(3490.106, -886)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box285" type="Sprite2D" parent="." unique_id=2014992473]
+modulate = Color(0, 0.14509805, 0.20392157, 1)
+position = Vector2(3642.106, -886)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box286" type="Sprite2D" parent="." unique_id=949926864]
+position = Vector2(3338.159, -1037.5)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box287" type="Sprite2D" parent="." unique_id=159276998]
+modulate = Color(0, 0.14509805, 0.20392157, 1)
+position = Vector2(3490.159, -1037.5)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box288" type="Sprite2D" parent="." unique_id=537137326]
+position = Vector2(3642.159, -1037.5)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box289" type="Sprite2D" parent="." unique_id=1279026807]
+position = Vector2(-3524.947, -582)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box290" type="Sprite2D" parent="." unique_id=2011298207]
+modulate = Color(0, 0.14509805, 0.20392157, 1)
+position = Vector2(-3372.947, -582)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box291" type="Sprite2D" parent="." unique_id=1340702686]
+modulate = Color(0, 0.14509805, 0.20392157, 1)
+position = Vector2(-3524.894, -733.5)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box292" type="Sprite2D" parent="." unique_id=1520222829]
+position = Vector2(-3220.947, -582)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box293" type="Sprite2D" parent="." unique_id=726232609]
+modulate = Color(0, 0.14509805, 0.20392157, 1)
+position = Vector2(-3068.947, -582)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box294" type="Sprite2D" parent="." unique_id=1989835188]
+position = Vector2(-3372.894, -733.5)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box295" type="Sprite2D" parent="." unique_id=733824260]
+modulate = Color(0, 0.14509805, 0.20392157, 1)
+position = Vector2(-3220.894, -733.5)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box296" type="Sprite2D" parent="." unique_id=720772449]
+position = Vector2(-2915.947, -582)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box297" type="Sprite2D" parent="." unique_id=1212453185]
+modulate = Color(0, 0.14509805, 0.20392157, 1)
+position = Vector2(-2763.947, -582)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box298" type="Sprite2D" parent="." unique_id=445675925]
+position = Vector2(-3067.894, -733.5)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box299" type="Sprite2D" parent="." unique_id=61223514]
+modulate = Color(0, 0.14509805, 0.20392157, 1)
+position = Vector2(-2915.894, -733.5)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box300" type="Sprite2D" parent="." unique_id=863036696]
+position = Vector2(-2611.947, -582)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box301" type="Sprite2D" parent="." unique_id=1488932933]
+position = Vector2(-2763.894, -733.5)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box302" type="Sprite2D" parent="." unique_id=1843962154]
+modulate = Color(0, 0.14509805, 0.20392157, 1)
+position = Vector2(-2611.894, -733.5)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box303" type="Sprite2D" parent="." unique_id=1351931185]
+position = Vector2(-3524.947, -886)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box304" type="Sprite2D" parent="." unique_id=2080168922]
+modulate = Color(0, 0.14509805, 0.20392157, 1)
+position = Vector2(-3372.947, -886)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box305" type="Sprite2D" parent="." unique_id=259608075]
+modulate = Color(0, 0.14509805, 0.20392157, 1)
+position = Vector2(-3524.894, -1037.5)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box306" type="Sprite2D" parent="." unique_id=1837702885]
+position = Vector2(-3220.947, -886)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box307" type="Sprite2D" parent="." unique_id=775826910]
+modulate = Color(0, 0.14509805, 0.20392157, 1)
+position = Vector2(-3068.947, -886)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box308" type="Sprite2D" parent="." unique_id=557258211]
+position = Vector2(-3372.894, -1037.5)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box309" type="Sprite2D" parent="." unique_id=1770690557]
+modulate = Color(0, 0.14509805, 0.20392157, 1)
+position = Vector2(-3220.894, -1037.5)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box310" type="Sprite2D" parent="." unique_id=231565180]
+position = Vector2(-2915.947, -886)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box311" type="Sprite2D" parent="." unique_id=930188944]
+modulate = Color(0, 0.14509805, 0.20392157, 1)
+position = Vector2(-2763.947, -886)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box312" type="Sprite2D" parent="." unique_id=1331008880]
+position = Vector2(-3067.894, -1037.5)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box313" type="Sprite2D" parent="." unique_id=1652537845]
+modulate = Color(0, 0.14509805, 0.20392157, 1)
+position = Vector2(-2915.894, -1037.5)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box314" type="Sprite2D" parent="." unique_id=1047076850]
+position = Vector2(-2611.947, -886)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box315" type="Sprite2D" parent="." unique_id=1168566453]
+position = Vector2(-2763.894, -1037.5)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box316" type="Sprite2D" parent="." unique_id=296561866]
+modulate = Color(0, 0.14509805, 0.20392157, 1)
+position = Vector2(-2611.894, -1037.5)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box317" type="Sprite2D" parent="." unique_id=1590748196]
+modulate = Color(0, 0.14509805, 0.20392157, 1)
+position = Vector2(-2460.894, -582)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box318" type="Sprite2D" parent="." unique_id=573810020]
+position = Vector2(-2308.894, -582)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box319" type="Sprite2D" parent="." unique_id=260934323]
+modulate = Color(0, 0.14509805, 0.20392157, 1)
+position = Vector2(-2156.894, -582)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box320" type="Sprite2D" parent="." unique_id=1297044565]
+position = Vector2(-2460.841, -733.5)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box321" type="Sprite2D" parent="." unique_id=856158015]
+modulate = Color(0, 0.14509805, 0.20392157, 1)
+position = Vector2(-2308.841, -733.5)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box322" type="Sprite2D" parent="." unique_id=130682706]
+position = Vector2(-2003.894, -582)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box323" type="Sprite2D" parent="." unique_id=2047964565]
+modulate = Color(0, 0.14509805, 0.20392157, 1)
+position = Vector2(-1851.894, -582)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box324" type="Sprite2D" parent="." unique_id=91366228]
+position = Vector2(-2155.841, -733.5)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box325" type="Sprite2D" parent="." unique_id=221304797]
+modulate = Color(0, 0.14509805, 0.20392157, 1)
+position = Vector2(-2003.8411, -733.5)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box326" type="Sprite2D" parent="." unique_id=500036126]
+position = Vector2(-1851.8411, -733.5)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box327" type="Sprite2D" parent="." unique_id=811402473]
+modulate = Color(0, 0.14509805, 0.20392157, 1)
+position = Vector2(-2460.894, -886)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box328" type="Sprite2D" parent="." unique_id=1713004173]
+position = Vector2(-2308.894, -886)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box329" type="Sprite2D" parent="." unique_id=109511646]
+modulate = Color(0, 0.14509805, 0.20392157, 1)
+position = Vector2(-2156.894, -886)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box330" type="Sprite2D" parent="." unique_id=879566930]
+position = Vector2(-2460.841, -1037.5)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box331" type="Sprite2D" parent="." unique_id=987693350]
+modulate = Color(0, 0.14509805, 0.20392157, 1)
+position = Vector2(-2308.841, -1037.5)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box332" type="Sprite2D" parent="." unique_id=1145486393]
+position = Vector2(-2003.894, -886)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box333" type="Sprite2D" parent="." unique_id=891690043]
+modulate = Color(0, 0.14509805, 0.20392157, 1)
+position = Vector2(-1851.894, -886)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box334" type="Sprite2D" parent="." unique_id=1326970992]
+position = Vector2(-2155.841, -1037.5)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box335" type="Sprite2D" parent="." unique_id=1708302295]
+modulate = Color(0, 0.14509805, 0.20392157, 1)
+position = Vector2(-2003.8411, -1037.5)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box336" type="Sprite2D" parent="." unique_id=614996826]
+position = Vector2(-1851.8411, -1037.5)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box337" type="Sprite2D" parent="." unique_id=2002438995]
+position = Vector2(-1691.894, -582)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box338" type="Sprite2D" parent="." unique_id=469298243]
+modulate = Color(0, 0.14509805, 0.20392157, 1)
+position = Vector2(-1539.894, -582)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box339" type="Sprite2D" parent="." unique_id=580317604]
+modulate = Color(0, 0.14509805, 0.20392157, 1)
+position = Vector2(-1691.8411, -733.5)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box340" type="Sprite2D" parent="." unique_id=433787316]
+position = Vector2(-1387.894, -582)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box341" type="Sprite2D" parent="." unique_id=1544970841]
+modulate = Color(0, 0.14509805, 0.20392157, 1)
+position = Vector2(-1235.894, -582)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box342" type="Sprite2D" parent="." unique_id=1648092158]
+position = Vector2(-1539.8411, -733.5)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box343" type="Sprite2D" parent="." unique_id=1777947254]
+modulate = Color(0, 0.14509805, 0.20392157, 1)
+position = Vector2(-1387.8411, -733.5)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box344" type="Sprite2D" parent="." unique_id=568948965]
+position = Vector2(-1082.894, -582)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box345" type="Sprite2D" parent="." unique_id=128513592]
+modulate = Color(0, 0.14509805, 0.20392157, 1)
+position = Vector2(-930.89404, -582)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box346" type="Sprite2D" parent="." unique_id=2093299084]
+position = Vector2(-1234.8411, -733.5)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box347" type="Sprite2D" parent="." unique_id=195347271]
+modulate = Color(0, 0.14509805, 0.20392157, 1)
+position = Vector2(-1082.8411, -733.5)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box348" type="Sprite2D" parent="." unique_id=1927883993]
+position = Vector2(-778.89404, -582)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box349" type="Sprite2D" parent="." unique_id=1829550098]
+position = Vector2(-930.84106, -733.5)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box350" type="Sprite2D" parent="." unique_id=934482217]
+modulate = Color(0, 0.14509805, 0.20392157, 1)
+position = Vector2(-778.84106, -733.5)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box351" type="Sprite2D" parent="." unique_id=1618102745]
+position = Vector2(-1691.894, -886)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box352" type="Sprite2D" parent="." unique_id=1083789466]
+modulate = Color(0, 0.14509805, 0.20392157, 1)
+position = Vector2(-1539.894, -886)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box353" type="Sprite2D" parent="." unique_id=1224267132]
+modulate = Color(0, 0.14509805, 0.20392157, 1)
+position = Vector2(-1691.8411, -1037.5)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box354" type="Sprite2D" parent="." unique_id=789408270]
+position = Vector2(-1387.894, -886)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box355" type="Sprite2D" parent="." unique_id=1245018181]
+modulate = Color(0, 0.14509805, 0.20392157, 1)
+position = Vector2(-1235.894, -886)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box356" type="Sprite2D" parent="." unique_id=1596284549]
+position = Vector2(-1539.8411, -1037.5)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box357" type="Sprite2D" parent="." unique_id=2010800839]
+modulate = Color(0, 0.14509805, 0.20392157, 1)
+position = Vector2(-1387.8411, -1037.5)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box358" type="Sprite2D" parent="." unique_id=996302729]
+position = Vector2(-1082.894, -886)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box359" type="Sprite2D" parent="." unique_id=110547038]
+modulate = Color(0, 0.14509805, 0.20392157, 1)
+position = Vector2(-930.89404, -886)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box360" type="Sprite2D" parent="." unique_id=1004983630]
+position = Vector2(-1234.8411, -1037.5)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box361" type="Sprite2D" parent="." unique_id=1148951742]
+modulate = Color(0, 0.14509805, 0.20392157, 1)
+position = Vector2(-1082.8411, -1037.5)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box362" type="Sprite2D" parent="." unique_id=1508636572]
+position = Vector2(-778.89404, -886)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box363" type="Sprite2D" parent="." unique_id=316911203]
+position = Vector2(-930.84106, -1037.5)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box364" type="Sprite2D" parent="." unique_id=908411375]
+modulate = Color(0, 0.14509805, 0.20392157, 1)
+position = Vector2(-778.84106, -1037.5)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box365" type="Sprite2D" parent="." unique_id=1794554847]
+modulate = Color(0, 0.14509805, 0.20392157, 1)
+position = Vector2(-627.84106, -582)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box366" type="Sprite2D" parent="." unique_id=1581617105]
+position = Vector2(-475.84106, -582)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box367" type="Sprite2D" parent="." unique_id=231647533]
+modulate = Color(0, 0.14509805, 0.20392157, 1)
+position = Vector2(-323.84106, -582)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box368" type="Sprite2D" parent="." unique_id=1218437484]
+position = Vector2(-627.7881, -733.5)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box369" type="Sprite2D" parent="." unique_id=1160891106]
+modulate = Color(0, 0.14509805, 0.20392157, 1)
+position = Vector2(-475.7881, -733.5)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box370" type="Sprite2D" parent="." unique_id=605235199]
+position = Vector2(-170.84106, -582)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box371" type="Sprite2D" parent="." unique_id=353241295]
+modulate = Color(0, 0.14509805, 0.20392157, 1)
+position = Vector2(-18.841064, -582)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box372" type="Sprite2D" parent="." unique_id=832781264]
+position = Vector2(-322.7881, -733.5)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box373" type="Sprite2D" parent="." unique_id=1419754527]
+modulate = Color(0, 0.14509805, 0.20392157, 1)
+position = Vector2(-170.78809, -733.5)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box374" type="Sprite2D" parent="." unique_id=1575924997]
+position = Vector2(-18.788086, -733.5)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box375" type="Sprite2D" parent="." unique_id=446679798]
+modulate = Color(0, 0.14509805, 0.20392157, 1)
+position = Vector2(-627.84106, -886)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box376" type="Sprite2D" parent="." unique_id=1678083441]
+position = Vector2(-475.84106, -886)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box377" type="Sprite2D" parent="." unique_id=1168157827]
+modulate = Color(0, 0.14509805, 0.20392157, 1)
+position = Vector2(-323.84106, -886)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box378" type="Sprite2D" parent="." unique_id=1380504758]
+position = Vector2(-627.7881, -1037.5)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box379" type="Sprite2D" parent="." unique_id=869607419]
+modulate = Color(0, 0.14509805, 0.20392157, 1)
+position = Vector2(-475.7881, -1037.5)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box380" type="Sprite2D" parent="." unique_id=1535127794]
+position = Vector2(-170.84106, -886)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box381" type="Sprite2D" parent="." unique_id=1614887271]
+modulate = Color(0, 0.14509805, 0.20392157, 1)
+position = Vector2(-18.841064, -886)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box382" type="Sprite2D" parent="." unique_id=415170177]
+position = Vector2(-322.7881, -1037.5)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box383" type="Sprite2D" parent="." unique_id=2125614312]
+modulate = Color(0, 0.14509805, 0.20392157, 1)
+position = Vector2(-170.78809, -1037.5)
+scale = Vector2(0.5988428, 0.63179916)
+texture = ExtResource("19_rdjgw")
+
+[node name="Box384" type="Sprite2D" parent="." unique_id=1750847672]
+position = Vector2(-18.788086, -1037.5)
 scale = Vector2(0.5988428, 0.63179916)
 texture = ExtResource("19_rdjgw")
