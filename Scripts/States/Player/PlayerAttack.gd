@@ -19,7 +19,7 @@ func Enter():
 			attack.hit_successful.connect(player.freeze, CONNECT_ONE_SHOT)
 		if attack.name.to_lower() == "pogo" or attack.name.to_lower() == "channel pogo":
 			attack.hit_successful.connect(func (): 
-				player.velocity.y = player.jump_velocity * .8,
+				player.velocity.y = player.jump_velocity,
 				CONNECT_ONE_SHOT)
 		player.add_ink(-attack.cost)
 		player.emit_signal("ink_changed", player.current_ink)

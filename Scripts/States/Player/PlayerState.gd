@@ -44,8 +44,13 @@ func buffer():
 		Transitioned.emit(self, 'block')
 		return true
 	elif player.buffered_input == 'dash' and player.data.Dash:
-		player.buffered_input = ''
-		Transitioned.emit(self, 'dash')
-		return true
+		if Input.is_action_pressed('dash'):
+			player.buffered_input = ''
+			Transitioned.emit(self, 'dash')
+			return true
+		else:
+			player.buffered_input = ''
+			return false
+			
 	return false
 	
