@@ -25,6 +25,7 @@ signal blocking(is_blocking)
 signal shards_changed(new_shard)
 signal shield_changed(new_shield)
 signal ink_changed(new_ink)
+signal ink_increased(amount)
 signal unlocked_spell()
 
 @onready var attacks: Node2D = $Attacks
@@ -352,9 +353,11 @@ func _on_interaction_area_entered(area: Area2D) -> void:
 	elif area.is_in_group("Interactable"):
 		interactables.append(area)
 	elif area.is_in_group("Ink Heart"):
-		data.max_ink += 10
+		var amount = 10
+		data.max_ink += amount
 		area.queue_free()
 		current_ink = data.max_ink
+		emit_signal("ink_increased", amount)
 		emit_signal("ink_changed", current_ink)
 		GameManager.text_request("Max Ink Increased")
 

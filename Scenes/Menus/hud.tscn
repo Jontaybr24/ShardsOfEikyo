@@ -72,10 +72,10 @@ offset_bottom = 40.0
 [node name="Label" type="Label" parent="Shard" unique_id=1796922142]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 1.225
-anchor_top = 0.094805144
-anchor_right = 1.2880001
-anchor_bottom = 0.1638052
+anchor_left = 1.125
+anchor_top = -0.025
+anchor_right = 1.1880001
+anchor_bottom = 0.044000052
 offset_left = 65.0
 offset_top = 61.0
 offset_right = 152.48
@@ -97,8 +97,8 @@ offset_bottom = 52.0
 value = 50.0
 
 [node name="Sprite" type="Sprite2D" parent="Shard" unique_id=491860321]
-position = Vector2(83, 90.792206)
-scale = Vector2(0.13506491, 0.13506494)
+position = Vector2(84, 88.00001)
+scale = Vector2(0.1168831, 0.11688313)
 texture = ExtResource("3_2246s")
 
 [node name="Shield" type="Control" parent="." unique_id=993826577]
@@ -108,7 +108,7 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="Sprite" type="Sprite2D" parent="Shield" unique_id=718211150]
-position = Vector2(36, 88)
+position = Vector2(35, 87)
 scale = Vector2(0.08633088, 0.086330906)
 texture = ExtResource("4_smsyt")
 

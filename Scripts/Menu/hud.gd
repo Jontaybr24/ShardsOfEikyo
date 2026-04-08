@@ -17,6 +17,7 @@ func _ready():
 	GameManager.connect("player_spawned", player_spawned)
 	visible = true
 	shield.hide()
+	ink_bar.connect("size_increased", shield_bar.update_size)
 
 func _process(delta):
 	timepassed += delta
@@ -52,6 +53,7 @@ func player_spawned(new_player):
 	new_player.connect("shield_available", show_shield)
 	new_player.connect("blocking", shield_bar_visible)
 	new_player.connect("shield_changed", set_shield)
+	new_player.connect("ink_increased", ink_bar.increase_health)
 
 func round_to(value: float, places: int) -> float:
 	var factor = pow(10, places)

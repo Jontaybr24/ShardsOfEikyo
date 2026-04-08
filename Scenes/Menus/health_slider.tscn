@@ -1,5 +1,7 @@
 [gd_scene format=3 uid="uid://bi50rjgdti65j"]
 
+[ext_resource type="Script" uid="uid://yyonbrepmjtr" path="res://Scenes/Menus/health_bar.gd" id="1_sdsos"]
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_18f5x"]
 bg_color = Color(0.5686275, 0.5686275, 0.5686275, 1)
 
@@ -15,3 +17,4 @@ max_value = 60.0
 value = 34.0
 rounded = true
 show_percentage = false
+script = ExtResource("1_sdsos")

@@ -1,5 +1,7 @@
 [gd_scene format=3 uid="uid://c3g35mfanu4qh"]
 
+[ext_resource type="Script" uid="uid://dcbmlhglq36d" path="res://Scenes/Menus/shield_bar.gd" id="1_8rd5m"]
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_18f5x"]
 bg_color = Color(0.5686275, 0.5686275, 0.5686275, 0)
 
@@ -15,3 +17,4 @@ max_value = 50.0
 value = 34.0
 rounded = true
 show_percentage = false
+script = ExtResource("1_8rd5m")
