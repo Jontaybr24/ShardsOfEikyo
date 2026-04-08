@@ -5,6 +5,8 @@ extends CanvasLayer
 @onready var timer_label: Label = $"Timer Label"
 @onready var ink: Control = $"Ink UI"
 @onready var shield: Control = $Shield
+@onready var ink_bar: ProgressBar = $Ink/HealthBar
+@onready var shield_bar: ProgressBar = $Shard/ShieldBar
 
 var current_shield = 0
 var current_shard = 0
@@ -22,6 +24,7 @@ func _process(delta):
 
 func set_ink(amount):
 	ink_label.text = str(int(round(amount)))
+	ink_bar.value = float(round(amount))
 	current_ink = amount
 	if amount < 5:
 		return
@@ -32,6 +35,13 @@ func set_ink(amount):
 	await get_tree().create_timer(.2).timeout
 	ink_label.modulate = Color.WHITE
 	
+func set_shield(amount):
+	shield_bar.value = float(round(amount))
+	current_shield = amount
+	
+func shield_bar_visible(visible):
+	shield_bar.visible = visible
+	
 func set_shard(amount):
 	shard_label.text = str(int(round(amount)))
 	current_shard = amount
@@ -39,7 +49,9 @@ func set_shard(amount):
 func player_spawned(new_player):
 	new_player.connect("shards_changed", set_shard)
 	new_player.connect("ink_changed", set_ink)
-	new_player.connect("shield_changed", show_shield)
+	new_player.connect("shield_available", show_shield)
+	new_player.connect("blocking", shield_bar_visible)
+	new_player.connect("shield_changed", set_shield)
 
 func round_to(value: float, places: int) -> float:
 	var factor = pow(10, places)

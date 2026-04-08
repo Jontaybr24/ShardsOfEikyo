@@ -20,8 +20,10 @@ var current_attack = null
 var heal_source = null
 var buffered_input = ''
 
-signal shield_changed(new_shield)
+signal shield_available(shield_ready)
+signal blocking(is_blocking)
 signal shards_changed(new_shard)
+signal shield_changed(new_shield)
 signal ink_changed(new_ink)
 signal unlocked_spell()
 
@@ -163,9 +165,10 @@ func _physics_process(delta):
 	# regen the shield when it's not being used or is broken
 	if shield_broke or not Input.is_action_pressed("block") and current_shield < max_shield:
 		current_shield = clamp(current_shield + shield_regen * delta, 0, max_shield)
+		emit_signal("shield_changed", current_shield)
 		if current_shield == max_shield:
 			shield_broke = false
-			emit_signal("shield_changed", not shield_broke)
+			emit_signal("shield_available", not shield_broke)
 			shield.material.set_shader_parameter("tint", Color.WHITE)
 	
 	if channeling:
@@ -231,7 +234,7 @@ func unlock_ability(ability):
 			emit_signal("ink_changed", current_ink)
 		"block":
 			data.Shield = true
-			emit_signal("shield_changed", not shield_broke)
+			emit_signal("shield_available", not shield_broke)
 		"inkblast":
 			current_ink = data.max_ink
 			data.Inkblast = true
@@ -263,6 +266,7 @@ func take_damage(dmg, typ, source, kb = Vector2()):
 		
 	if current_state == CONDITIONS.BLOCK and current_shield > 0:
 		current_shield = clamp(current_shield - (dmg * res.scalar), 0, max_shield)
+		emit_signal("shield_changed", current_shield)
 		if current_shield > 0:
 			shield.material.set_shader_parameter("tint", Color.PINK)
 			await get_tree().create_timer(iframes).timeout
@@ -273,7 +277,7 @@ func take_damage(dmg, typ, source, kb = Vector2()):
 			audio_player.play()
 			shield_broke = true
 			shield.material.set_shader_parameter("tint", Color.RED)
-			emit_signal("shield_changed", not shield_broke)
+			emit_signal("shield_available", not shield_broke)
 			current_state = CONDITIONS.DEFAULT
 			add_knockback(kb, dir)
 			return

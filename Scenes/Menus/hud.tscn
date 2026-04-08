@@ -1,8 +1,10 @@
 [gd_scene format=3 uid="uid://qxvhka4atcik"]
 
 [ext_resource type="Script" uid="uid://c2pbyps4y0xuo" path="res://Scripts/Menu/hud.gd" id="1_jxero"]
+[ext_resource type="PackedScene" uid="uid://bi50rjgdti65j" path="res://Scenes/Menus/health_slider.tscn" id="2_sg5wc"]
 [ext_resource type="Texture2D" uid="uid://q0ddc2f61u1k" path="res://Temp Assets/shard.png" id="3_2246s"]
 [ext_resource type="Texture2D" uid="uid://drxtjrij1lpsl" path="res://Temp Assets/inkpot.png" id="3_v1m4g"]
+[ext_resource type="PackedScene" uid="uid://c3g35mfanu4qh" path="res://Scenes/Menus/shield_slider.tscn" id="4_s81ki"]
 [ext_resource type="Texture2D" uid="uid://dvbl4snskov8h" path="res://Temp Assets/wood_shield.png" id="4_smsyt"]
 
 [node name="Hud" type="CanvasLayer" unique_id=2028246174]
@@ -32,6 +34,7 @@ offset_right = 40.0
 offset_bottom = -76.0
 
 [node name="Label" type="Label" parent="Ink" unique_id=1749491469]
+visible = false
 layout_mode = 1
 anchors_preset = -1
 anchor_right = 0.063
@@ -46,6 +49,13 @@ horizontal_alignment = 1
 vertical_alignment = 1
 uppercase = true
 metadata/_edit_use_anchors_ = true
+
+[node name="HealthBar" parent="Ink" unique_id=1070830238 instance=ExtResource("2_sg5wc")]
+layout_mode = 0
+offset_left = 67.0
+offset_top = 147.0
+offset_right = 206.0
+offset_bottom = 166.0
 
 [node name="Sprite" type="Sprite2D" parent="Ink" unique_id=612181543]
 texture_filter = 1
@@ -62,8 +72,10 @@ offset_bottom = 40.0
 [node name="Label" type="Label" parent="Shard" unique_id=1796922142]
 layout_mode = 1
 anchors_preset = -1
-anchor_right = 0.063
-anchor_bottom = 0.069000006
+anchor_left = 1.225
+anchor_top = 0.094805144
+anchor_right = 1.2880001
+anchor_bottom = 0.1638052
 offset_left = 65.0
 offset_top = 61.0
 offset_right = 152.48
@@ -75,8 +87,17 @@ vertical_alignment = 1
 uppercase = true
 metadata/_edit_use_anchors_ = true
 
+[node name="ShieldBar" parent="Shard" unique_id=89733252 instance=ExtResource("4_s81ki")]
+visible = false
+layout_mode = 0
+offset_left = 65.0
+offset_top = 29.0
+offset_right = 209.0
+offset_bottom = 52.0
+value = 50.0
+
 [node name="Sprite" type="Sprite2D" parent="Shard" unique_id=491860321]
-position = Vector2(34, 87)
+position = Vector2(83, 90.792206)
 scale = Vector2(0.13506491, 0.13506494)
 texture = ExtResource("3_2246s")
 
@@ -87,7 +108,7 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="Sprite" type="Sprite2D" parent="Shield" unique_id=718211150]
-position = Vector2(201.00002, 33)
+position = Vector2(36, 88)
 scale = Vector2(0.08633088, 0.086330906)
 texture = ExtResource("4_smsyt")
 
