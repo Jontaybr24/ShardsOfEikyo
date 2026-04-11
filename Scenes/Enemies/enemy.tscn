@@ -40,7 +40,7 @@ size = Vector2(50, 92)
 size = Vector2(44, 89)
 
 [node name="Enemy" type="CharacterBody2D" unique_id=1836850152 node_paths=PackedStringArray("audio_player") groups=["Attackable", "Enemy"]]
-collision_layer = 4
+collision_layer = 20
 script = ExtResource("1_haj6g")
 health = 35
 loot_table = Array[ExtResource("2_pko3b")]([SubResource("Resource_53ao7"), SubResource("Resource_3hxf3")])

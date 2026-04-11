@@ -8,6 +8,14 @@ enum ELEMENTS {
 	FIRE
 }
 
+var type_layers = {
+	ELEMENTS.NONE: 32,
+	ELEMENTS.INK: 5,
+	ELEMENTS.WOOD: 6,
+	ELEMENTS.SHARD: 7,
+	ELEMENTS.FIRE: 8,
+}
+
 # [Attacking Type, Defending Type]
 var matchups = {
 	[ELEMENTS.INK  , ELEMENTS.SHARD]: {"scalar": 2.0, "SFX": preload("res://Assets/Audio/ShardFX10.wav")},
@@ -32,3 +40,8 @@ func get_scalar(atk_type, def_type) -> float:
 func get_SFX(atk_type, def_type) -> String:
 	var d = get_matchup(atk_type, def_type)
 	return d["SFX"]
+
+func set_collision_type(object: CollisionObject2D, type, enabled = true):
+	for layer in type_layers:
+		object.set_collision_mask_value(type_layers[layer], false)
+	object.set_collision_mask_value(type_layers[type], enabled)

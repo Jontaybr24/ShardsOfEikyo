@@ -46,7 +46,7 @@ size = Vector2(114, 128)
 size = Vector2(124.000015, 110.000015)
 
 [node name="Speedster" type="CharacterBody2D" unique_id=1710381249 node_paths=PackedStringArray("audio_player") groups=["Attackable", "Enemy"]]
-collision_layer = 4
+collision_layer = 36
 script = ExtResource("1_vffms")
 max_combo = 3
 health = 60

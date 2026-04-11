@@ -14,7 +14,7 @@ func Enter():
 	var new_dir = Input.get_axis("left", "right")
 	dash_start_pos = player.global_position.x
 	player.current_state = player.CONDITIONS.INVULNERABLE
-	player.collision.disabled = true
+	player.set_collision_layer_value(3, false)
 	dir = player.last_dir if new_dir == 0 else sign(new_dir)
 	player.velocity = Vector2(dash_velocity[0] * dir, 0)
 	
@@ -22,7 +22,7 @@ func Exit():
 	if abs(player.velocity.x) >= dash_velocity[0]:
 		player.velocity.x -= dash_velocity[0] * dir
 	player.current_state = player.CONDITIONS.DEFAULT
-	player.collision.disabled = false
+	player.set_collision_layer_value(3, true)
 	player.dash_timer = dash_cooldown
 
 func Physics_Update(delta: float):
