@@ -52,8 +52,11 @@ func _ready():
 	}
 	if armor_sprite:
 		armor_sprite.hide()
-	type = base_type
-	TypeManager.set_collision_type(self, type)
+	if armor > 0:
+		type = armor_type
+	else:
+		type = base_type
+	TypeManager.set_collision_layer_type(self, type)
 	if indicator:
 		indicator.update()
 	
@@ -62,12 +65,10 @@ func _process(delta: float) -> void:
 	if armor_sprite:
 		if armor > 0:
 			type = armor_type
-			TypeManager.set_collision_type(self, type)
 			armor_sprite.show()
 			indicator.update()
 		else:
 			type = base_type
-			TypeManager.set_collision_type(self, type)
 			armor_sprite.hide()
 			indicator.update()
 	
@@ -106,6 +107,8 @@ func take_damage(dmg, dmg_type, pos, kb = data.knockback):
 			audio_player.stream = shield_break
 			audio_player.play()
 			armor_sprite.hide()
+			type = base_type
+			TypeManager.set_collision_layer_type(self, type)
 	else: 
 		health -= total_dmg
 		var distance = pos.x - global_position.x
