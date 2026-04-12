@@ -20,8 +20,8 @@ func Enter():
 	player.velocity = Vector2(dash_velocity[0] * dir, 0)
 	
 func Exit():
-	if abs(player.velocity.x) >= dash_velocity[0]:
-		player.velocity.x -= dash_velocity[0] * dir
+	#if abs(player.velocity.x) >= dash_velocity[0]:
+		#player.velocity.x -= dash_velocity[0] * dir
 	player.current_state = player.CONDITIONS.DEFAULT
 	player.set_collision_mask_value(3, true)
 	TypeManager.set_collision_mask_type(player, TypeManager.ELEMENTS.WOOD, false)
