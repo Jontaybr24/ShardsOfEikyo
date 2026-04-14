@@ -25,7 +25,7 @@ signal died
 var move_speed = 0
 var data = {}
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
-
+var broken = false
 var damage_tic = .2
 var time_since_last_damage = 0.0
 var contact_damage = true
@@ -50,6 +50,7 @@ func _ready():
 	"knockback": knockback,
 	"immunities": immunities,
 	}
+	print(data)
 	if armor_sprite:
 		armor_sprite.hide()
 	if armor > 0:
