@@ -9,7 +9,7 @@ var boost_timer = 0
 var max_boost_time = .5
 var boost_gravity_reduction = .5
 
-var sprite: AnimatedSprite2D
+
 var dir = 0
 var last_dir = 1
 var frozen = false
@@ -35,6 +35,7 @@ signal unlocked_spell()
 @onready var state_machine = $"State Machine"
 @onready var indicator: Node2D = $"Type Indicator"
 @onready var audio_player: AudioStreamPlayer2D = $AudioStreamPlayer2D
+@onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
 
 @export_category("Overides")
 @export var unlock_abilities = false
@@ -132,7 +133,6 @@ func _init():
 func _ready():
 	print("player ready")
 	process_mode = Node.PROCESS_MODE_PAUSABLE
-	sprite = $AnimatedSprite2D
 	GameManager.set_player(self)
 	current_ink = data.max_ink
 	emit_signal("shards_changed", data.shards)
@@ -158,7 +158,7 @@ func _physics_process(delta):
 	
 	if sprite:
 		sprite.flip_h = last_dir == 1
-		if dir != 0:
+		if dir != 0 and state_machine.current_state.name.to_lower() == "listen":
 			sprite.play("Walk")
 			last_dir = dir
 		else:
@@ -257,17 +257,22 @@ func add_shards(amount):
 	data.shards += amount
 	emit_signal("shards_changed", data.shards)
 
-func take_damage(dmg, typ, source, kb = Vector2()):
+func take_damage(dmg, attack_type, source, kb = Vector2()):
 	if current_state == CONDITIONS.INVULNERABLE: return
-	var res = TypeManager.get_matchup(typ, type)
+	var res = TypeManager.get_matchup(attack_type, type)
 	var distance = global_position.x - source.x
 	var dir = sign(distance)
+	print(dmg * res.scalar, " damage taken")
 	if kb == Vector2():
 		kb = knockback
 		
 	if current_state == CONDITIONS.BLOCK and current_shield > 0:
-		current_shield = clamp(current_shield - (dmg * res.scalar), 0, max_shield)
-		emit_signal("shield_changed", current_shield)
+		if res.scalar < 0:
+			current_ink = clamp(current_ink - (dmg * res.scalar), 0, max_ink)
+			emit_signal("ink_changed", current_ink)
+		else:
+			current_shield = clamp(current_shield - (dmg * res.scalar), 0, max_shield)
+			emit_signal("shield_changed", current_shield)
 		if current_shield > 0:
 			shield.material.set_shader_parameter("tint", Color.PINK)
 			await get_tree().create_timer(iframes).timeout

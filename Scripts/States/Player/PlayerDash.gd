@@ -4,7 +4,7 @@ class_name PlayerDash
 # dash
 var dash_start_pos = 0
 var dash_cooldown = 0.5
-var dash_velocity = Vector2(2000, 0)
+var dash_velocity = Vector2(1500, 0)
 var dash_distance = 200
 var last = 0
 var dir = 0
@@ -20,8 +20,8 @@ func Enter():
 	player.velocity = Vector2(dash_velocity[0] * dir, 0)
 	
 func Exit():
-	#if abs(player.velocity.x) >= dash_velocity[0]:
-		#player.velocity.x -= dash_velocity[0] * dir
+	if abs(player.velocity.x) >= dash_velocity[0]:
+		player.velocity.x -= dash_velocity[0] * dir
 	player.current_state = player.CONDITIONS.DEFAULT
 	player.set_collision_mask_value(3, true)
 	TypeManager.set_collision_mask_type(player, TypeManager.ELEMENTS.WOOD, false)

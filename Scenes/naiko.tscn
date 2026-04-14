@@ -523,7 +523,7 @@ shield_break = ExtResource("2_jhgqk")
 material = SubResource("ShaderMaterial_6xrbi")
 scale = Vector2(0.34409884, 0.34409884)
 sprite_frames = SubResource("SpriteFrames_rk00n")
-animation = &"Block"
+animation = &"Walk"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1257874269]
 position = Vector2(0, 4.5)
