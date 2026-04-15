@@ -6,6 +6,8 @@
 [ext_resource type="Texture2D" uid="uid://crtaqmuhmw81n" path="res://Temp Assets/headspace.jpg" id="4_nahes"]
 [ext_resource type="Script" uid="uid://do05bsbviqpwu" path="res://Scripts/Gameplay/camera.gd" id="5_47d5m"]
 [ext_resource type="PackedScene" uid="uid://1yxwbn1lok2i" path="res://Scenes/naiko.tscn" id="6_ppd2x"]
+[ext_resource type="PackedScene" uid="uid://c54walp1wq66d" path="res://Scenes/Enemies/shooter.tscn" id="10_rdjgw"]
+[ext_resource type="PackedScene" uid="uid://bd53ynllc0vex" path="res://Scenes/Enemies/quick_inkling.tscn" id="11_6ddnt"]
 [ext_resource type="PackedScene" uid="uid://b3jkcmkg7ln00" path="res://Scenes/Enemies/enemy.tscn" id="11_bfq8o"]
 [ext_resource type="PackedScene" uid="uid://wwr0tjw2kvoo" path="res://Scenes/World Items/ground.tscn" id="14_7s8jf"]
 [ext_resource type="Script" uid="uid://c7j2mxc7rr0xf" path="res://Scripts/Gameplay/wave_manager.gd" id="16_d4lni"]
@@ -104,15 +106,33 @@ default = NodePath("1")
 [node name="1" parent="Wave Manager" unique_id=1056837958 instance=ExtResource("17_atgkg")]
 position = Vector2(-8, -21)
 
+[node name="Enemy" parent="Wave Manager/1" unique_id=1836850152 instance=ExtResource("11_bfq8o")]
+position = Vector2(819, 55)
+
+[node name="Enemy2" parent="Wave Manager/1" unique_id=2062737884 instance=ExtResource("11_bfq8o")]
+position = Vector2(3196, 48)
+armor = 20
+
+[node name="Shooter" parent="Wave Manager/1" unique_id=440473195 instance=ExtResource("10_rdjgw")]
+position = Vector2(1616, 38)
+
+[node name="Shooter2" parent="Wave Manager/1" unique_id=357561963 instance=ExtResource("10_rdjgw")]
+position = Vector2(4163, 31)
+armor = 20
+
+[node name="Speedster" parent="Wave Manager/1" unique_id=1710381249 instance=ExtResource("11_6ddnt")]
+position = Vector2(2753, 9)
+
+[node name="Speedster2" parent="Wave Manager/1" unique_id=1385084459 instance=ExtResource("11_6ddnt")]
+position = Vector2(4710, 17)
+armor = 20
+
 [node name="Boss" parent="Wave Manager" unique_id=1145347499 instance=ExtResource("17_atgkg")]
 position = Vector2(5070, 2)
 
 [node name="Ground10" parent="Wave Manager" unique_id=1645827944 instance=ExtResource("14_7s8jf")]
 position = Vector2(16.000002, 211.00003)
 scale = Vector2(7450.8013, -0.94523835)
-
-[node name="Enemy" parent="Wave Manager" unique_id=1836850152 instance=ExtResource("11_bfq8o")]
-position = Vector2(756, 38)
 
 [node name="Parallax" type="Node2D" parent="." unique_id=1195304366]
 visible = false

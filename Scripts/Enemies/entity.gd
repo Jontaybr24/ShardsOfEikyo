@@ -50,17 +50,11 @@ func _ready():
 	"knockback": knockback,
 	"immunities": immunities,
 	}
-	print(data)
 	if armor_sprite:
 		armor_sprite.hide()
-	if armor > 0:
-		type = armor_type
-	else:
-		type = base_type
 	TypeManager.set_collision_layer_type(self, type)
 	if indicator:
 		indicator.update()
-	
 	
 func _process(delta: float) -> void:
 	if armor_sprite:
@@ -131,6 +125,12 @@ func set_data(meta_data):
 	data = meta_data
 	health = data.health
 	armor = data.armor
+	type = base_type
+	if armor > 0:
+		armor_sprite.show()
+		indicator.update()
+		type = armor_type
+	TypeManager.set_collision_layer_type(self, type)
 
 func contact(p):
 	p.take_damage(data.damage, TypeManager.ELEMENTS.NONE, global_position)

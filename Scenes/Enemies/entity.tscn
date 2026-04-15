@@ -37,12 +37,12 @@ initial_state = NodePath("Idle")
 
 [node name="Idle" type="Node" parent="State Machine" unique_id=1600961133 node_paths=PackedStringArray("enemy")]
 script = ExtResource("5_pp4jc")
-enemy = NodePath("")
+enemy = NodePath("../..")
 metadata/_custom_type_script = "uid://b1qyoqfexwkht"
 
 [node name="Knockback" type="Node" parent="State Machine" unique_id=1385930841 node_paths=PackedStringArray("enemy")]
 script = ExtResource("6_xskih")
-enemy = NodePath("")
+enemy = NodePath("../..")
 metadata/_custom_type_script = "uid://bx77in28r1l35"
 
 [node name="Type Indicator" parent="." unique_id=650235984 instance=ExtResource("2_ob7ta")]

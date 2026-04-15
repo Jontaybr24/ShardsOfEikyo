@@ -16,6 +16,7 @@ func _ready():
 			pass
 		else:
 			meta_data = child.data
+			print(meta_data)
 			spawn_data.append({
 				"path": child.scene_file_path,
 				"position": child.position,
