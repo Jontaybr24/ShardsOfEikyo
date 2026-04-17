@@ -51,7 +51,7 @@ func player_spawned(new_player):
 	new_player.connect("shards_changed", set_shard)
 	new_player.connect("ink_changed", set_ink)
 	new_player.connect("shield_available", show_shield)
-	#new_player.connect("blocking", shield_bar_visible)
+	new_player.connect("blocking", shield_bar_visible)
 	new_player.connect("shield_changed", set_shield)
 	new_player.connect("ink_increased", ink_bar.increase_health)
 
