@@ -1,7 +1,7 @@
 extends State
 class_name EnemyState
 
-@export var enemy : CharacterBody2D
+@export var enemy : Entity
 var player: CharacterBody2D
 var distance = 0.0
 var direction = 0.0

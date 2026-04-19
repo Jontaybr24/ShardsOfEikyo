@@ -16,7 +16,6 @@ func _ready():
 			pass
 		else:
 			meta_data = child.data
-			print(meta_data)
 			spawn_data.append({
 				"path": child.scene_file_path,
 				"position": child.position,
@@ -40,7 +39,6 @@ func spawn_wave(player = null):
 		var new_spawn = scene.instantiate()
 		new_spawn.position = child_data.position
 		add_child(new_spawn)
-		print(child_data)
 		new_spawn.set_data(child_data.meta_data)
 		new_spawn.died.connect(_on_child_died)
 	child_count = get_child_count() - 1

@@ -50,8 +50,6 @@ func _ready():
 	"knockback": knockback,
 	"immunities": immunities,
 	}
-	print(name)
-	print(data)
 	if armor_sprite:
 		armor_sprite.hide()
 	TypeManager.set_collision_layer_type(self, type)
@@ -124,7 +122,6 @@ func take_damage(dmg, dmg_type, pos, kb = data.knockback):
 
 
 func set_data(meta_data):
-	print('My data: ', meta_data)
 	data = meta_data
 	health = data.health
 	armor = data.armor
