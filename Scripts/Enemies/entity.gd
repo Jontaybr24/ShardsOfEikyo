@@ -3,7 +3,6 @@ class_name Entity
 
 signal died
 
-@export_group("Stats")
 @export var health = 30
 @export var armor = 0
 @export var damage = 5
@@ -14,7 +13,6 @@ signal died
 @export var armor_type = TypeManager.ELEMENTS.NONE
 @export var immune_to_knockback = false
 
-@export_group("Data")
 @export var audio_player : AudioStreamPlayer2D
 @export var good_hit : AudioStream
 @export var bad_hit : AudioStream
@@ -32,6 +30,8 @@ var contact_damage = true
 var direction = 1
 var drop_variance = 25
 var kb_timer = 0
+var detection_range = 400
+var action_timer = 0
 
 @onready var armor_sprite = $Armor
 @onready var indicator: Node2D = $"Type Indicator"
@@ -50,6 +50,8 @@ func _ready():
 	"knockback": knockback,
 	"immunities": immunities,
 	}
+	print(name)
+	print(data)
 	if armor_sprite:
 		armor_sprite.hide()
 	TypeManager.set_collision_layer_type(self, type)
@@ -122,6 +124,7 @@ func take_damage(dmg, dmg_type, pos, kb = data.knockback):
 
 
 func set_data(meta_data):
+	print('My data: ', meta_data)
 	data = meta_data
 	health = data.health
 	armor = data.armor

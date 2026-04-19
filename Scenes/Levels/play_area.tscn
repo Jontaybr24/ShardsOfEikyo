@@ -44,7 +44,6 @@
 [ext_resource type="PackedScene" uid="uid://b23d6lqjmpfik" path="res://Scenes/wall.tscn" id="42_5lq47"]
 [ext_resource type="PackedScene" uid="uid://o6ty2lct7t4n" path="res://Scenes/Collectables/inky_heart.tscn" id="42_dsnmj"]
 [ext_resource type="PackedScene" uid="uid://4lfbxb8xjk1h" path="res://Scenes/interactable.tscn" id="43_5lq47"]
-[ext_resource type="PackedScene" uid="uid://d28khsplxid7i" path="res://Scenes/wood_wall.tscn" id="45_jjrh1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jf5ke"]
 size = Vector2(4.0476904, 241)
@@ -2148,8 +2147,8 @@ default = NodePath("1")
 [node name="1" parent="Wave Manager" unique_id=1056837958 instance=ExtResource("13_srfx2")]
 position = Vector2(-8, -21)
 
-[node name="Enemy5" parent="Wave Manager/1" unique_id=1836850152 instance=ExtResource("14_2ry77")]
-position = Vector2(1351, 13)
+[node name="Enemy" parent="Wave Manager/1" unique_id=1836850152 instance=ExtResource("14_2ry77")]
+position = Vector2(1147, 26)
 
 [node name="Block" parent="Wave Manager" unique_id=371059053 instance=ExtResource("13_srfx2")]
 position = Vector2(2936, -43)
@@ -2198,6 +2197,7 @@ position = Vector2(9196, -26)
 
 [node name="Speedster" parent="Wave Manager/Speedster" unique_id=1710381249 instance=ExtResource("20_x8neq")]
 position = Vector2(3686, -9)
+immune_to_knockback = null
 
 [node name="Enemy1" parent="Wave Manager/Speedster" unique_id=1660644628 instance=ExtResource("14_2ry77")]
 position = Vector2(872, 29)
@@ -2217,10 +2217,12 @@ position = Vector2(14135, -22)
 [node name="Speedster2" parent="Wave Manager/Double Trouble" unique_id=416704018 instance=ExtResource("20_x8neq")]
 position = Vector2(2290, -17)
 armor = 25
+immune_to_knockback = null
 
 [node name="Speedster3" parent="Wave Manager/Double Trouble" unique_id=953952251 instance=ExtResource("20_x8neq")]
 position = Vector2(4871, 10)
 armor = 25
+immune_to_knockback = null
 
 [node name="Forest Top" parent="Wave Manager" unique_id=490863732 instance=ExtResource("13_srfx2")]
 position = Vector2(15187, -2132)
@@ -2228,10 +2230,12 @@ position = Vector2(15187, -2132)
 [node name="Speedster2" parent="Wave Manager/Forest Top" unique_id=1822916284 instance=ExtResource("20_x8neq")]
 position = Vector2(2135, 245)
 armor = 25
+immune_to_knockback = null
 
 [node name="Speedster3" parent="Wave Manager/Forest Top" unique_id=1178898323 instance=ExtResource("20_x8neq")]
 position = Vector2(4685, 241)
 armor = 25
+immune_to_knockback = null
 
 [node name="Enemy5" parent="Wave Manager/Forest Top" unique_id=1091220072 instance=ExtResource("14_2ry77")]
 position = Vector2(1108, 303)
@@ -2288,10 +2292,12 @@ position = Vector2(21694, -1910)
 [node name="Speedster2" parent="Wave Manager/Forest Top2" unique_id=1892028218 instance=ExtResource("20_x8neq")]
 position = Vector2(2748, 29)
 armor = 25
+immune_to_knockback = null
 
 [node name="Speedster3" parent="Wave Manager/Forest Top2" unique_id=1785917004 instance=ExtResource("20_x8neq")]
 position = Vector2(4695, 52)
 armor = 25
+immune_to_knockback = null
 
 [node name="Enemy6" parent="Wave Manager/Forest Top2" unique_id=62451618 instance=ExtResource("14_2ry77")]
 position = Vector2(2419, 41)
@@ -2334,6 +2340,7 @@ position = Vector2(-2871, 29)
 
 [node name="Speedster" parent="Wave Manager/Instruction" unique_id=2118474640 instance=ExtResource("20_x8neq")]
 position = Vector2(3702, -631)
+immune_to_knockback = null
 
 [node name="Dash" parent="Wave Manager" unique_id=29614058 instance=ExtResource("13_srfx2")]
 position = Vector2(5782, -1230)
@@ -2341,10 +2348,12 @@ position = Vector2(5782, -1230)
 [node name="Speedster" parent="Wave Manager/Dash" unique_id=1171030464 instance=ExtResource("20_x8neq")]
 position = Vector2(-2012, -234)
 armor = 25
+immune_to_knockback = null
 
 [node name="Speedster2" parent="Wave Manager/Dash" unique_id=2073335881 instance=ExtResource("20_x8neq")]
 position = Vector2(-1112, -234)
 armor = 25
+immune_to_knockback = null
 
 [node name="Double Jump" parent="Wave Manager" unique_id=2019332563 instance=ExtResource("13_srfx2")]
 position = Vector2(19607, -587)
@@ -2369,9 +2378,11 @@ position = Vector2(-2665, 34)
 
 [node name="Speedster" parent="Wave Manager/Double Jump" unique_id=2079408830 instance=ExtResource("20_x8neq")]
 position = Vector2(-2002, 7)
+immune_to_knockback = null
 
 [node name="Speedster2" parent="Wave Manager/Double Jump" unique_id=1672419088 instance=ExtResource("20_x8neq")]
 position = Vector2(-4581, 7)
+immune_to_knockback = null
 
 [node name="Long Stretch" parent="Wave Manager" unique_id=2143329415 instance=ExtResource("13_srfx2")]
 position = Vector2(20253, -22)
@@ -2412,10 +2423,15 @@ position = Vector2(2188, 7)
 [node name="Speedster" parent="Wave Manager/Long Stretch" unique_id=1759616660 instance=ExtResource("20_x8neq")]
 position = Vector2(3451, -4)
 armor = 25
+immune_to_knockback = null
 
 [node name="Speedster2" parent="Wave Manager/Long Stretch" unique_id=692791495 instance=ExtResource("20_x8neq")]
 position = Vector2(7099, -14)
 armor = 25
+damage = null
+knockback = null
+immunities = null
+immune_to_knockback = null
 
 [node name="Post Fire Vine" parent="Wave Manager" unique_id=2030305356 instance=ExtResource("13_srfx2")]
 position = Vector2(28123, -1235)
@@ -2443,6 +2459,7 @@ position = Vector2(-3091, 55)
 
 [node name="Speedster2" parent="Wave Manager/Post Fire Vine" unique_id=1554532213 instance=ExtResource("20_x8neq")]
 position = Vector2(-5236, 28)
+immune_to_knockback = null
 
 [node name="Final Steps" parent="Wave Manager" unique_id=1939173926 instance=ExtResource("13_srfx2")]
 position = Vector2(27815, -1881)
@@ -3926,8 +3943,5 @@ scale = Vector2(242.2868, -0.10578469)
 
 [node name="Shooter" parent="Parkour" unique_id=255600674 groups=["Key"] instance=ExtResource("22_tyvsw")]
 position = Vector2(3901, 41)
-
-[node name="Entity" parent="." unique_id=1730364630 instance=ExtResource("45_jjrh1")]
-position = Vector2(14235, -2880.0002)
 
 [connection signal="body_entered" from="Grounds/Ground91/Area2D" to="Grounds/Ground91" method="_on_area_2d_body_entered"]

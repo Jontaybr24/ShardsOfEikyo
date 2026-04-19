@@ -15,6 +15,7 @@
 [ext_resource type="Shader" uid="uid://m1sf6khknajr" path="res://Shaders/outline.gdshader" id="17_x3kke"]
 [ext_resource type="PackedScene" uid="uid://jhs1sabjo6mp" path="res://Scenes/World Items/grass.tscn" id="18_7c6lk"]
 [ext_resource type="Texture2D" uid="uid://ckpfvowwrt6do" path="res://Temp Assets/box.png" id="19_rdjgw"]
+[ext_resource type="PackedScene" uid="uid://drmhxvgxqxnfs" path="res://Scenes/Enemies/demon.tscn" id="20_0vdbq"]
 [ext_resource type="PackedScene" uid="uid://o6ty2lct7t4n" path="res://Scenes/Collectables/inky_heart.tscn" id="20_6ddnt"]
 [ext_resource type="Script" uid="uid://brt8caet1iqrx" path="res://Scripts/Gameplay/Background/Parallax_manager.gd" id="22_hnc3n"]
 [ext_resource type="Shader" uid="uid://cngb2m4008xec" path="res://Shaders/group_blur.gdshader" id="23_21u3h"]
@@ -105,6 +106,9 @@ default = NodePath("1")
 
 [node name="1" parent="Wave Manager" unique_id=1056837958 instance=ExtResource("17_atgkg")]
 position = Vector2(-8, -21)
+
+[node name="Demon" parent="Wave Manager/1" unique_id=1051879583 instance=ExtResource("20_0vdbq")]
+position = Vector2(8340, -89)
 
 [node name="Enemy" parent="Wave Manager/1" unique_id=1836850152 instance=ExtResource("11_bfq8o")]
 position = Vector2(819, 55)

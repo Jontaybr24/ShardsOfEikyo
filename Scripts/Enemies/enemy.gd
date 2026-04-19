@@ -1,7 +1,6 @@
 extends Entity
 class_name BasicEnemy
 
-var detection_range = 400
 var vert_range = 100
 var attack_range : int
 var attack_damage = 10
@@ -15,7 +14,6 @@ var vertical_range = {
 @onready var attack_box: Area2D = $"Attack Box"
 @onready var state_machine = $"State Machine"
 var player : Node2D
-var action_timer = 0
 var dir = 1
 
 func _ready():

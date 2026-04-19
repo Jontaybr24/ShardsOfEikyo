@@ -2,12 +2,12 @@ extends Entity
 class_name BasicShooter
 
 var projectile = preload("res://Scenes/Attacks/projectile.tscn")
-var detection_range = 600
 @onready var state_machine = $"State Machine"
 var player = null
 
 func _ready():
 	super._ready()
+	detection_range = 600
 	GameManager.player_spawned.connect(update_player)
 
 func _physics_process(delta: float) -> void:
