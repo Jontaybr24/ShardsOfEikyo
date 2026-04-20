@@ -32,6 +32,10 @@ var drop_variance = 25
 var kb_timer = 0
 var detection_range = 400
 var action_timer = 0
+var vertical_range = {
+	"min": 0,
+	"max": 400
+}
 
 @onready var armor_sprite = $Armor
 @onready var indicator: Node2D = $"Type Indicator"
@@ -75,6 +79,9 @@ func _physics_process(delta: float) -> void:
 		interaction.position.x = abs(interaction.position.x) * -direction
 	move_and_slide()
 	
+
+func in_range(y):
+	return y > vertical_range.min and y < vertical_range.max
 
 func take_damage(dmg, dmg_type, pos, kb = data.knockback):
 	if dmg_type in data.immunities:

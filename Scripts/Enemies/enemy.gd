@@ -6,10 +6,6 @@ var attack_range : int
 var attack_damage = 10
 var attack_rate = .4
 var combo = 0
-var vertical_range = {
-	"min": 0,
-	"max": 400
-}
 @export var max_combo = 1
 @onready var attack_box: Area2D = $"Attack Box"
 @onready var state_machine = $"State Machine"
@@ -52,8 +48,6 @@ func take_damage(dmg, dmg_type, pos, kb = data.knockback):
 		state_machine.on_child_transition(state_machine.current_state, "knockback")
 	super.take_damage(dmg, dmg_type, pos, kb)
 
-func in_range(y):
-	return y > vertical_range.min and y < vertical_range.max
 	
 func update_player(new):
 	player = new
