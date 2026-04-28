@@ -15,7 +15,7 @@ compatibility/default_parent_skeleton_in_mesh_instance_3d=true
 [application]
 
 config/name="Shards of EIKYO"
-run/main_scene="uid://dngg18qtv1r74"
+run/main_scene="uid://dlcuylx1nj2qu"
 config/features=PackedStringArray("4.6", "Forward Plus")
 boot_splash/bg_color=Color(0.5825062, 0.024520934, 0.48494393, 1)
 config/icon="res://icon.svg"
