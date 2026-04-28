@@ -39,6 +39,13 @@ signal unlocked_spell()
 
 @export_category("Overides")
 @export var unlock_abilities = false
+@export var dash_unlocked = false
+@export var block_unlocked = false
+@export var channel_unlocked = false
+@export var jump2_unlocked = false
+@export var inkBlast_unlocked = false
+@export var inkSlam_unlocked = false
+@export var heal_unlocked = false
 
 @export_group("Sounds")
 @export var shield_break : AudioStream
@@ -117,8 +124,8 @@ var data = {
 	"Inkblast": false,
 	"Inkslam": false,
 	"Doublejump": false,
-	"Shield": false,
-	"Dash": false,
+	"Shield": true,
+	"Dash": true,
 	"Dash_mult": 1,
 	"shards": 100,
 	"max_ink": max_ink
@@ -148,6 +155,19 @@ func _ready():
 		unlock_ability("slam")
 		unlock_ability("doublejump")
 		unlock_ability("dash")
+	else:
+		if dash_unlocked:
+			unlock_ability("dash")
+		if channel_unlocked:
+			unlock_ability("channel")
+		if jump2_unlocked:
+			unlock_ability("doublejump")
+		if inkBlast_unlocked:
+			unlock_ability("inkblast")
+		if inkSlam_unlocked:
+			unlock_ability("slam")
+		if block_unlocked:
+			unlock_ability("block")
 	max = position.y
 
 

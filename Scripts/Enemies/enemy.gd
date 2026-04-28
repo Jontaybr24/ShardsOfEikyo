@@ -44,6 +44,7 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 
 func take_damage(dmg, dmg_type, pos, kb = data.knockback):
+	print("Damage Data: ", dmg_type, ' ', data.immunities)
 	if dmg_type not in data.immunities and not immune_to_knockback:
 		state_machine.on_child_transition(state_machine.current_state, "knockback")
 	super.take_damage(dmg, dmg_type, pos, kb)

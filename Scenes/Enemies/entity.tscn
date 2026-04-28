@@ -13,8 +13,9 @@ size = Vector2(34, 60)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_egtqx"]
 size = Vector2(28.25, 51)
 
-[node name="Entity" type="CharacterBody2D" unique_id=440473195 groups=["Attackable", "Enemy"]]
+[node name="Entity" type="CharacterBody2D" unique_id=440473195 node_paths=PackedStringArray("audio_player") groups=["Attackable", "Enemy"]]
 script = ExtResource("1_egtqx")
+audio_player = NodePath("FXplayer")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1457843403]
 scale = Vector2(0.22857143, 0.22857147)

@@ -51,6 +51,8 @@ func inflict_damage(target):
 	if target.is_in_group("Enemy") and parent.is_in_group("Enemy"):
 		return
 	if target.is_in_group('Attackable') and target != parent:
+		if damage == null or bonus == null:
+			print("Null Flagged")
 		target.take_damage((damage + bonus) * multiplier, type, parent.global_position, knockback)
 		hit = true
 		tic_time = tic_rate

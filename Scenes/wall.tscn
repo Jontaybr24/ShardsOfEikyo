@@ -3,7 +3,10 @@
 [ext_resource type="PackedScene" uid="uid://3khmnypklfmm" path="res://Scenes/Enemies/entity.tscn" id="1_0dv0i"]
 [ext_resource type="Script" uid="uid://bxrow5r6qo6q0" path="res://Scripts/loot_entry.gd" id="2_0xsiy"]
 [ext_resource type="PackedScene" uid="uid://w8g84mdk4jvc" path="res://Scenes/Collectables/medium_crystal_shard.tscn" id="3_g4b4r"]
+[ext_resource type="AudioStream" uid="uid://b44bd307qtdsc" path="res://Assets/Audio/ShardFX1.wav" id="4_18a63"]
 [ext_resource type="Texture2D" uid="uid://q0ddc2f61u1k" path="res://Temp Assets/shard.png" id="4_jp0x0"]
+[ext_resource type="AudioStream" uid="uid://cailld5whp0r4" path="res://Assets/Audio/BadHitFX.wav" id="5_afdol"]
+[ext_resource type="AudioStream" uid="uid://1eg0cxlbfd43" path="res://Assets/Audio/CanCrushFX.wav" id="6_im7sd"]
 
 [sub_resource type="Resource" id="Resource_18a63"]
 script = ExtResource("2_0xsiy")
@@ -12,18 +15,26 @@ min = 5
 max = 7
 metadata/_custom_type_script = "uid://bxrow5r6qo6q0"
 
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_jc1vo"]
+streams_count = 1
+stream_0/stream = ExtResource("6_im7sd")
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0dv0i"]
 size = Vector2(34, 60)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0xsiy"]
 size = Vector2(74, 187)
 
-[node name="Wall" unique_id=440473195 instance=ExtResource("1_0dv0i")]
+[node name="Wall" unique_id=440473195 node_paths=PackedStringArray("audio_player") instance=ExtResource("1_0dv0i")]
 scale = Vector2(1.2142857, 1.2142857)
 loot_table = Array[ExtResource("2_0xsiy")]([SubResource("Resource_18a63")])
 immunities = [0, 2, 3, 4]
 base_type = 3
 immune_to_knockback = true
+audio_player = NodePath("FXplayer")
+good_hit = ExtResource("4_18a63")
+bad_hit = ExtResource("5_afdol")
+shield_break = SubResource("AudioStreamRandomizer_jc1vo")
 
 [node name="Sprite2D" parent="." index="0" unique_id=1457843403]
 texture = ExtResource("4_jp0x0")
@@ -74,5 +85,5 @@ shape = SubResource("RectangleShape2D_0dv0i")
 position = Vector2(6, -29.5)
 shape = SubResource("RectangleShape2D_0xsiy")
 
-[node name="Type Indicator" parent="." index="11" unique_id=650235984]
+[node name="Type Indicator" parent="." index="12" unique_id=650235984]
 visible = false
