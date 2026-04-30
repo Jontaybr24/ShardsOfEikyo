@@ -9,7 +9,6 @@ func Enter():
 	await get_tree().create_timer(attack.start_delay).timeout
 	await attack.flash()
 	enemy.combo += 1
-	print(enemy.combo, ' ', enemy.max_combo)
 	if enemy.combo >= enemy.max_combo:
 		enemy.combo = 0
 		Transitioned.emit(self, "recharge")

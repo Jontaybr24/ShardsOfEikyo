@@ -10,9 +10,11 @@ var lifetime = 0
 var parried = false
 var parent = null
 @onready var sprite: Sprite2D = $Sprite2D
+@onready var notifier: VisibleOnScreenNotifier2D = $VisibleOnScreenNotifier2D
 
 func _ready():
 	GameManager.player_died.connect(die)
+	notifier.screen_exited.connect(die)
 
 func _physics_process(delta: float) -> void:
 	position.x += move_speed * dir * delta
@@ -20,14 +22,18 @@ func _physics_process(delta: float) -> void:
 	if lifetime > end_of_life:
 		queue_free()
 
+func die():
+	queue_free()
+
 func _on_area_entered(area: Area2D) -> void:
 	var target = area.get_parent()
 	if target.is_in_group("Player"):
 		target.take_damage(damage, type, global_position)
-		queue_free()
+		die()
 	elif target == parent and parried:
 		target.take_damage(damage, type, global_position)
-		queue_free()
+		die()
 
-func die():
-	queue_free()
+func _on_body_entered(body: Node2D) -> void:
+	if body.is_in_group("Solid"):
+		die()

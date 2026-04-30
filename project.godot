@@ -39,6 +39,7 @@ Climbable=""
 Interactable=""
 "Collectable Layer"=""
 "Projectile Layer"=""
+Solid=""
 
 [input]
 

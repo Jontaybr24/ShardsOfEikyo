@@ -5,7 +5,7 @@
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_at5ip"]
 
-[node name="Projectile" type="Area2D" unique_id=1012474100 groups=["Projectile"]]
+[node name="Projectile" type="Area2D" unique_id=1012474100 groups=["Projectile", "Solid"]]
 collision_layer = 4
 collision_mask = 3
 script = ExtResource("1_xvusd")
@@ -18,4 +18,7 @@ texture = ExtResource("2_ctn7t")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1373347387]
 shape = SubResource("RectangleShape2D_at5ip")
 
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=1442161191]
+
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
