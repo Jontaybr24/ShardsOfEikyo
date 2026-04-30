@@ -113,8 +113,8 @@ scale = Vector2(0.08633088, 0.086330906)
 texture = ExtResource("4_smsyt")
 
 [node name="Version" type="Label" parent="." unique_id=940775210]
-offset_left = 1100.0
+offset_left = 1089.0
 offset_top = 615.0
-offset_right = 1141.0
+offset_right = 1143.0
 offset_bottom = 638.0
-text = "v1.02"
+text = "v0.2.00"

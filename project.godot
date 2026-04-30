@@ -37,6 +37,8 @@ Projectile=""
 Wall=""
 Climbable=""
 Interactable=""
+"Collectable Layer"=""
+"Projectile Layer"=""
 
 [input]
 

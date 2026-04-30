@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://c821ktuee67tw"]
+
+[ext_resource type="Script" uid="uid://ypa64yqokd73" path="res://Scenes/Collectables/collectable_layer.gd" id="1_pjoje"]
+[ext_resource type="Script" uid="uid://dkedpcdr3hcps" path="res://Scripts/layer_holder.gd" id="1_yb7md"]
+
+[node name="Layer Holder" type="Node2D" unique_id=416682925]
+script = ExtResource("1_yb7md")
+
+[node name="CollectableLayer" type="CanvasGroup" parent="." unique_id=822942867 groups=["Collectable Layer"]]
+script = ExtResource("1_pjoje")
+metadata/_custom_type_script = "uid://ypa64yqokd73"
+
+[node name="ProjectileLayer" type="Node" parent="." unique_id=1042583691 groups=["Projectile Layer"]]

@@ -1,0 +1,2 @@
+extends CanvasGroup
+class_name CollectableLayer

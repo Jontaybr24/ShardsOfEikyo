@@ -1,4 +1,5 @@
 extends CanvasLayer
+class_name HUD
 
 @onready var shard_label: Label = $"Shard/Label"
 @onready var ink_label: Label = $"Ink/Label"
