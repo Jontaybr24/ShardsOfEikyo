@@ -3,10 +3,10 @@ class_name Player
 
 var move_speed = 300
 var sprint_multiplier = 1.5
-var jump_velocity = -600
+var jump_velocity = -620
 var jump_timer = 0
 var boost_timer = 0
-var max_boost_time = .5
+var max_boost_time = .55
 var boost_gravity_reduction = .5
 
 

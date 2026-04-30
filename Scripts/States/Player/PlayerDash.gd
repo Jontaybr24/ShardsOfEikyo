@@ -12,6 +12,7 @@ var dir = 0
 func Enter():
 	super.Enter()
 	var new_dir = Input.get_axis("left", "right")
+	player.position.y -= 5
 	dash_start_pos = player.global_position.x
 	player.current_state = player.CONDITIONS.INVULNERABLE
 	player.set_collision_mask_value(3, false)
