@@ -16,7 +16,7 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	if not player:
 		return
-	position = Vector2(player.global_position.x, floor + yOffset)
+	#position = Vector2(player.global_position.x, floor + yOffset)
 	var player_yPos = player.global_position.y
 	if player_yPos > floor + transition_offsest:
 		lower_cam()
