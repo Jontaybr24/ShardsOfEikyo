@@ -19,17 +19,17 @@ size = Vector2(544, 113)
 
 [node name="Grass" type="Area2D" unique_id=1502200006 groups=["Flammable", "Ink Source"]]
 z_index = 6
-scale = Vector2(0.2, 0.2)
+scale = Vector2(0.0856552, 0.0856552)
 script = ExtResource("1_on02d")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=216091300]
 material = SubResource("ShaderMaterial_gr604")
 texture = ExtResource("2_qm417")
+offset = Vector2(0, -140.625)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=689407527]
-position = Vector2(2, 74.5)
+position = Vector2(0, -58.373573)
 shape = SubResource("RectangleShape2D_qruad")
 
 [node name="VisibleOnScreenEnabler2D" type="VisibleOnScreenEnabler2D" parent="." unique_id=831298123]
-position = Vector2(4.9999995, 0)
-rect = Rect2(-324.99997, -124.999985, 649.99994, 254.99997)
+rect = Rect2(-324.99997, -256.84372, 649.99994, 256.84372)

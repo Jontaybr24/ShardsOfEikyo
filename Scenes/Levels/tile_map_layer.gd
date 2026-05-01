@@ -8,6 +8,7 @@ func _ready() -> void:
 		var cell_data : TileData = get_cell_tile_data(cell)
 		if cell_data.get_custom_data("spawn_grass"):
 			var world_pos = map_to_local(cell)
-			#var grass_spawn = grass.instantiate()
-			#grass_spawn.position = Vector2(world_pos.x, world_pos.y - tile_set.tile_size.y)
-			#add_child(grass_spawn)
+			if randi() % 100 > 80:
+				var grass_spawn = grass.instantiate()
+				grass_spawn.position = Vector2(world_pos.x + randf_range(-20, 20), world_pos.y - tile_set.tile_size.y / 2)
+				add_child(grass_spawn)
