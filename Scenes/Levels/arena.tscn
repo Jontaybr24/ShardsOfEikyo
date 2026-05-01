@@ -114,7 +114,7 @@ default = NodePath("Wave 1")
 position = Vector2(0, -2)
 
 [node name="Enemy" parent="Wave Manager/Wave 1" unique_id=1836850152 instance=ExtResource("8_f2xt7")]
-position = Vector2(259, 89)
+position = Vector2(-648, 102)
 
 [node name="Enemy2" parent="Wave Manager/Wave 1" unique_id=151790673 instance=ExtResource("8_f2xt7")]
 position = Vector2(514, 93)
@@ -149,22 +149,25 @@ position = Vector2(-1116, 89)
 [node name="Enemy7" parent="Wave Manager/Wave 1" unique_id=2091471211 instance=ExtResource("8_f2xt7")]
 position = Vector2(-1404, 77)
 
+[node name="Stairs" parent="Wave Manager" unique_id=807188800 instance=ExtResource("7_06psl")]
+position = Vector2(4898, -88)
+
+[node name="Shooter" parent="Wave Manager/Stairs" unique_id=126608716 instance=ExtResource("9_2ye47")]
+position = Vector2(830, 157)
+
+[node name="Shooter2" parent="Wave Manager/Stairs" unique_id=800065848 instance=ExtResource("9_2ye47")]
+position = Vector2(1085, 93)
+
+[node name="Shooter3" parent="Wave Manager/Stairs" unique_id=1615101294 instance=ExtResource("9_2ye47")]
+position = Vector2(1339, 34)
+
+[node name="Shooter4" parent="Wave Manager/Stairs" unique_id=1730872490 instance=ExtResource("9_2ye47")]
+position = Vector2(1600, -30)
+
+[node name="Shooter5" parent="Wave Manager/Stairs" unique_id=1865122945 instance=ExtResource("9_2ye47")]
+position = Vector2(1854, -99)
+
+[node name="Shooter6" parent="Wave Manager/Stairs" unique_id=928752088 instance=ExtResource("9_2ye47")]
+position = Vector2(2108, -163)
+
 [node name="Layer Holder" parent="." unique_id=416682925 instance=ExtResource("11_2ye47")]
-
-[node name="Shooter" parent="." unique_id=126608716 instance=ExtResource("9_2ye47")]
-position = Vector2(5728, 69)
-
-[node name="Shooter2" parent="." unique_id=800065848 instance=ExtResource("9_2ye47")]
-position = Vector2(5983, 5)
-
-[node name="Shooter3" parent="." unique_id=1615101294 instance=ExtResource("9_2ye47")]
-position = Vector2(6237, -54)
-
-[node name="Shooter4" parent="." unique_id=1730872490 instance=ExtResource("9_2ye47")]
-position = Vector2(6498, -118)
-
-[node name="Shooter5" parent="." unique_id=1865122945 instance=ExtResource("9_2ye47")]
-position = Vector2(6752, -187)
-
-[node name="Shooter6" parent="." unique_id=928752088 instance=ExtResource("9_2ye47")]
-position = Vector2(7006, -251)

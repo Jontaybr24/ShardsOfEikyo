@@ -21,7 +21,7 @@ var matchups = {
 	[ELEMENTS.INK  , ELEMENTS.SHARD]: {"scalar": 2.0, "SFX": preload("res://Assets/Audio/ShardFX10.wav")},
 	[ELEMENTS.INK  , ELEMENTS.WOOD ]: {"scalar": -0.5, "SFX": preload("res://Assets/Audio/WoodFX2.wav")},
 	[ELEMENTS.SHARD, ELEMENTS.INK  ]: {"scalar": 0.5, "SFX": preload("res://Assets/Audio/BadHitFX.wav")},
-	[ELEMENTS.SHARD, ELEMENTS.WOOD ]: {"scalar": 2.0, "SFX": preload("res://Assets/Audio/DigFX2.wav")},
+	[ELEMENTS.SHARD, ELEMENTS.WOOD ]: {"scalar": 3.0, "SFX": preload("res://Assets/Audio/DigFX2.wav")},
 	[ELEMENTS.SHARD, ELEMENTS.SHARD]: {"scalar": 1.0, "SFX": preload("res://Assets/Audio/ShardFX1.wav")},
 	[ELEMENTS.WOOD , ELEMENTS.INK  ]: {"scalar": 2.0, "SFX": preload("res://Assets/Audio/BadHitFX.wav")},
 	[ELEMENTS.WOOD , ELEMENTS.WOOD ]: {"scalar": 0.75, "SFX": preload("res://Assets/Audio/HitFX4.wav")},

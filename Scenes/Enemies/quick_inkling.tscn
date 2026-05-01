@@ -84,6 +84,8 @@ position = Vector2(-101, 28.000002)
 scale = Vector2(2.1199975, 1.479999)
 collision_layer = 1
 parent = NodePath("..")
+damage = 5
+type = 2
 duration = 0.2
 
 [node name="Sprite" type="Sprite2D" parent="Attack Box" unique_id=877817993]
