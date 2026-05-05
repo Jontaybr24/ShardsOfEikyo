@@ -40,6 +40,7 @@ Interactable=""
 "Collectable Layer"=""
 "Projectile Layer"=""
 Solid=""
+TileMap=""
 
 [input]
 

@@ -35,7 +35,8 @@ func Update(delta: float):
 		player.boosting_jump = false
 	
 	player.dir = Input.get_axis("left", "right")
-	var speed = player.move_speed * (player.sprint_multiplier if player.sprinting else 1.0)
+	var speed = player.move_speed * (player.sprint_multiplier if player.sprinting else 1.0)\
+	* (player.slow_multiplier if player.stuck else 1.0)
 	player.position.x += player.dir * speed * delta
 	
 	if player.is_on_floor():

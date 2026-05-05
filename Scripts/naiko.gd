@@ -3,6 +3,7 @@ class_name Player
 
 var move_speed = 300
 var sprint_multiplier = 1.5
+var slow_multiplier = .2
 var jump_velocity = -620
 var jump_timer = 0
 var boost_timer = 0
@@ -50,6 +51,7 @@ signal unlocked_spell()
 @export_group("Sounds")
 @export var shield_break : AudioStream
 
+var tilemap : TileMapLayer
 
 # health stats
 var max_shield = 50
@@ -115,6 +117,7 @@ var kill_velocity = 50
 var can_climb = false
 var boosting_jump = false
 var sprinting = false
+var stuck = false
 
 # dash
 var dash_timer = 0
@@ -169,7 +172,7 @@ func _ready():
 		if block_unlocked:
 			unlock_ability("block")
 	max = position.y
-
+	tilemap = get_tree().get_first_node_in_group("TileMap")
 
 func _physics_process(delta):
 	sprint_multiplier = data.Dash_mult
@@ -244,6 +247,19 @@ func _physics_process(delta):
 			velocity.x = 0
 			decay_velocity = false
 	
+	var tile_pos = tilemap.local_to_map(tilemap.to_local(global_position))
+	var tile_data = tilemap.get_cell_tile_data(tile_pos)
+	if tile_data:
+		var tile_type = tile_data.get_custom_data("tile_type")
+		match tile_type:
+			"shard_vine":
+				print("Vine")
+				stuck = true
+			_:
+				print("Not Vine")
+	else:
+		stuck = false
+		
 	move_and_slide()
 
 func unlock_ability(ability):
