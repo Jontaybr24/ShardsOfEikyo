@@ -12,3 +12,6 @@ func _ready() -> void:
 				var grass_spawn = grass.instantiate()
 				grass_spawn.position = Vector2(world_pos.x + randf_range(-20, 20), world_pos.y - tile_set.tile_size.y / 2)
 				add_child(grass_spawn)
+
+func get_cell_data(position):
+	return get_cell_tile_data(local_to_map(to_local(position)))

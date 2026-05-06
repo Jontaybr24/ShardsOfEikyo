@@ -247,8 +247,7 @@ func _physics_process(delta):
 			velocity.x = 0
 			decay_velocity = false
 	
-	var tile_pos = tilemap.local_to_map(tilemap.to_local(global_position))
-	var tile_data = tilemap.get_cell_tile_data(tile_pos)
+	var tile_data = tilemap.get_cell_data(global_position)
 	if tile_data:
 		var tile_type = tile_data.get_custom_data("tile_type")
 		match tile_type:
