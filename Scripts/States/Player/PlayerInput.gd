@@ -52,7 +52,7 @@ func Update(delta: float):
 	if player.data.Shield and Input.is_action_just_pressed("block") \
 	and not player.shield_broke:
 		Transitioned.emit(self, "block")
-		
+	
 	if player.data.Channel and Input.is_action_pressed('channel_hold') \
 	and player.data.shards >= player.channel_min:
 		player.channeling = true

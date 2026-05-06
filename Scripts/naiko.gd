@@ -10,7 +10,6 @@ var boost_timer = 0
 var max_boost_time = .55
 var boost_gravity_reduction = .5
 
-
 var dir = 0
 var last_dir = 1
 var frozen = false
@@ -52,6 +51,8 @@ signal unlocked_spell()
 @export var shield_break : AudioStream
 
 var tilemap : TileMapLayer
+var current_tile
+var last_tile = null
 
 # health stats
 var max_shield = 50
@@ -173,17 +174,22 @@ func _ready():
 			unlock_ability("block")
 	max = position.y
 	tilemap = get_tree().get_first_node_in_group("TileMap")
+	current_tile = tilemap.get_cell_data(global_position)
 
 func _physics_process(delta):
 	sprint_multiplier = data.Dash_mult
 	if current_ink <= 0 or position.y > 500:
 		die()
-	
+	print(last_tile)
 	if sprite:
 		sprite.flip_h = last_dir == 1
 		if dir != 0 and state_machine.current_state.name.to_lower() == "listen":
 			sprite.play("Walk")
 			last_dir = dir
+			current_tile = tilemap.get_cell_data(global_position)
+			if current_tile != last_tile:
+				last_tile = current_tile
+				check_tile_type()
 		else:
 			sprite.play("Idle")
 	# regen the shield when it's not being used or is broken
@@ -246,18 +252,6 @@ func _physics_process(delta):
 		if abs(velocity.x) < kill_velocity: 
 			velocity.x = 0
 			decay_velocity = false
-	
-	var tile_data = tilemap.get_cell_data(global_position)
-	if tile_data:
-		var tile_type = tile_data.get_custom_data("tile_type")
-		match tile_type:
-			"shard_vine":
-				print("Vine")
-				stuck = true
-			_:
-				print("Not Vine")
-	else:
-		stuck = false
 		
 	move_and_slide()
 
@@ -283,6 +277,17 @@ func unlock_ability(ability):
 		"dash":
 			data.Dash_mult = 1.75
 			data.Dash = true
+
+func check_tile_type():
+	if current_tile:
+		var tile_type = current_tile.get_custom_data("tile_type")
+		match tile_type:
+			"shard_vine":
+				stuck = true
+			_:
+				print("Not Vine")
+	else:
+		stuck = false
 
 func add_ink(amount):
 	current_ink = clamp(current_ink + amount, 0, data.max_ink)
