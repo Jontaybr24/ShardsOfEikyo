@@ -24,6 +24,7 @@
 [ext_resource type="Script" uid="uid://1da4ba3xj7n1" path="res://Scripts/States/Player/PlayerSlam.gd" id="18_0di8p"]
 [ext_resource type="PackedScene" uid="uid://uducaxmreo5a" path="res://Scenes/type_indicator.tscn" id="19_36hgu"]
 [ext_resource type="Script" uid="uid://blojh0cqgv23b" path="res://Scripts/States/Player/PlayerClimb.gd" id="21_1gk4c"]
+[ext_resource type="AudioStream" uid="uid://62s2xm6lujxc" path="res://Assets/Audio/HealFX1.wav" id="22_ablot"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_6xrbi"]
 
@@ -766,12 +767,15 @@ script = ExtResource("15_banwa")
 player = NodePath("../..")
 metadata/_custom_type_script = "uid://bi37dy670y1hn"
 
-[node name="Heal" type="Node" parent="State Machine" unique_id=2137513481]
+[node name="Heal" type="Node" parent="State Machine" unique_id=2137513481 node_paths=PackedStringArray("player")]
 script = ExtResource("16_13egm")
+healSFX = ExtResource("22_ablot")
+player = NodePath("../..")
 metadata/_custom_type_script = "uid://ds312yohc2c5w"
 
-[node name="Slam" type="Node" parent="State Machine" unique_id=1912798029]
+[node name="Slam" type="Node" parent="State Machine" unique_id=1912798029 node_paths=PackedStringArray("player")]
 script = ExtResource("18_0di8p")
+player = NodePath("../..")
 metadata/_custom_type_script = "uid://1da4ba3xj7n1"
 
 [node name="Climb" type="Node" parent="State Machine" unique_id=1050667817 node_paths=PackedStringArray("player")]
@@ -790,7 +794,9 @@ collision_mask = 8
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Collection Magnet" unique_id=264863265]
 shape = SubResource("CircleShape2D_1gk4c")
 
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1173889767]
+[node name="AudioIn" type="AudioStreamPlayer2D" parent="." unique_id=1173889767]
+
+[node name="AudioOut" type="AudioStreamPlayer2D" parent="." unique_id=1729091045]
 
 [connection signal="area_entered" from="Interaction" to="." method="_on_interaction_area_entered"]
 [connection signal="area_exited" from="Interaction" to="." method="_on_interaction_area_exited"]

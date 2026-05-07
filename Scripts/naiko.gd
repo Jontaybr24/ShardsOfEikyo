@@ -34,10 +34,11 @@ signal unlocked_spell()
 @onready var collision: CollisionShape2D = $Interaction/CollisionShape2D
 @onready var state_machine = $"State Machine"
 @onready var indicator: Node2D = $"Type Indicator"
-@onready var audio_player: AudioStreamPlayer2D = $AudioStreamPlayer2D
+@onready var audio_in: AudioStreamPlayer2D = $AudioIn
+@onready var audio_out: AudioStreamPlayer2D = $AudioOut
 @onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
 
-@export_category("Overides")
+@export_group("Overides")
 @export var unlock_abilities = false
 @export var dash_unlocked = false
 @export var block_unlocked = false
@@ -49,6 +50,8 @@ signal unlocked_spell()
 
 @export_group("Sounds")
 @export var shield_break : AudioStream
+@export var damage : AudioStream
+@export var dash : AudioStream
 
 var tilemap : TileMapLayer
 var current_tile
@@ -302,6 +305,9 @@ func take_damage(dmg, attack_type, source, kb = Vector2()):
 	var distance = global_position.x - source.x
 	var dir = sign(distance)
 	print(dmg * res.scalar, " damage taken")
+	print(res.SFX)
+	audio_in.stream = res.SFX
+	audio_in.play()
 	if kb == Vector2():
 		kb = knockback
 		
@@ -318,8 +324,8 @@ func take_damage(dmg, attack_type, source, kb = Vector2()):
 			shield.material.set_shader_parameter("tint", Color.WHITE)
 			return
 		else:
-			audio_player.stream = shield_break
-			audio_player.play()
+			audio_in.stream = shield_break
+			audio_in.play()
 			shield_broke = true
 			shield.material.set_shader_parameter("tint", Color.RED)
 			emit_signal("shield_available", not shield_broke)
