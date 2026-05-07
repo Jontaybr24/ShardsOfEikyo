@@ -2,7 +2,9 @@
 
 [ext_resource type="Script" uid="uid://c83au1lrrouxt" path="res://Scripts/Enemies/entity.gd" id="1_egtqx"]
 [ext_resource type="PackedScene" uid="uid://uducaxmreo5a" path="res://Scenes/type_indicator.tscn" id="2_ob7ta"]
+[ext_resource type="AudioStream" uid="uid://cd6grxtgybg80" path="res://Assets/Audio/BadHitFX2.wav" id="2_pp4jc"]
 [ext_resource type="AudioStream" uid="uid://cailld5whp0r4" path="res://Assets/Audio/BadHitFX.wav" id="3_l6vru"]
+[ext_resource type="AudioStream" uid="uid://cfthl3b7lb48c" path="res://Assets/Audio/BarkBreakFX.wav" id="3_xskih"]
 [ext_resource type="Script" uid="uid://djm45qu8y40qy" path="res://Scripts/States/state_machine.gd" id="4_u1xcd"]
 [ext_resource type="Script" uid="uid://b1qyoqfexwkht" path="res://Scripts/States/Enemy/EnemyIdle.gd" id="5_pp4jc"]
 [ext_resource type="Script" uid="uid://bx77in28r1l35" path="res://Scripts/States/Enemy/EnemyKnockback.gd" id="6_xskih"]
@@ -13,9 +15,12 @@ size = Vector2(34, 60)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_egtqx"]
 size = Vector2(28.25, 51)
 
-[node name="Entity" type="CharacterBody2D" unique_id=440473195 node_paths=PackedStringArray("audio_player") groups=["Attackable", "Enemy"]]
+[node name="Entity" type="CharacterBody2D" unique_id=440473195 node_paths=PackedStringArray("audio_player", "audio_player2") groups=["Attackable", "Enemy"]]
 script = ExtResource("1_egtqx")
 audio_player = NodePath("FXplayer")
+audio_player2 = NodePath("FXplayer2")
+bad_hit = ExtResource("2_pp4jc")
+shield_break = ExtResource("3_xskih")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1457843403]
 scale = Vector2(0.22857143, 0.22857147)
@@ -49,5 +54,9 @@ metadata/_custom_type_script = "uid://bx77in28r1l35"
 [node name="Type Indicator" parent="." unique_id=650235984 instance=ExtResource("2_ob7ta")]
 
 [node name="FXplayer" type="AudioStreamPlayer2D" parent="." unique_id=1204300861]
+stream = ExtResource("3_l6vru")
+bus = &"SFX"
+
+[node name="FXplayer2" type="AudioStreamPlayer2D" parent="." unique_id=369316411]
 stream = ExtResource("3_l6vru")
 bus = &"SFX"

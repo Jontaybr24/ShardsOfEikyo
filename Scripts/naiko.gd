@@ -180,7 +180,6 @@ func _physics_process(delta):
 	sprint_multiplier = data.Dash_mult
 	if current_ink <= 0 or position.y > 500:
 		die()
-	print(last_tile)
 	if sprite:
 		sprite.flip_h = last_dir == 1
 		if dir != 0 and state_machine.current_state.name.to_lower() == "listen":

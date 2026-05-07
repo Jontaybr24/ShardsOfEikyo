@@ -14,6 +14,7 @@ signal died
 @export var immune_to_knockback = false
 
 @export var audio_player : AudioStreamPlayer2D
+@export var audio_player2 : AudioStreamPlayer2D
 @export var good_hit : AudioStream
 @export var bad_hit : AudioStream
 @export var shield_break : AudioStream
@@ -91,17 +92,18 @@ func take_damage(dmg, dmg_type, pos, kb = data.knockback):
 	var scalar = res.scalar
 	total_dmg = dmg * scalar
 	audio_player.stream = res.SFX
+	print(res.SFX)
 	audio_player.play()
-	if scalar > 1:
-		#play good sound
-		audio_player.stream = good_hit
-		print("Strong Hit")
-	elif scalar < 1:
-		#play bad sound
-		audio_player.stream = bad_hit
-		print("Weak Hit")
-	
-	audio_player.play()
+	if scalar != 1:
+		if scalar > 1:
+			#play good sound
+			audio_player2.stream = good_hit
+			print("Strong Hit")
+		elif scalar < 0.6:
+			#play bad sound
+			audio_player2.stream = bad_hit
+			print("Weak Hit")	
+		audio_player2.play()
 	
 	if (armor > 0): 
 		armor -= total_dmg

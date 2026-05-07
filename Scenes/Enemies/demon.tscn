@@ -3,8 +3,9 @@
 [ext_resource type="Script" uid="uid://dp8f8wtbn1wkk" path="res://Scripts/Enemies/demon.gd" id="1_rjha3"]
 [ext_resource type="AudioStream" uid="uid://b44bd307qtdsc" path="res://Assets/Audio/ShardFX1.wav" id="2_7chon"]
 [ext_resource type="Texture2D" uid="uid://b87qc5u32bytm" path="res://Temp Assets/darkbowser.png" id="2_040qw"]
-[ext_resource type="AudioStream" uid="uid://cailld5whp0r4" path="res://Assets/Audio/BadHitFX.wav" id="2_y038n"]
+[ext_resource type="AudioStream" uid="uid://cd6grxtgybg80" path="res://Assets/Audio/BadHitFX2.wav" id="3_7chon"]
 [ext_resource type="Texture2D" uid="uid://dvbl4snskov8h" path="res://Temp Assets/wood_shield.png" id="3_868kw"]
+[ext_resource type="AudioStream" uid="uid://1eg0cxlbfd43" path="res://Assets/Audio/CanCrushFX.wav" id="4_ipsli"]
 [ext_resource type="Script" uid="uid://djm45qu8y40qy" path="res://Scripts/States/state_machine.gd" id="5_4ku7m"]
 [ext_resource type="Script" uid="uid://b1qyoqfexwkht" path="res://Scripts/States/Enemy/EnemyIdle.gd" id="6_748kp"]
 [ext_resource type="PackedScene" uid="uid://uducaxmreo5a" path="res://Scenes/type_indicator.tscn" id="6_ywd1k"]
@@ -26,7 +27,7 @@ size = Vector2(185, 243)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1dp5w"]
 size = Vector2(153, 242)
 
-[node name="Demon" type="CharacterBody2D" unique_id=1051879583 node_paths=PackedStringArray("audio_player") groups=["Attackable", "Enemy"]]
+[node name="Demon" type="CharacterBody2D" unique_id=1051879583 node_paths=PackedStringArray("audio_player", "audio_player2") groups=["Attackable", "Enemy"]]
 collision_layer = 4
 script = ExtResource("1_rjha3")
 health = 400
@@ -35,8 +36,10 @@ base_type = 3
 armor_type = 2
 immune_to_knockback = true
 audio_player = NodePath("AudioStreamPlayer2D")
+audio_player2 = NodePath("AudioStreamPlayer2D2")
 good_hit = ExtResource("2_7chon")
-bad_hit = ExtResource("2_y038n")
+bad_hit = ExtResource("3_7chon")
+shield_break = ExtResource("4_ipsli")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=454315020]
 scale = Vector2(0.38581422, 0.38581428)
@@ -133,4 +136,7 @@ enemy = NodePath("../..")
 metadata/_custom_type_script = "uid://2npvertng78n"
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=852533633]
+bus = &"SFX"
+
+[node name="AudioStreamPlayer2D2" type="AudioStreamPlayer2D" parent="." unique_id=105607868]
 bus = &"SFX"

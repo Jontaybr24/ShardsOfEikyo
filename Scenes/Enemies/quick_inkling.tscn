@@ -13,8 +13,9 @@
 [ext_resource type="PackedScene" uid="uid://uducaxmreo5a" path="res://Scenes/type_indicator.tscn" id="6_udkui"]
 [ext_resource type="Texture2D" uid="uid://c2l6s25njlh8b" path="res://Temp Assets/Reinforced_Diamond_Chestplate.webp" id="7_2xf4f"]
 [ext_resource type="PackedScene" uid="uid://ctmsstd6uq73w" path="res://Scenes/Attacks/attack.tscn" id="7_udkui"]
-[ext_resource type="AudioStream" uid="uid://cailld5whp0r4" path="res://Assets/Audio/BadHitFX.wav" id="7_ytbtl"]
+[ext_resource type="AudioStream" uid="uid://cd6grxtgybg80" path="res://Assets/Audio/BadHitFX2.wav" id="7_ytbtl"]
 [ext_resource type="Script" uid="uid://v7yqgmo47ilg" path="res://Scripts/States/Enemy/EnemyAttack.gd" id="8_cu4ai"]
+[ext_resource type="AudioStream" uid="uid://dbdll3cfuebfp" path="res://Assets/Audio/CrystalShieldBreak.wav" id="8_ytbtl"]
 [ext_resource type="Script" uid="uid://doqdip8c8hjh2" path="res://Scripts/States/Enemy/EnemyRecharge.gd" id="9_d0hj1"]
 [ext_resource type="Script" uid="uid://bx77in28r1l35" path="res://Scripts/States/Enemy/EnemyKnockback.gd" id="10_cu4ai"]
 [ext_resource type="Texture2D" uid="uid://cleu3gb2la8jr" path="res://Temp Assets/woodsword.png" id="11_d0hj1"]
@@ -45,7 +46,7 @@ size = Vector2(114, 128)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rljve"]
 size = Vector2(124.000015, 110.000015)
 
-[node name="Speedster" type="CharacterBody2D" unique_id=1710381249 node_paths=PackedStringArray("audio_player") groups=["Attackable", "Enemy"]]
+[node name="Speedster" type="CharacterBody2D" unique_id=1710381249 node_paths=PackedStringArray("audio_player", "audio_player2") groups=["Attackable", "Enemy"]]
 collision_layer = 36
 script = ExtResource("1_vffms")
 max_combo = 3
@@ -54,8 +55,10 @@ loot_table = Array[ExtResource("2_55nwv")]([SubResource("Resource_rbluy"), SubRe
 base_type = 2
 armor_type = 3
 audio_player = NodePath("AudioStreamPlayer2D")
+audio_player2 = NodePath("AudioStreamPlayer2D2")
 good_hit = ExtResource("6_lutx7")
 bad_hit = ExtResource("7_ytbtl")
+shield_break = ExtResource("8_ytbtl")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1022558088]
 scale = Vector2(-0.386, 0.386)
@@ -132,4 +135,7 @@ metadata/_custom_type_script = "uid://bx77in28r1l35"
 rect = Rect2(-61, -68, 131, 139)
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=306357247]
+bus = &"SFX"
+
+[node name="AudioStreamPlayer2D2" type="AudioStreamPlayer2D" parent="." unique_id=59348588]
 bus = &"SFX"

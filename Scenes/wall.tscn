@@ -25,13 +25,12 @@ size = Vector2(34, 60)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0xsiy"]
 size = Vector2(74, 187)
 
-[node name="Wall" unique_id=440473195 node_paths=PackedStringArray("audio_player") instance=ExtResource("1_0dv0i")]
+[node name="Wall" unique_id=440473195 instance=ExtResource("1_0dv0i")]
 scale = Vector2(1.2142857, 1.2142857)
 loot_table = Array[ExtResource("2_0xsiy")]([SubResource("Resource_18a63")])
 immunities = [0, 2, 3, 4]
 base_type = 3
 immune_to_knockback = true
-audio_player = NodePath("FXplayer")
 good_hit = ExtResource("4_18a63")
 bad_hit = ExtResource("5_afdol")
 shield_break = SubResource("AudioStreamRandomizer_jc1vo")
