@@ -1,0 +1,34 @@
+[gd_scene format=3 uid="uid://cyk7cmon1ga0b"]
+
+[ext_resource type="PackedScene" uid="uid://iddpscnahepo" path="res://Scenes/Menus/pause_menu.tscn" id="1_ciit1"]
+[ext_resource type="PackedScene" uid="uid://qxvhka4atcik" path="res://Scenes/Menus/hud.tscn" id="2_hi411"]
+[ext_resource type="PackedScene" uid="uid://2l303ia26y4e" path="res://Scenes/Menus/inventory.tscn" id="3_vjnr7"]
+[ext_resource type="PackedScene" uid="uid://bkqoygkcyrylh" path="res://Scenes/Menus/textbox.tscn" id="4_wp7ya"]
+[ext_resource type="Texture2D" uid="uid://crtaqmuhmw81n" path="res://Temp Assets/headspace.jpg" id="5_ykyg2"]
+
+[node name="UI" type="Control" unique_id=39218115]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Pause Menu" parent="." unique_id=842149770 instance=ExtResource("1_ciit1")]
+
+[node name="Hud" parent="." unique_id=2028246174 instance=ExtResource("2_hi411")]
+
+[node name="Inventory" parent="." unique_id=611606700 instance=ExtResource("3_vjnr7")]
+
+[node name="Textbox" parent="." unique_id=1172664379 instance=ExtResource("4_wp7ya")]
+
+[node name="Background" type="CanvasLayer" parent="." unique_id=211698708]
+layer = -100
+
+[node name="TextureRect" type="TextureRect" parent="Background" unique_id=1461331888]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_ykyg2")

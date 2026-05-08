@@ -50,8 +50,11 @@ signal unlocked_spell()
 
 @export_group("Sounds")
 @export var shield_break : AudioStream
-@export var damage : AudioStream
-@export var dash : AudioStream
+@export var damage_sound : AudioStream
+@export var charge_attack_sound : AudioStream
+@export var dash_sound : AudioStream
+@export var dash_recharge_sound : AudioStream
+@export var heal_sound : AudioStream
 
 var tilemap : TileMapLayer
 var current_tile
@@ -233,6 +236,8 @@ func _physics_process(delta):
 	
 	if time_since_charge > charge_attack_time and not charged:
 		charged = true
+		audio_out.stream = charge_attack_sound
+		audio_out.play()
 		sprite.modulate = Color.SKY_BLUE
 		await get_tree().create_timer(.2).timeout
 		sprite.modulate = Color.WHITE
@@ -292,6 +297,9 @@ func check_tile_type():
 		stuck = false
 
 func add_ink(amount):
+	if amount > 1 and current_ink < data.max_ink:
+		audio_out.stream = heal_sound
+		audio_out.play()
 	current_ink = clamp(current_ink + amount, 0, data.max_ink)
 	emit_signal("ink_changed", current_ink)
 
@@ -313,7 +321,7 @@ func take_damage(dmg, attack_type, source, kb = Vector2()):
 		
 	if current_state == CONDITIONS.BLOCK and current_shield > 0:
 		if res.scalar < 0:
-			current_ink = clamp(current_ink - (dmg * res.scalar), 0, max_ink)
+			add_ink(dmg * -res.scalar)
 			emit_signal("ink_changed", current_ink)
 		else:
 			current_shield = clamp(current_shield - (dmg * res.scalar), 0, max_shield)

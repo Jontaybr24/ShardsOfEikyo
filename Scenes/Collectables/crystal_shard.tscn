@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://duhbyafpqm37c" path="res://Scripts/Collectables/crystal_shard.gd" id="1_penym"]
 [ext_resource type="Texture2D" uid="uid://q0ddc2f61u1k" path="res://Temp Assets/shard.png" id="2_mx45u"]
+[ext_resource type="AudioStream" uid="uid://bv3owgm2grao6" path="res://Assets/Audio/ShardFX7.wav" id="3_mx45u"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_msp4t"]
 radius = 7.0
@@ -10,6 +11,7 @@ radius = 7.0
 collision_layer = 8
 collision_mask = 10
 script = ExtResource("1_penym")
+audio_stream = ExtResource("3_mx45u")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1353904945]
 scale = Vector2(1.8000002, 1.8000002)
@@ -21,6 +23,8 @@ texture = ExtResource("2_mx45u")
 
 [node name="VisibleOnScreenEnabler2D" type="VisibleOnScreenEnabler2D" parent="." unique_id=1238854827]
 rect = Rect2(-17, -21, 33, 42)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1831869527]
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]
 [connection signal="area_exited" from="." to="." method="_on_area_exited"]

@@ -1,0 +1,93 @@
+[gd_scene format=3 uid="uid://dnmafchlweesy"]
+
+[ext_resource type="Script" uid="uid://brt8caet1iqrx" path="res://Scripts/Gameplay/Background/Parallax_manager.gd" id="1_fxwo5"]
+[ext_resource type="Shader" uid="uid://cngb2m4008xec" path="res://Shaders/group_blur.gdshader" id="2_xo75i"]
+[ext_resource type="Shader" uid="uid://byuwfoibi2drm" path="res://Shaders/background_blur_h.gdshader" id="3_1u0m5"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_hjuiu"]
+shader = ExtResource("2_xo75i")
+shader_parameter/blur_size = 4.0
+shader_parameter/samples = 5
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_0vsvg"]
+shader = ExtResource("3_1u0m5")
+shader_parameter/blur_size = 4.0
+shader_parameter/samples = 5
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_yj43f"]
+shader = ExtResource("2_xo75i")
+shader_parameter/blur_size = 3.0
+shader_parameter/samples = 5
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_jr36q"]
+shader = ExtResource("2_xo75i")
+shader_parameter/blur_size = 2.0
+shader_parameter/samples = 5
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_kuwnp"]
+shader = ExtResource("2_xo75i")
+shader_parameter/blur_size = 1.0
+shader_parameter/samples = 5
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_v5exg"]
+shader = ExtResource("2_xo75i")
+shader_parameter/blur_size = 0.0
+shader_parameter/samples = 5
+
+[node name="Parallax" type="Node2D" unique_id=800698634]
+
+[node name="Parallax2D" type="Parallax2D" parent="." unique_id=806145850]
+modulate = Color(1, 0.019607844, 1, 1)
+z_index = -1000
+scroll_scale = Vector2(0, 0)
+follow_viewport = false
+script = ExtResource("1_fxwo5")
+num_trees = 400
+
+[node name="CanvasGroup" type="CanvasGroup" parent="Parallax2D" unique_id=1410636407]
+material = SubResource("ShaderMaterial_hjuiu")
+position = Vector2(123, 36)
+
+[node name="Parallax2D2" type="Parallax2D" parent="." unique_id=2031361715]
+z_index = -1000
+material = SubResource("ShaderMaterial_0vsvg")
+scroll_scale = Vector2(0.01, 0)
+follow_viewport = false
+script = ExtResource("1_fxwo5")
+num_trees = 400
+
+[node name="CanvasGroup" type="CanvasGroup" parent="Parallax2D2" unique_id=1595049626]
+material = SubResource("ShaderMaterial_yj43f")
+
+[node name="Parallax2D3" type="Parallax2D" parent="." unique_id=136788767]
+z_index = -1000
+material = SubResource("ShaderMaterial_0vsvg")
+scroll_scale = Vector2(0.02, 0)
+follow_viewport = false
+script = ExtResource("1_fxwo5")
+num_trees = 400
+
+[node name="CanvasGroup" type="CanvasGroup" parent="Parallax2D3" unique_id=2049370859]
+material = SubResource("ShaderMaterial_jr36q")
+
+[node name="Parallax2D4" type="Parallax2D" parent="." unique_id=1110158635]
+z_index = -1000
+material = SubResource("ShaderMaterial_0vsvg")
+scroll_scale = Vector2(0.03, 0)
+follow_viewport = false
+script = ExtResource("1_fxwo5")
+num_trees = 400
+
+[node name="CanvasGroup" type="CanvasGroup" parent="Parallax2D4" unique_id=937938479]
+material = SubResource("ShaderMaterial_kuwnp")
+
+[node name="Parallax2D5" type="Parallax2D" parent="." unique_id=1368845701]
+z_index = -1000
+material = SubResource("ShaderMaterial_0vsvg")
+scroll_scale = Vector2(0.04, 0)
+follow_viewport = false
+script = ExtResource("1_fxwo5")
+num_trees = 400
+
+[node name="CanvasGroup" type="CanvasGroup" parent="Parallax2D5" unique_id=2067371921]
+material = SubResource("ShaderMaterial_v5exg")

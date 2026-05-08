@@ -2,11 +2,18 @@
 
 [ext_resource type="Script" uid="uid://ypa64yqokd73" path="res://Scenes/Collectables/collectable_layer.gd" id="1_pjoje"]
 [ext_resource type="Script" uid="uid://dkedpcdr3hcps" path="res://Scripts/layer_holder.gd" id="1_yb7md"]
+[ext_resource type="Shader" uid="uid://m1sf6khknajr" path="res://Shaders/outline.gdshader" id="2_lt6x6"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_wigna"]
+shader = ExtResource("2_lt6x6")
+shader_parameter/outline_color = Color(0.6459673, 0.24990705, 0.9653254, 1)
+shader_parameter/thickness = 1.0
 
 [node name="Layer Holder" type="Node2D" unique_id=416682925]
 script = ExtResource("1_yb7md")
 
 [node name="CollectableLayer" type="CanvasGroup" parent="." unique_id=822942867 groups=["Collectable Layer"]]
+material = SubResource("ShaderMaterial_wigna")
 script = ExtResource("1_pjoje")
 metadata/_custom_type_script = "uid://ypa64yqokd73"
 

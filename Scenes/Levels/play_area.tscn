@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://qxvhka4atcik" path="res://Scenes/Menus/hud.tscn" id="10_8vi7n"]
 [ext_resource type="Texture2D" uid="uid://crtaqmuhmw81n" path="res://Temp Assets/headspace.jpg" id="12_x8neq"]
 [ext_resource type="PackedScene" uid="uid://b12i5ou8yoss7" path="res://Scenes/World Items/thorn.tscn" id="13_3sn60"]
+[ext_resource type="PackedScene" uid="uid://dnmafchlweesy" path="res://Scenes/Scenery/parallax.tscn" id="13_dsnmj"]
 [ext_resource type="PackedScene" uid="uid://ccgkc2vkx7bxg" path="res://Scenes/wave.tscn" id="13_srfx2"]
 [ext_resource type="PackedScene" uid="uid://u4j2g4ka5xbt" path="res://Scenes/Enemies/Tree_demon.tscn" id="13_t4bdt"]
 [ext_resource type="PackedScene" uid="uid://b3jkcmkg7ln00" path="res://Scenes/Enemies/enemy.tscn" id="14_2ry77"]
@@ -17,10 +18,7 @@
 [ext_resource type="PackedScene" uid="uid://drmhxvgxqxnfs" path="res://Scenes/Enemies/demon.tscn" id="18_uco2s"]
 [ext_resource type="PackedScene" uid="uid://b88bjvuibg8uq" path="res://Scenes/Attacks/fire.tscn" id="19_cpprb"]
 [ext_resource type="PackedScene" uid="uid://bd53ynllc0vex" path="res://Scenes/Enemies/quick_inkling.tscn" id="20_x8neq"]
-[ext_resource type="Shader" uid="uid://byuwfoibi2drm" path="res://Shaders/background_blur_h.gdshader" id="21_tyvsw"]
 [ext_resource type="PackedScene" uid="uid://dt2ly7hup1bs7" path="res://Scenes/World Items/vine.tscn" id="21_x8neq"]
-[ext_resource type="Shader" uid="uid://cngb2m4008xec" path="res://Shaders/group_blur.gdshader" id="22_0vsvg"]
-[ext_resource type="Script" uid="uid://brt8caet1iqrx" path="res://Scripts/Gameplay/Background/Parallax_manager.gd" id="22_hjuiu"]
 [ext_resource type="PackedScene" uid="uid://c54walp1wq66d" path="res://Scenes/Enemies/shooter.tscn" id="22_tyvsw"]
 [ext_resource type="PackedScene" uid="uid://oip84gu8i2mh" path="res://Scenes/Collectables/ability.tscn" id="22_yj43f"]
 [ext_resource type="PackedScene" uid="uid://jhs1sabjo6mp" path="res://Scenes/World Items/grass.tscn" id="23_hjuiu"]
@@ -50,36 +48,6 @@ size = Vector2(4.0476904, 241)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jjrh1"]
 size = Vector2(5.9242563, 131.854)
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_hjuiu"]
-shader = ExtResource("22_0vsvg")
-shader_parameter/blur_size = 4.0
-shader_parameter/samples = 5
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_0vsvg"]
-shader = ExtResource("21_tyvsw")
-shader_parameter/blur_size = 4.0
-shader_parameter/samples = 5
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_yj43f"]
-shader = ExtResource("22_0vsvg")
-shader_parameter/blur_size = 3.0
-shader_parameter/samples = 5
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_jr36q"]
-shader = ExtResource("22_0vsvg")
-shader_parameter/blur_size = 2.0
-shader_parameter/samples = 5
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_kuwnp"]
-shader = ExtResource("22_0vsvg")
-shader_parameter/blur_size = 1.0
-shader_parameter/samples = 5
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_v5exg"]
-shader = ExtResource("22_0vsvg")
-shader_parameter/blur_size = 0.0
-shader_parameter/samples = 5
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_i4tbg"]
 shader = ExtResource("29_u3qvk")
@@ -1620,6 +1588,8 @@ scale = Vector2(1.0400001, 1.0400001)
 position = Vector2(25038, 56)
 scale = Vector2(1.0400001, 1.0400001)
 
+[node name="Parallax" parent="." unique_id=800698634 instance=ExtResource("13_dsnmj")]
+
 [node name="Grounds" type="Node" parent="." unique_id=1125928237]
 
 [node name="Ground" type="StaticBody2D" parent="Grounds" unique_id=1037639914]
@@ -2484,65 +2454,6 @@ position = Vector2(30159, -2010)
 
 [node name="Demon" parent="Wave Manager/Boss" unique_id=1051879583 instance=ExtResource("18_uco2s")]
 position = Vector2(3570, 1893)
-
-[node name="Parallax" type="Node2D" parent="." unique_id=1195304366]
-position = Vector2(0, 85)
-
-[node name="Parallax2D" type="Parallax2D" parent="Parallax" unique_id=785762124]
-modulate = Color(1, 0.019607844, 1, 1)
-z_index = -1000
-scroll_scale = Vector2(0, 0)
-follow_viewport = false
-script = ExtResource("22_hjuiu")
-num_trees = 400
-
-[node name="CanvasGroup" type="CanvasGroup" parent="Parallax/Parallax2D" unique_id=705969819]
-material = SubResource("ShaderMaterial_hjuiu")
-position = Vector2(123, 36)
-
-[node name="Parallax2D2" type="Parallax2D" parent="Parallax" unique_id=471970800]
-z_index = -1000
-material = SubResource("ShaderMaterial_0vsvg")
-scroll_scale = Vector2(0.1, 0)
-follow_viewport = false
-script = ExtResource("22_hjuiu")
-num_trees = 400
-
-[node name="CanvasGroup" type="CanvasGroup" parent="Parallax/Parallax2D2" unique_id=1269415613]
-material = SubResource("ShaderMaterial_yj43f")
-
-[node name="Parallax2D3" type="Parallax2D" parent="Parallax" unique_id=536774272]
-z_index = -1000
-material = SubResource("ShaderMaterial_0vsvg")
-scroll_scale = Vector2(0.2, 0)
-follow_viewport = false
-script = ExtResource("22_hjuiu")
-num_trees = 400
-
-[node name="CanvasGroup" type="CanvasGroup" parent="Parallax/Parallax2D3" unique_id=1513980157]
-material = SubResource("ShaderMaterial_jr36q")
-
-[node name="Parallax2D4" type="Parallax2D" parent="Parallax" unique_id=1111745935]
-z_index = -1000
-material = SubResource("ShaderMaterial_0vsvg")
-scroll_scale = Vector2(0.3, 0)
-follow_viewport = false
-script = ExtResource("22_hjuiu")
-num_trees = 400
-
-[node name="CanvasGroup" type="CanvasGroup" parent="Parallax/Parallax2D4" unique_id=1404157273]
-material = SubResource("ShaderMaterial_kuwnp")
-
-[node name="Parallax2D5" type="Parallax2D" parent="Parallax" unique_id=2122972183]
-z_index = -1000
-material = SubResource("ShaderMaterial_0vsvg")
-scroll_scale = Vector2(0.4, 0)
-follow_viewport = false
-script = ExtResource("22_hjuiu")
-num_trees = 400
-
-[node name="CanvasGroup" type="CanvasGroup" parent="Parallax/Parallax2D5" unique_id=17015388]
-material = SubResource("ShaderMaterial_v5exg")
 
 [node name="Abilities" type="Node" parent="." unique_id=1495218845]
 
