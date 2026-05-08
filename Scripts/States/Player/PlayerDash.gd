@@ -16,17 +16,21 @@ func Enter():
 	dash_start_pos = player.global_position.x
 	player.current_state = player.CONDITIONS.INVULNERABLE
 	player.set_collision_mask_value(3, false)
-	TypeManager.set_collision_mask_type(player, TypeManager.ELEMENTS.WOOD, true)
+	TypeManager.set_collision_mask_type(player, TypeManager.ELEMENTS.INK, true)
 	dir = player.last_dir if new_dir == 0 else sign(new_dir)
 	player.velocity = Vector2(dash_velocity[0] * dir, 0)
+	player.type = TypeManager.ELEMENTS.INK
+	player.indicator.update()
 	
 func Exit():
 	if abs(player.velocity.x) >= dash_velocity[0]:
 		player.velocity.x -= dash_velocity[0] * dir
 	player.current_state = player.CONDITIONS.DEFAULT
 	player.set_collision_mask_value(3, true)
-	TypeManager.set_collision_mask_type(player, TypeManager.ELEMENTS.WOOD, false)
+	TypeManager.set_collision_mask_type(player, TypeManager.ELEMENTS.INK, false)
 	player.dash_timer = dash_cooldown
+	player.type = TypeManager.ELEMENTS.WOOD
+	player.indicator.update()
 
 func Physics_Update(delta: float):
 	player.velocity.y = 0

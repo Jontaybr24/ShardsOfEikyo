@@ -14,7 +14,7 @@ var dir = 0
 var last_dir = 1
 var frozen = false
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity") * 2.5
-var type = TypeManager.ELEMENTS.INK
+var type = TypeManager.ELEMENTS.WOOD
 var current_type = type
 var current_attack = null
 var heal_source = null
@@ -324,7 +324,7 @@ func take_damage(dmg, attack_type, source, kb = Vector2()):
 			add_ink(dmg * -res.scalar)
 			emit_signal("ink_changed", current_ink)
 		else:
-			current_shield = clamp(current_shield - (dmg * res.scalar), 0, max_shield)
+			current_shield = clamp(current_shield - (dmg * res.scalar * 0.5), 0, max_shield)
 			emit_signal("shield_changed", current_shield)
 		if current_shield > 0:
 			shield.material.set_shader_parameter("tint", Color.PINK)

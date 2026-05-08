@@ -12,8 +12,6 @@ func Enter():
 		return
 	player.shield.show()
 	player.sprite.play("Block")
-	player.type = TypeManager.ELEMENTS.WOOD
-	player.indicator.update()
 	player.emit_signal("blocking", true)
 	player.current_state = player.CONDITIONS.BLOCK
 	above_ground = true
@@ -22,8 +20,6 @@ func Enter():
 
 func Exit():
 	player.shield.hide()
-	player.type = TypeManager.ELEMENTS.INK
-	player.indicator.update()
 	player.emit_signal("blocking", false)
 	player.current_state = player.CONDITIONS.DEFAULT
 
