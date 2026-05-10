@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://c54walp1wq66d"]
 
 [ext_resource type="Script" uid="uid://eirtb0po2cvp" path="res://Scripts/Enemies/shooter.gd" id="1_em7em"]
-[ext_resource type="Script" uid="uid://bxrow5r6qo6q0" path="res://Scripts/loot_entry.gd" id="2_gw3vm"]
+[ext_resource type="Script" uid="uid://bxrow5r6qo6q0" path="res://Scripts/Collectables/loot_entry.gd" id="2_gw3vm"]
 [ext_resource type="Texture2D" uid="uid://q0ddc2f61u1k" path="res://Temp Assets/shard.png" id="2_n5ife"]
 [ext_resource type="Texture2D" uid="uid://bsibkr1lwtye" path="res://Temp Assets/Screenshot 2025-11-10 210536.png" id="3_flciy"]
 [ext_resource type="PackedScene" uid="uid://cg08bdjycug3k" path="res://Scenes/Collectables/ink_crystal.tscn" id="3_to03w"]

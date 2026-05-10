@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://b23d6lqjmpfik"]
 
 [ext_resource type="PackedScene" uid="uid://3khmnypklfmm" path="res://Scenes/Enemies/entity.tscn" id="1_0dv0i"]
-[ext_resource type="Script" uid="uid://bxrow5r6qo6q0" path="res://Scripts/loot_entry.gd" id="2_0xsiy"]
+[ext_resource type="Script" uid="uid://bxrow5r6qo6q0" path="res://Scripts/Collectables/loot_entry.gd" id="2_0xsiy"]
 [ext_resource type="PackedScene" uid="uid://w8g84mdk4jvc" path="res://Scenes/Collectables/medium_crystal_shard.tscn" id="3_g4b4r"]
 [ext_resource type="AudioStream" uid="uid://b44bd307qtdsc" path="res://Assets/Audio/ShardFX1.wav" id="4_18a63"]
 [ext_resource type="Texture2D" uid="uid://q0ddc2f61u1k" path="res://Temp Assets/shard.png" id="4_jp0x0"]

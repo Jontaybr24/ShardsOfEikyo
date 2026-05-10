@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bxos1dxrcaecq" path="res://Scripts/Enemies/enemy.gd" id="1_haj6g"]
 [ext_resource type="Texture2D" uid="uid://bi5m0nhra6f01" path="res://Temp Assets/inkling.png" id="2_beuat"]
-[ext_resource type="Script" uid="uid://bxrow5r6qo6q0" path="res://Scripts/loot_entry.gd" id="2_pko3b"]
+[ext_resource type="Script" uid="uid://bxrow5r6qo6q0" path="res://Scripts/Collectables/loot_entry.gd" id="2_pko3b"]
 [ext_resource type="PackedScene" uid="uid://cg08bdjycug3k" path="res://Scenes/Collectables/ink_crystal.tscn" id="2_ycxl0"]
 [ext_resource type="PackedScene" uid="uid://pad4mnxfr5el" path="res://Scenes/Collectables/crystal_shard.tscn" id="4_53ao7"]
 [ext_resource type="Texture2D" uid="uid://bsryb5srthmqs" path="res://Temp Assets/ink.png" id="5_beuat"]

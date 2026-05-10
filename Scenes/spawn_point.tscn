@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://cvs3b2k8lut58"]
+
+[ext_resource type="Script" uid="uid://cujnumdalk8su" path="res://spawn_point.gd" id="1_p0wmp"]
+[ext_resource type="Script" uid="uid://cat0iw4j2q2gc" path="res://Scripts/Entities/spawn_data.gd" id="2_udxm3"]
+[ext_resource type="PackedScene" uid="uid://b3jkcmkg7ln00" path="res://Scenes/Enemies/enemy.tscn" id="3_xc5ke"]
+[ext_resource type="PackedScene" uid="uid://c54walp1wq66d" path="res://Scenes/Enemies/shooter.tscn" id="4_nptss"]
+[ext_resource type="PackedScene" uid="uid://bd53ynllc0vex" path="res://Scenes/Enemies/quick_inkling.tscn" id="5_vyxcf"]
+
+[sub_resource type="Resource" id="Resource_pj1to"]
+script = ExtResource("2_udxm3")
+scene = ExtResource("3_xc5ke")
+metadata/_custom_type_script = "uid://cat0iw4j2q2gc"
+
+[sub_resource type="Resource" id="Resource_6iav0"]
+script = ExtResource("2_udxm3")
+scene = ExtResource("4_nptss")
+metadata/_custom_type_script = "uid://cat0iw4j2q2gc"
+
+[sub_resource type="Resource" id="Resource_im06o"]
+script = ExtResource("2_udxm3")
+scene = ExtResource("5_vyxcf")
+metadata/_custom_type_script = "uid://cat0iw4j2q2gc"
+
+[node name="Spawn Point" type="Node2D" unique_id=283043255]
+script = ExtResource("1_p0wmp")
+spawn_list = Array[ExtResource("2_udxm3")]([SubResource("Resource_pj1to"), SubResource("Resource_6iav0"), SubResource("Resource_im06o")])

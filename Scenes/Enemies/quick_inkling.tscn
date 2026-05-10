@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bd53ynllc0vex"]
 
 [ext_resource type="Script" uid="uid://cbwl6jppk3rcq" path="res://Scripts/Enemies/quick_inkling.gd" id="1_vffms"]
-[ext_resource type="Script" uid="uid://bxrow5r6qo6q0" path="res://Scripts/loot_entry.gd" id="2_55nwv"]
+[ext_resource type="Script" uid="uid://bxrow5r6qo6q0" path="res://Scripts/Collectables/loot_entry.gd" id="2_55nwv"]
 [ext_resource type="Texture2D" uid="uid://c5u7w332vcc3y" path="res://Temp Assets/speedster.png" id="2_daoxt"]
 [ext_resource type="PackedScene" uid="uid://cg08bdjycug3k" path="res://Scenes/Collectables/ink_crystal.tscn" id="2_udkui"]
 [ext_resource type="PackedScene" uid="uid://pad4mnxfr5el" path="res://Scenes/Collectables/crystal_shard.tscn" id="4_rbluy"]

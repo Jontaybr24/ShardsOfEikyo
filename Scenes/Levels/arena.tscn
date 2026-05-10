@@ -7,11 +7,9 @@
 [ext_resource type="PackedScene" uid="uid://1yxwbn1lok2i" path="res://Scenes/naiko.tscn" id="4_54ufs"]
 [ext_resource type="Script" uid="uid://do05bsbviqpwu" path="res://Scripts/Gameplay/camera.gd" id="4_w8qsr"]
 [ext_resource type="PackedScene" uid="uid://dnmafchlweesy" path="res://Scenes/Scenery/parallax.tscn" id="7_i706s"]
-[ext_resource type="PackedScene" uid="uid://b3jkcmkg7ln00" path="res://Scenes/Enemies/enemy.tscn" id="8_f2xt7"]
-[ext_resource type="PackedScene" uid="uid://c54walp1wq66d" path="res://Scenes/Enemies/shooter.tscn" id="9_2ye47"]
 [ext_resource type="PackedScene" uid="uid://b641qljir7yua" path="res://Scenes/World Items/spawn_crystal.tscn" id="9_pfw2s"]
-[ext_resource type="PackedScene" uid="uid://bd53ynllc0vex" path="res://Scenes/Enemies/quick_inkling.tscn" id="10_70hmg"]
 [ext_resource type="PackedScene" uid="uid://c821ktuee67tw" path="res://Scenes/layer_holder.tscn" id="11_2ye47"]
+[ext_resource type="PackedScene" uid="uid://cvs3b2k8lut58" path="res://Scenes/spawn_point.tscn" id="13_vw7s7"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7fubs"]
 texture = ExtResource("1_54ufs")
@@ -145,25 +143,5 @@ player = NodePath("../Naiko")
 [node name="Checkpoint" parent="." unique_id=264271652 instance=ExtResource("9_pfw2s")]
 position = Vector2(-1870, -93)
 
-[node name="Enemy" parent="." unique_id=1836850152 instance=ExtResource("8_f2xt7")]
-position = Vector2(-1165, -76)
-
-[node name="Enemy2" parent="." unique_id=616443274 instance=ExtResource("8_f2xt7")]
-position = Vector2(-740, -72)
-armor = 20
-
-[node name="Shooter" parent="." unique_id=440473195 instance=ExtResource("9_2ye47")]
-position = Vector2(-417, -84)
-
-[node name="Enemy3" parent="." unique_id=98831997 instance=ExtResource("8_f2xt7")]
-position = Vector2(-40, -65)
-
-[node name="Enemy4" parent="." unique_id=1260377493 instance=ExtResource("8_f2xt7")]
-position = Vector2(344, -48)
-armor = 20
-
-[node name="Speedster" parent="." unique_id=1710381249 instance=ExtResource("10_70hmg")]
-position = Vector2(1750, -105)
-
-[node name="Shooter2" parent="." unique_id=2073294524 instance=ExtResource("9_2ye47")]
-position = Vector2(731, -81)
+[node name="Spawn Point" parent="." unique_id=283043255 instance=ExtResource("13_vw7s7")]
+position = Vector2(-1592, -167)
