@@ -313,7 +313,6 @@ func take_damage(dmg, attack_type, source, kb = Vector2()):
 	var distance = global_position.x - source.x
 	var dir = sign(distance)
 	print(dmg * res.scalar, " damage taken")
-	print(res.SFX)
 	audio_in.stream = res.SFX
 	audio_in.play()
 	if kb == Vector2():

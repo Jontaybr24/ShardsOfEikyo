@@ -19,7 +19,6 @@ func spawn(wait = false):
 		await get_tree().create_timer(spawn_timer).timeout
 	var enemy = spawn_list.pick_random()
 	var new_spawn = enemy.scene.instantiate()
-	new_spawn.position = global_position
-	print(new_spawn.position)
 	add_child(new_spawn)
+	new_spawn.global_position = global_position
 	spawncount -= 1
