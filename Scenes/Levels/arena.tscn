@@ -144,5 +144,6 @@ player = NodePath("../Naiko")
 position = Vector2(-4, -136)
 
 [node name="Spawn Point" parent="." unique_id=283043255 instance=ExtResource("13_vw7s7")]
-position = Vector2(3, -457)
-spawn_timer = 15
+position = Vector2(149, -136)
+spawn_timer = 5
+spawncount = 10

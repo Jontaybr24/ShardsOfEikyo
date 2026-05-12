@@ -9,6 +9,7 @@ func Enter():
 	super.Enter()
 	if enemy.sprite:
 		enemy.sprite.modulate = Color.WHITE
+	enemy.combo = 0
 
 func Update(delta: float):
 	if wander_time > 0:

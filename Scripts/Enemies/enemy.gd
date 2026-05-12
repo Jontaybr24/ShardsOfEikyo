@@ -5,7 +5,6 @@ var vert_range = 100
 var attack_range : int
 var attack_damage = 10
 var attack_rate = .4
-var combo = 0
 @export var max_combo = 1
 @onready var attack_box: Area2D = $"Attack Box"
 @onready var state_machine = $"State Machine"

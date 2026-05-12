@@ -33,6 +33,7 @@ var drop_variance = 25
 var kb_timer = 0
 var detection_range = 400
 var action_timer = 0
+var combo = 0
 var vertical_range = {
 	"min": 0,
 	"max": 400

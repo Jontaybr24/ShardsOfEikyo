@@ -4,6 +4,8 @@ class_name EnemyKnockback
 @export var kb_time = .5
 
 func Enter():
+	if enemy.combo:
+		enemy.combo = 0
 	if enemy.kb_timer < 0:
 		enemy.kb_timer = kb_time
 
