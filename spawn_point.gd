@@ -1,4 +1,5 @@
 extends Node2D
+class_name SpawnPoint
 
 @export var spawn_list : Array[SpawnData]
 @export var spawn_timer = 1
@@ -6,8 +7,6 @@ extends Node2D
 
 var timer = 0
 
-func _ready() -> void:
-	spawn()
 
 func _process(delta: float) -> void:
 	if timer > 0:
