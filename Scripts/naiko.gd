@@ -341,6 +341,8 @@ func take_damage(dmg, attack_type, source, kb = Vector2()):
 			return
 	add_knockback(kb, dir)
 	current_ink -= clamp((dmg * res.scalar), 0, data.max_ink)
+	audio_out.stream = damage_sound
+	audio_out.play()
 	emit_signal("ink_changed", current_ink)
 
 func add_knockback(vel, direction):
@@ -357,7 +359,11 @@ func freeze():
 func unfreeze():
 	current_state = CONDITIONS.DEFAULT
 
-func die():
+func die():	
+	audio_in.reparent(get_parent())
+	audio_in.finished.connect(audio_in.queue_free)
+	audio_out.reparent(get_parent())
+	audio_out.finished.connect(audio_out.queue_free)
 	GameManager.respawn_player()
 
 func jump(percentage = 1.0):

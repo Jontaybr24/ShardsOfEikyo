@@ -5,6 +5,7 @@
 [ext_resource type="AudioStream" uid="uid://cfthl3b7lb48c" path="res://Assets/Audio/BarkBreakFX.wav" id="2_jhgqk"]
 [ext_resource type="PackedScene" uid="uid://ctmsstd6uq73w" path="res://Scenes/Attacks/attack.tscn" id="3_6xrbi"]
 [ext_resource type="AudioStream" uid="uid://ciy8lyludvt2n" path="res://Assets/Audio/ChargeFX1.wav" id="3_c1lmw"]
+[ext_resource type="AudioStream" uid="uid://dg8phtqqvwxkc" path="res://Assets/Audio/ClickFX5.wav" id="3_pftav"]
 [ext_resource type="AudioStream" uid="uid://b5twufukswehh" path="res://Assets/Audio/ChargeFX2.wav" id="3_xhtb1"]
 [ext_resource type="Script" uid="uid://oryqcrbtfp66" path="res://Scripts/Attacks/player_attack.gd" id="4_0di8p"]
 [ext_resource type="Texture2D" uid="uid://2ehh2vnqxs7g" path="res://Temp Assets/shield.png" id="4_3kuo7"]
@@ -521,6 +522,7 @@ collision_mask = 9
 script = ExtResource("1_83ox1")
 unlock_abilities = true
 shield_break = ExtResource("2_jhgqk")
+damage_sound = ExtResource("3_pftav")
 charge_attack_sound = ExtResource("3_xhtb1")
 dash_recharge_sound = ExtResource("3_c1lmw")
 heal_sound = ExtResource("22_ablot")
