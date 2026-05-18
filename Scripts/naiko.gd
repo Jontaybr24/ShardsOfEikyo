@@ -51,6 +51,7 @@ signal unlocked_spell()
 @export_group("Sounds")
 @export var shield_break : AudioStream
 @export var damage_sound : AudioStream
+@export var death_sound : AudioStream
 @export var charge_attack_sound : AudioStream
 @export var dash_sound : AudioStream
 @export var dash_recharge_sound : AudioStream
@@ -362,6 +363,8 @@ func unfreeze():
 func die():	
 	audio_in.reparent(get_parent())
 	audio_in.finished.connect(audio_in.queue_free)
+	audio_out.stream = death_sound
+	audio_out.play()
 	audio_out.reparent(get_parent())
 	audio_out.finished.connect(audio_out.queue_free)
 	GameManager.respawn_player()

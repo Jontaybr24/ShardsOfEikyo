@@ -10,6 +10,7 @@
 [ext_resource type="Script" uid="uid://oryqcrbtfp66" path="res://Scripts/Attacks/player_attack.gd" id="4_0di8p"]
 [ext_resource type="Texture2D" uid="uid://2ehh2vnqxs7g" path="res://Temp Assets/shield.png" id="4_3kuo7"]
 [ext_resource type="Shader" uid="uid://r2imtd7nb3kh" path="res://Shaders/transparent.gdshader" id="4_6xrbi"]
+[ext_resource type="AudioStream" uid="uid://b71mmw5g1asr" path="res://Assets/Audio/ScreamFX1.wav" id="4_snsi3"]
 [ext_resource type="Texture2D" uid="uid://545sjeelbllq" path="res://Temp Assets/ink2.png" id="5_a7b5t"]
 [ext_resource type="Texture2D" uid="uid://c2edn45ilu17k" path="res://Temp Assets/inkblast.png" id="6_h3idd"]
 [ext_resource type="Texture2D" uid="uid://cleu3gb2la8jr" path="res://Temp Assets/woodsword.png" id="6_qns6d"]
@@ -523,6 +524,7 @@ script = ExtResource("1_83ox1")
 unlock_abilities = true
 shield_break = ExtResource("2_jhgqk")
 damage_sound = ExtResource("3_pftav")
+death_sound = ExtResource("4_snsi3")
 charge_attack_sound = ExtResource("3_xhtb1")
 dash_recharge_sound = ExtResource("3_c1lmw")
 heal_sound = ExtResource("22_ablot")
