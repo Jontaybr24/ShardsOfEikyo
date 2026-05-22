@@ -10,6 +10,8 @@
 [ext_resource type="PackedScene" uid="uid://donihll3sqbew" path="res://Scenes/Combat/arena_manager.tscn" id="9_2ye47"]
 [ext_resource type="PackedScene" uid="uid://b641qljir7yua" path="res://Scenes/World Items/spawn_crystal.tscn" id="9_pfw2s"]
 [ext_resource type="PackedScene" uid="uid://c821ktuee67tw" path="res://Scenes/layer_holder.tscn" id="11_2ye47"]
+[ext_resource type="Script" uid="uid://cat0iw4j2q2gc" path="res://Scripts/Entities/spawn_data.gd" id="11_vw7s7"]
+[ext_resource type="PackedScene" uid="uid://c54walp1wq66d" path="res://Scenes/Enemies/shooter.tscn" id="12_i706s"]
 [ext_resource type="PackedScene" uid="uid://cvs3b2k8lut58" path="res://Scenes/spawn_point.tscn" id="13_vw7s7"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7fubs"]
@@ -113,6 +115,11 @@ custom_data_layer_1/name = "tile_type"
 custom_data_layer_1/type = 4
 sources/2 = SubResource("TileSetAtlasSource_7fubs")
 
+[sub_resource type="Resource" id="Resource_6iav0"]
+script = ExtResource("11_vw7s7")
+scene = ExtResource("12_i706s")
+metadata/_custom_type_script = "uid://cat0iw4j2q2gc"
+
 [node name="Arena" type="Node2D" unique_id=1384604499]
 
 [node name="UI" parent="." unique_id=39218115 instance=ExtResource("1_vw7s7")]
@@ -145,11 +152,13 @@ player = NodePath("../Naiko")
 
 [node name="Spawn Point" parent="Arena" unique_id=283043255 instance=ExtResource("13_vw7s7")]
 position = Vector2(-479, -239)
+spawn_list = Array[ExtResource("11_vw7s7")]([SubResource("Resource_6iav0")])
 spawn_timer = 3
 spawncount = 10000
 
 [node name="Spawn Point2" parent="Arena" unique_id=1051620587 instance=ExtResource("13_vw7s7")]
 position = Vector2(485, -265)
+spawn_list = Array[ExtResource("11_vw7s7")]([SubResource("Resource_6iav0")])
 spawn_timer = 3
 spawncount = 10000
 

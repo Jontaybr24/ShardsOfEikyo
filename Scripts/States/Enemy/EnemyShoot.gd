@@ -5,6 +5,10 @@ class_name EnemyShoot
 @export var shot_count = 1
 @export var offset = Vector2()
 @export var exit_delay = 0
+@export var charged_up_SFX : AudioStream
+@export var fire_SFX : AudioStream
+@export var charged_up_mark : float
+
 var shoot_timer = 0
 var exit_timer = 0
 var num_shots = 0
@@ -18,7 +22,12 @@ func Enter():
 func Physics_Update(delta: float):
 	super.Physics_Update(delta)
 	shoot_timer -= delta
+	if shoot_timer < charged_up_mark and !enemy.audio_player.playing:
+		enemy.audio_player.stream = charged_up_SFX
+		enemy.audio_player.play()
 	if shoot_timer < 0 and is_instance_valid(player) and num_shots < shot_count:
+		enemy.audio_player.stream = fire_SFX
+		enemy.audio_player.play()
 		num_shots += 1
 		shoot_timer = shoot_rate
 		var projectile = enemy.projectile.instantiate()

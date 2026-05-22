@@ -360,7 +360,7 @@ func freeze():
 func unfreeze():
 	current_state = CONDITIONS.DEFAULT
 
-func die():	
+func die():
 	audio_in.reparent(get_parent())
 	audio_in.finished.connect(audio_in.queue_free)
 	audio_out.stream = death_sound
