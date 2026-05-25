@@ -207,6 +207,9 @@ func _physics_process(delta):
 			emit_signal("shield_available", not shield_broke)
 			shield.material.set_shader_parameter("tint", Color.WHITE)
 	
+	if sprinting and not Input.is_action_just_pressed("dash"):
+		sprinting = false
+	
 	if channeling:
 		channel_aura.show()
 	else:
