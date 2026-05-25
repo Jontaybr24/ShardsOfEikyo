@@ -45,7 +45,7 @@ func Exit():
 	player.unfreeze()
 
 func Update(delta: float):
-	if player.current_state != player.CONDITIONS.SUSPENDED:
+	if player.CONDITIONS.SUSPENDED not in player.current_states:
 		player.dir = Input.get_axis("left", "right")
 		var speed = player.move_speed * (player.sprint_multiplier if player.sprinting else 1.0)
 		player.position.x += player.dir * speed * delta

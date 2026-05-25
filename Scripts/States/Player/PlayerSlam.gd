@@ -9,11 +9,11 @@ func Enter():
 	if player.current_ink <= player.attacks.get_node("Slam").cost:
 		Transitioned.emit(self, "listen")
 		return
-	player.current_state = player.CONDITIONS.INVULNERABLE
+	player.current_states.append(player.CONDITIONS.INVULNERABLE)
 	player.velocity.y = slam_velocity
 	max_velocity = 0
 func Exit():	
-	player.current_state = player.CONDITIONS.DEFAULT
+	player.current_states.erase(player.CONDITIONS.INVULNERABLE)
 
 func Physics_Update(delta: float):
 	if player.velocity.y > max_velocity:

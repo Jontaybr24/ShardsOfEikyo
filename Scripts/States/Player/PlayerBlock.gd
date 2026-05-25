@@ -13,7 +13,7 @@ func Enter():
 	player.shield.show()
 	player.sprite.play("Block")
 	player.emit_signal("blocking", true)
-	player.current_state = player.CONDITIONS.BLOCK
+	player.current_states.append(player.CONDITIONS.BLOCK)
 	above_ground = true
 	direction = Input.get_axis("left", "right")
 	speed = player.move_speed * (player.sprint_multiplier if player.sprinting else 1.0)
@@ -21,10 +21,10 @@ func Enter():
 func Exit():
 	player.shield.hide()
 	player.emit_signal("blocking", false)
-	player.current_state = player.CONDITIONS.DEFAULT
+	player.current_states.erase(player.CONDITIONS.BLOCK)
 
 func Update(delta: float):
-	if player.current_state != player.CONDITIONS.SUSPENDED and above_ground:
+	if player.CONDITIONS.SUSPENDED not in player.current_states and above_ground:
 		player.position.x += direction * speed * delta
 	
 	if player.is_on_floor():

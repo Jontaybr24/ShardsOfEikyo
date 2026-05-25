@@ -68,7 +68,6 @@ var current_shield = max_shield
 var current_ink = max_ink
 
 enum CONDITIONS {
-	DEFAULT,
 	BLOCK,
 	INVULNERABLE,
 	CHANNEL,
@@ -76,7 +75,7 @@ enum CONDITIONS {
 	JUMPING,
 }
 
-var current_state = CONDITIONS.DEFAULT
+var current_states = []
 
 # shield
 var shield_regen = 20
@@ -211,7 +210,6 @@ func _physics_process(delta):
 			shield.material.set_shader_parameter("tint", Color.WHITE)
 	
 	if sprinting and not Input.is_action_pressed("dash"):
-		print("No longer dashing")
 		sprinting = false
 	
 	if channeling:
@@ -223,14 +221,14 @@ func _physics_process(delta):
 		if enemy.contact_damage: enemy.contact(self)
 		
 	if not is_on_floor() \
-	and not current_state == CONDITIONS.SUSPENDED:
+	and not CONDITIONS.SUSPENDED in current_states:
 		var new_grav = gravity * delta * (boost_gravity_reduction if boosting_jump else 1)
 		velocity.y += new_grav
 	
-	if current_state == CONDITIONS.JUMPING and is_on_floor() and jump_timer > .05:
-		current_state = CONDITIONS.DEFAULT
+	if CONDITIONS.JUMPING in current_states and is_on_floor() and jump_timer > .05:
+		current_states.erase(CONDITIONS.JUMPING)
 	
-	if current_state == CONDITIONS.JUMPING and boost_timer > 0\
+	if CONDITIONS.JUMPING in current_states and boost_timer > 0\
 	and Input.is_action_pressed("jump"):
 		boosting_jump = true
 	
@@ -253,7 +251,7 @@ func _physics_process(delta):
 	attack_timer -= delta
 	reset_timer -= delta
 	dash_timer -= delta
-	if current_state == CONDITIONS.JUMPING:
+	if CONDITIONS.JUMPING in current_states:
 		jump_timer += delta
 		boost_timer -= delta
 	
@@ -316,7 +314,7 @@ func add_shards(amount):
 	emit_signal("shards_changed", data.shards)
 
 func take_damage(dmg, attack_type, source, kb = Vector2()):
-	if current_state == CONDITIONS.INVULNERABLE: return
+	if CONDITIONS.INVULNERABLE in current_states: return
 	var res = TypeManager.get_matchup(attack_type, type)
 	var distance = global_position.x - source.x
 	var dir = sign(distance)
@@ -326,7 +324,7 @@ func take_damage(dmg, attack_type, source, kb = Vector2()):
 	if kb == Vector2():
 		kb = knockback
 		
-	if current_state == CONDITIONS.BLOCK and current_shield > 0:
+	if CONDITIONS.BLOCK in current_states and current_shield > 0:
 		if res.scalar < 0:
 			add_ink(dmg * -res.scalar)
 			emit_signal("ink_changed", current_ink)
@@ -335,8 +333,10 @@ func take_damage(dmg, attack_type, source, kb = Vector2()):
 			emit_signal("shield_changed", current_shield)
 		if current_shield > 0:
 			shield.material.set_shader_parameter("tint", Color.PINK)
-			await get_tree().create_timer(iframes).timeout
-			shield.material.set_shader_parameter("tint", Color.WHITE)
+			current_states.append(CONDITIONS.INVULNERABLE)
+			get_tree().create_timer(iframes).timeout.connect(func(): 
+				current_states.erase(CONDITIONS.INVULNERABLE)
+				shield.material.set_shader_parameter("tint", Color.WHITE))
 			return
 		else:
 			audio_in.stream = shield_break
@@ -344,10 +344,12 @@ func take_damage(dmg, attack_type, source, kb = Vector2()):
 			shield_broke = true
 			shield.material.set_shader_parameter("tint", Color.RED)
 			emit_signal("shield_available", not shield_broke)
-			current_state = CONDITIONS.DEFAULT
+			current_states.erase(CONDITIONS.BLOCK)
 			add_knockback(kb, dir)
 			return
 	add_knockback(kb, dir)
+	current_states.append(CONDITIONS.INVULNERABLE)
+	get_tree().create_timer(iframes).timeout.connect(func(): current_states.erase(CONDITIONS.INVULNERABLE))
 	current_ink -= clamp((dmg * res.scalar), 0, data.max_ink)
 	audio_out.stream = damage_sound
 	audio_out.play()
@@ -360,12 +362,12 @@ func add_knockback(vel, direction):
 	decay_velocity = true
 
 func freeze():
-	current_state = CONDITIONS.SUSPENDED
+	current_states.append(CONDITIONS.SUSPENDED)
 	velocity = Vector2(velocity.x, 0)
 	sprinting = false
 
 func unfreeze():
-	current_state = CONDITIONS.DEFAULT
+	current_states.erase(CONDITIONS.SUSPENDED)
 
 func die():
 	audio_in.reparent(get_parent())
@@ -378,7 +380,7 @@ func die():
 
 func jump(percentage = 1.0):
 	velocity = jump_velocity * Vector2(0, percentage)
-	current_state = CONDITIONS.JUMPING
+	current_states.append(CONDITIONS.JUMPING)
 	boost_timer = max_boost_time
 	jump_timer = 0
 

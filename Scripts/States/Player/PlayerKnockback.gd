@@ -10,11 +10,11 @@ func Enter():
 	super.Enter()
 	timer = kb_time
 	player.channeling = false
-	player.current_state = player.CONDITIONS.INVULNERABLE
+	player.current_states.append(player.CONDITIONS.INVULNERABLE)
 	player.sprite.modulate = Color.RED
 
 func Exit():
-	player.current_state = player.CONDITIONS.DEFAULT
+	player.current_states.erase(player.CONDITIONS.INVULNERABLE)
 	player.sprite.modulate = Color(1, 1, 1)
 
 func Physics_Update(delta: float):
