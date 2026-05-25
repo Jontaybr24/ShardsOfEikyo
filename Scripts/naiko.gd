@@ -183,6 +183,9 @@ func _ready():
 	tilemap = get_tree().get_first_node_in_group("TileMap")
 	current_tile = tilemap.get_cell_data(global_position)
 
+#func _process(delta: float) -> void:
+	#print(sprinting)
+
 func _physics_process(delta):
 	sprint_multiplier = data.Dash_mult
 	if current_ink <= 0 or position.y > 500:
@@ -207,7 +210,8 @@ func _physics_process(delta):
 			emit_signal("shield_available", not shield_broke)
 			shield.material.set_shader_parameter("tint", Color.WHITE)
 	
-	if sprinting and not Input.is_action_just_pressed("dash"):
+	if sprinting and not Input.is_action_pressed("dash"):
+		print("No longer dashing")
 		sprinting = false
 	
 	if channeling:

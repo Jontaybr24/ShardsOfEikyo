@@ -163,8 +163,9 @@ spawn_list = Array[ExtResource("11_vw7s7")]([SubResource("Resource_6iav0")])
 spawn_timer = 3
 spawncount = 10000
 
-[node name="Wave Manager" type="Node" parent="." unique_id=1301618198]
+[node name="Wave Manager" type="Node" parent="." unique_id=1301618198 node_paths=PackedStringArray("default")]
 script = ExtResource("13_i706s")
+default = NodePath("Dash")
 
 [node name="Wave" parent="Wave Manager" unique_id=1056837958 instance=ExtResource("14_a8grh")]
 position = Vector2(6, -157)
