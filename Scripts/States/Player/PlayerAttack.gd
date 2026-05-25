@@ -47,7 +47,8 @@ func Exit():
 func Update(delta: float):
 	if player.CONDITIONS.SUSPENDED not in player.current_states:
 		player.dir = Input.get_axis("left", "right")
-		var speed = player.move_speed * (player.sprint_multiplier if player.sprinting else 1.0)
+		var speed = player.move_speed * (player.sprint_multiplier\
+		if player.CONDITIONS.SPRINTING in player.current_states else 1.0)
 		player.position.x += player.dir * speed * delta
 	
 	if Input.is_action_just_released("dash"):

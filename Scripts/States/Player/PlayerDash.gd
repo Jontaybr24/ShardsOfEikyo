@@ -15,6 +15,7 @@ func Enter():
 	player.position.y -= 5
 	dash_start_pos = player.global_position.x
 	player.current_states.append(player.CONDITIONS.INVULNERABLE)
+	player.current_states.erase(player.CONDITIONS.STUCK)
 	player.set_collision_mask_value(3, false)
 	TypeManager.set_collision_mask_type(player, TypeManager.ELEMENTS.INK, true)
 	dir = player.last_dir if new_dir == 0 else sign(new_dir)

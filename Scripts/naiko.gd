@@ -73,6 +73,8 @@ enum CONDITIONS {
 	CHANNEL,
 	SUSPENDED,
 	JUMPING,
+	STUCK,
+	SPRINTING,
 }
 
 var current_states = []
@@ -123,8 +125,6 @@ var decay_velocity = false
 var kill_velocity = 50
 var can_climb = false
 var boosting_jump = false
-var sprinting = false
-var stuck = false
 
 # dash
 var dash_timer = 0
@@ -209,8 +209,6 @@ func _physics_process(delta):
 			emit_signal("shield_available", not shield_broke)
 			shield.material.set_shader_parameter("tint", Color.WHITE)
 	
-	if sprinting and not Input.is_action_pressed("dash"):
-		sprinting = false
 	
 	if channeling:
 		channel_aura.show()
@@ -296,11 +294,12 @@ func check_tile_type():
 		var tile_type = current_tile.get_custom_data("tile_type")
 		match tile_type:
 			"shard_vine":
-				stuck = true
+				current_states.append(CONDITIONS.STUCK)
+				current_states.erase(CONDITIONS.SPRINTING)
 			_:
 				print("Not Vine")
 	else:
-		stuck = false
+		current_states.erase(CONDITIONS.STUCK)
 
 func add_ink(amount):
 	if amount > 1 and current_ink < data.max_ink:
@@ -364,7 +363,7 @@ func add_knockback(vel, direction):
 func freeze():
 	current_states.append(CONDITIONS.SUSPENDED)
 	velocity = Vector2(velocity.x, 0)
-	sprinting = false
+	current_states.erase(CONDITIONS.SPRINTING)
 
 func unfreeze():
 	current_states.erase(CONDITIONS.SUSPENDED)

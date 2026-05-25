@@ -15,7 +15,7 @@ func Enter():
 func Exit():
 	player.boosting_jump = false
 	player.channeling = false
-	if not perserve_sprint: player.sprinting = false
+	if not perserve_sprint: player.current_states.erase(player.CONDITIONS.SPRINTING)
 
 func Update(delta: float):
 	if not player:
@@ -25,18 +25,19 @@ func Update(delta: float):
 		interaction_timer -= delta
 	
 	if Input.is_action_just_pressed("jump") and player.is_on_floor() and player.interactables.size() == 0:
-		player.jump(1.15 if player.sprinting else 1)
+		player.jump(1.15 if player.CONDITIONS.SPRINTING in player.current_states else 1)
 	
 	if player.buffered_input == 'jump' and (player.is_on_floor() or player.jump_ready):
-		player.jump(1.15 if player.sprinting else 1)
+		player.jump(1.15 if player.CONDITIONS.SPRINTING in player.current_states else 1)
 		player.buffered_input = ''
 	
 	if Input.is_action_just_released("jump"):
 		player.boosting_jump = false
 	
 	player.dir = Input.get_axis("left", "right")
-	var speed = player.move_speed * (player.sprint_multiplier if player.sprinting else 1.0)\
-	* (player.slow_multiplier if player.stuck else 1.0)
+	var speed = player.move_speed * (player.sprint_multiplier if player.CONDITIONS.SPRINTING\
+	in player.current_states else 1.0) * (player.slow_multiplier if player.CONDITIONS.STUCK\
+	in player.current_states else 1.0)
 	player.position.x += player.dir * speed * delta
 	
 	if player.is_on_floor():
@@ -97,9 +98,15 @@ func Update(delta: float):
 		if Input.is_action_just_pressed('dash') and player.dash_timer < 0:
 			Transitioned.emit(self, "dash")
 		if Input.is_action_pressed("dash") and player.is_on_floor():
-			player.sprinting = true
+				player.current_states.append(player.CONDITIONS.SPRINTING)
 		if Input.is_action_just_released("dash"):
-			player.sprinting = false
+			player.current_states.erase(player.CONDITIONS.SPRINTING)
+	
+	if Input.is_action_just_released("dash"):
+		player.current_states.erase(player.CONDITIONS.SPRINTING)
+	
+	if player.CONDITIONS.SPRINTING in player.current_states and not Input.is_action_pressed("dash"):
+		player.current_states.erase(player.CONDITIONS.SPRINTING)
 	
 	if Input.is_action_just_pressed('heal') and player.current_ink < player.data.max_ink:
 		Transitioned.emit(self, "heal")
