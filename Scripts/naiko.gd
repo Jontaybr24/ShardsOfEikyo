@@ -306,7 +306,8 @@ func check_tile_type():
 		var tile_type = current_tile.get_custom_data("tile_type")
 		match tile_type:
 			"shard_vine":
-				current_states.append(CONDITIONS.STUCK)
+				if CONDITIONS.STUCK not in current_states:
+					current_states.append(CONDITIONS.STUCK)
 				current_states.erase(CONDITIONS.SPRINTING)
 				velocity.y = 0
 				difficult_terrain_timer = difficult_terrain_damage_tic
