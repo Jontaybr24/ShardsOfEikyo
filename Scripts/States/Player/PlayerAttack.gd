@@ -52,4 +52,4 @@ func Update(delta: float):
 		player.position.x += player.dir * speed * delta
 	
 	if Input.is_action_just_released("dash"):
-		player.sprinting = false
+		player.current_states.erase(player.CONDITIONS.SPRINTING)

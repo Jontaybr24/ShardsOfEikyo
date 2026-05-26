@@ -162,7 +162,7 @@ script = ExtResource("13_i706s")
 default = NodePath("Wave")
 
 [node name="Wave" parent="Wave Manager" unique_id=1056837958 instance=ExtResource("14_a8grh")]
-position = Vector2(511, -96)
+position = Vector2(1861, -124)
 
 [node name="Dash" parent="Wave Manager" unique_id=1205584444 instance=ExtResource("14_a8grh")]
 position = Vector2(3073, -225)

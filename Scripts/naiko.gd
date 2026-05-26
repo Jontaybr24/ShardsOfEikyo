@@ -126,8 +126,12 @@ var kill_velocity = 50
 var can_climb = false
 var boosting_jump = false
 
-# dash
+# timers
 var dash_timer = 0
+var difficult_terrain_timer = 0.3
+var difficult_terrain_damage_tic = .6
+var shard_vine_damage = 2
+
 
 var data = {
 	"Channel": false,
@@ -215,11 +219,19 @@ func _physics_process(delta):
 	else:
 		channel_aura.hide()
 	
+	if dir != 0 and difficult_terrain_timer > 0 and CONDITIONS.STUCK in current_states:
+		difficult_terrain_timer -= delta
+		print(difficult_terrain_timer)
+	
+	if difficult_terrain_timer <= 0:
+		take_damage(shard_vine_damage, TypeManager.ELEMENTS.SHARD, Vector2(0, 0))
+		difficult_terrain_timer = difficult_terrain_damage_tic
+	
 	for enemy in enemies:
 		if enemy.contact_damage: enemy.contact(self)
 		
 	if not is_on_floor() \
-	and not CONDITIONS.SUSPENDED in current_states:
+	and not CONDITIONS.SUSPENDED in current_states and not CONDITIONS.STUCK in current_states:
 		var new_grav = gravity * delta * (boost_gravity_reduction if boosting_jump else 1)
 		velocity.y += new_grav
 	
@@ -245,7 +257,7 @@ func _physics_process(delta):
 		sprite.modulate = Color.SKY_BLUE
 		await get_tree().create_timer(.2).timeout
 		sprite.modulate = Color.WHITE
-		
+
 	attack_timer -= delta
 	reset_timer -= delta
 	dash_timer -= delta
@@ -296,10 +308,15 @@ func check_tile_type():
 			"shard_vine":
 				current_states.append(CONDITIONS.STUCK)
 				current_states.erase(CONDITIONS.SPRINTING)
+				velocity.y = 0
+				difficult_terrain_timer = difficult_terrain_damage_tic
+				take_damage(shard_vine_damage, TypeManager.ELEMENTS.SHARD, global_position)
 			_:
+				current_states.erase(CONDITIONS.STUCK)
 				print("Not Vine")
 	else:
 		current_states.erase(CONDITIONS.STUCK)
+		
 
 func add_ink(amount):
 	if amount > 1 and current_ink < data.max_ink:
@@ -315,8 +332,13 @@ func add_shards(amount):
 func take_damage(dmg, attack_type, source, kb = Vector2()):
 	if CONDITIONS.INVULNERABLE in current_states: return
 	var res = TypeManager.get_matchup(attack_type, type)
-	var distance = global_position.x - source.x
-	var dir = sign(distance)
+	var distance
+	var dir
+	if source != null:
+		distance = global_position.x - source.x
+		dir = sign(distance)
+	else:
+		dir = 0
 	print(dmg * res.scalar, " damage taken")
 	audio_in.stream = res.SFX
 	audio_in.play()
@@ -378,6 +400,8 @@ func die():
 	GameManager.respawn_player()
 
 func jump(percentage = 1.0):
+	if CONDITIONS.STUCK in current_states:
+		return
 	velocity = jump_velocity * Vector2(0, percentage)
 	current_states.append(CONDITIONS.JUMPING)
 	boost_timer = max_boost_time
