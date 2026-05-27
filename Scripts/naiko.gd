@@ -41,6 +41,8 @@ signal unlocked_spell()
 @export_group("Overides")
 @export var unlock_abilities = false
 @export var dash_unlocked = false
+@export var twinned_ink = false
+@export var twinned_recharge : float = 1
 @export var block_unlocked = false
 @export var channel_unlocked = false
 @export var jump2_unlocked = false
@@ -221,10 +223,11 @@ func _physics_process(delta):
 	
 	if dir != 0 and difficult_terrain_timer > 0 and CONDITIONS.STUCK in current_states:
 		difficult_terrain_timer -= delta
-		print(difficult_terrain_timer)
 	
 	if difficult_terrain_timer <= 0:
-		take_damage(shard_vine_damage, TypeManager.ELEMENTS.SHARD, Vector2(0, 0))
+		freeze()
+		get_tree().create_timer(iframes).timeout.connect(func(): unfreeze())
+		take_damage(shard_vine_damage, TypeManager.ELEMENTS.SHARD, global_position, Vector2(0, 0))
 		difficult_terrain_timer = difficult_terrain_damage_tic
 	
 	for enemy in enemies:
@@ -275,7 +278,6 @@ func _physics_process(delta):
 		if abs(velocity.x) < kill_velocity: 
 			velocity.x = 0
 			decay_velocity = false
-		
 	move_and_slide()
 
 func unlock_ability(ability):
@@ -325,12 +327,16 @@ func add_ink(amount):
 		audio_out.play()
 	current_ink = clamp(current_ink + amount, 0, data.max_ink)
 	emit_signal("ink_changed", current_ink)
+	if twinned_ink:
+		get_tree().create_timer(twinned_recharge).timeout.connect(func(): 
+			current_ink = clamp(current_ink + abs(amount), 0, data.max_ink)
+			emit_signal("ink_changed", current_ink))
 
 func add_shards(amount):
 	data.shards += amount
 	emit_signal("shards_changed", data.shards)
 
-func take_damage(dmg, attack_type, source, kb = Vector2()):
+func take_damage(dmg, attack_type, source, kb = null):
 	if CONDITIONS.INVULNERABLE in current_states: return
 	var res = TypeManager.get_matchup(attack_type, type)
 	var distance
@@ -343,7 +349,7 @@ func take_damage(dmg, attack_type, source, kb = Vector2()):
 	print(dmg * res.scalar, " damage taken")
 	audio_in.stream = res.SFX
 	audio_in.play()
-	if kb == Vector2():
+	if kb == null:
 		kb = knockback
 		
 	if CONDITIONS.BLOCK in current_states and current_shield > 0:
@@ -369,10 +375,11 @@ func take_damage(dmg, attack_type, source, kb = Vector2()):
 			current_states.erase(CONDITIONS.BLOCK)
 			add_knockback(kb, dir)
 			return
-	add_knockback(kb, dir)
+	if CONDITIONS.STUCK not in current_states:
+		add_knockback(kb, dir)
 	current_states.append(CONDITIONS.INVULNERABLE)
 	get_tree().create_timer(iframes).timeout.connect(func(): current_states.erase(CONDITIONS.INVULNERABLE))
-	current_ink -= clamp((dmg * res.scalar), 0, data.max_ink)
+	add_ink(-dmg * res.scalar)
 	audio_out.stream = damage_sound
 	audio_out.play()
 	emit_signal("ink_changed", current_ink)
