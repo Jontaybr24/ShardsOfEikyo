@@ -5,12 +5,15 @@ class_name PlayerDash
 var dash_start_pos = 0
 var dash_cooldown = 0.5
 var dash_velocity = Vector2(1500, 0)
-var dash_distance = 200
+var dash_distance : float
+var tile_distance = 4
 var last = 0
 var dir = 0
 
 func Enter():
 	super.Enter()
+	if not dash_distance:
+		dash_distance = player.tilemap.tile_set.tile_size.x * tile_distance * 2
 	var new_dir = Input.get_axis("left", "right")
 	player.position.y -= 5
 	dash_start_pos = player.global_position.x
