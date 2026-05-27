@@ -219,7 +219,6 @@ func _physics_process(delta):
 			emit_signal("shield_available", not shield_broke)
 			shield.material.set_shader_parameter("tint", Color.WHITE)
 	
-	
 	if channeling:
 		channel_aura.show()
 	else:

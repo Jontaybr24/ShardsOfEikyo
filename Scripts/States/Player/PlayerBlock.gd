@@ -25,9 +25,13 @@ func Exit():
 	player.current_states.erase(player.CONDITIONS.BLOCK)
 
 func Update(delta: float):
-	if player.CONDITIONS.SUSPENDED not in player.current_states and above_ground:
-		player.position.x += direction * speed * (player.slow_multiplier\
-		if player.CONDITIONS.STUCK in player.current_states else 1) * delta
+	if player.CONDITIONS.SUSPENDED not in player.current_states and\
+	player.CONDITIONS.STUCK not in player.current_states and above_ground:
+		player.position.x += direction * speed * delta
+		player.current_tile = player.tilemap.get_cell_data(player.global_position)
+		if player.current_tile != player.last_tile:
+			player.last_tile = player.current_tile
+			player.check_tile_type()
 	
 	if player.is_on_floor():
 		above_ground = false
