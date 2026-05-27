@@ -12,6 +12,7 @@ var boost_gravity_reduction = .5
 
 var dir = 0
 var last_dir = 1
+var last_pos = Vector2()
 var frozen = false
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity") * 2.5
 var type = TypeManager.ELEMENTS.WOOD
@@ -74,6 +75,7 @@ enum CONDITIONS {
 	INVULNERABLE,
 	CHANNEL,
 	SUSPENDED,
+	MOVING,
 	JUMPING,
 	STUCK,
 	SPRINTING,
@@ -130,8 +132,8 @@ var boosting_jump = false
 
 # timers
 var dash_timer = 0
-var difficult_terrain_timer = 0.3
-var difficult_terrain_damage_tic = .6
+var difficult_terrain_damage_tic = .3
+var difficult_terrain_timer = difficult_terrain_damage_tic
 var shard_vine_damage = 2
 
 
@@ -193,6 +195,8 @@ func _ready():
 
 func _physics_process(delta):
 	sprint_multiplier = data.Dash_mult
+	if last_pos == global_position:
+		current_states.erase(CONDITIONS.MOVING)
 	if current_ink <= 0 or position.y > 500:
 		die()
 	if sprite:
@@ -221,7 +225,8 @@ func _physics_process(delta):
 	else:
 		channel_aura.hide()
 	
-	if dir != 0 and difficult_terrain_timer > 0 and CONDITIONS.STUCK in current_states:
+	if CONDITIONS.MOVING in current_states and difficult_terrain_timer > 0\
+	and CONDITIONS.STUCK in current_states:
 		difficult_terrain_timer -= delta
 	
 	if difficult_terrain_timer <= 0:
@@ -278,7 +283,9 @@ func _physics_process(delta):
 		if abs(velocity.x) < kill_velocity: 
 			velocity.x = 0
 			decay_velocity = false
+	
 	move_and_slide()
+	last_pos = global_position
 
 func unlock_ability(ability):
 	match ability:
@@ -310,16 +317,16 @@ func check_tile_type():
 			"shard_vine":
 				if CONDITIONS.STUCK not in current_states:
 					current_states.append(CONDITIONS.STUCK)
+					take_damage(shard_vine_damage, TypeManager.ELEMENTS.SHARD, global_position)
+				
 				current_states.erase(CONDITIONS.SPRINTING)
 				velocity.y = 0
 				difficult_terrain_timer = difficult_terrain_damage_tic
-				take_damage(shard_vine_damage, TypeManager.ELEMENTS.SHARD, global_position)
 			_:
 				current_states.erase(CONDITIONS.STUCK)
 				print("Not Vine")
 	else:
 		current_states.erase(CONDITIONS.STUCK)
-		
 
 func add_ink(amount):
 	if amount > 1 and current_ink < data.max_ink:
@@ -392,7 +399,7 @@ func add_knockback(vel, direction):
 
 func freeze():
 	current_states.append(CONDITIONS.SUSPENDED)
-	velocity = Vector2(velocity.x, 0)
+	velocity = Vector2(0, 0)
 	current_states.erase(CONDITIONS.SPRINTING)
 
 func unfreeze():

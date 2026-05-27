@@ -18,7 +18,7 @@ func Exit():
 	if not perserve_sprint: player.current_states.erase(player.CONDITIONS.SPRINTING)
 
 func Update(delta: float):
-	if not player:
+	if not player or player.CONDITIONS.SUSPENDED in player.current_states:
 		return
 	
 	if interaction_timer > 0:
@@ -38,7 +38,15 @@ func Update(delta: float):
 	var speed = player.move_speed * (player.sprint_multiplier if player.CONDITIONS.SPRINTING\
 	in player.current_states else 1.0) * (player.slow_multiplier if player.CONDITIONS.STUCK\
 	in player.current_states else 1.0)
+	if player.CONDITIONS.MOVING not in player.current_states:
+		player.current_states.append(player.CONDITIONS.MOVING)
 	player.position.x += player.dir * speed * delta
+	
+	if player.CONDITIONS.STUCK in player.current_states:
+		var vert_dir = Input.get_axis("up", "down")
+		player.position.y += vert_dir * speed * delta
+		if player.CONDITIONS.MOVING not in player.current_states:
+			player.current_states.append(player.CONDITIONS.MOVING)
 	
 	if player.is_on_floor():
 		if player.data.Doublejump: player.has_second_jump = true

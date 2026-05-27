@@ -32,6 +32,8 @@ func Exit():
 	player.dash_timer = dash_cooldown
 	player.type = TypeManager.ELEMENTS.WOOD
 	player.indicator.update()
+	player.current_tile = player.tilemap.get_cell_data(player.global_position)
+	player.check_tile_type()
 
 func Physics_Update(delta: float):
 	player.velocity.y = 0
