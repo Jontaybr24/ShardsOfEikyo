@@ -3,10 +3,10 @@ class_name PlayerDash
 
 # dash
 var dash_start_pos = 0
-var dash_cooldown = 0.5
+var dash_cooldown = 0.25
 var dash_velocity = Vector2(1500, 0)
 var dash_distance : float
-var tile_distance = 4
+var tile_distance = 3
 var last = 0
 var dir = 0
 

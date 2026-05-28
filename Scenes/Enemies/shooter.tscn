@@ -40,6 +40,7 @@ size = Vector2(28.5, 94)
 [node name="Shooter" type="CharacterBody2D" unique_id=440473195 node_paths=PackedStringArray("audio_player", "audio_player2") groups=["Attackable", "Enemy"]]
 collision_layer = 68
 script = ExtResource("1_em7em")
+damage = 4
 loot_table = Array[ExtResource("2_gw3vm")]([SubResource("Resource_3a1vv"), SubResource("Resource_c247d")])
 base_type = 3
 armor_type = 2
