@@ -14,7 +14,6 @@ radius = 47.169907
 
 [node name="Ability" type="Area2D" unique_id=425630561 groups=["Ability", "Metadata"]]
 script = ExtResource("1_bw04c")
-ability_name = "default"
 
 [node name="Aura" type="Sprite2D" parent="." unique_id=1574386252]
 material = SubResource("ShaderMaterial_bnj6u")

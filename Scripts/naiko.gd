@@ -454,11 +454,14 @@ func CheckCombo():
 
 func _on_interaction_area_entered(area: Area2D) -> void:
 	var enemy = area.get_parent()
-	if area.is_in_group("Ability"):
-		var ability = area.data
-		unlock_ability(ability.name)
+	if area.is_in_group("Ability") and area not in abilities.get_children():
+		var ability = area
+		#unlock_ability(ability.name)
+		ability.deactivate_interaction()
+		ability.reparent(abilities)
+		if ability.state:
+			state_machine.add_state(ability.state)
 		GameManager.text_request("Unlocked " + ability.name + "\n" + ability.description)
-		area.queue_free()
 	elif area.name == "Interaction" and area.get_parent().is_in_group("Enemy"):
 		enemies.append(enemy)
 		enemy.contact(self)

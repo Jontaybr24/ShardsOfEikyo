@@ -1,7 +1,6 @@
 extends Area2D
 class_name Ability
 
-@export var ability_name: String
 @export_multiline var description: String
 @onready var collision_shape_2d: CollisionShape2D = $CollisionShape2D
 @export var state: State
@@ -12,7 +11,7 @@ var unlocked = false
 
 func _ready():
 	data = {
-	"name": ability_name,
+	"name": name.to_lower(),
 	"description": description
 	}
 	player = get_tree().get_first_node_in_group("Player")
@@ -32,6 +31,8 @@ func activate_interaction():
 func deactivate_interaction():
 	hide()
 	collision_shape_2d.disabled = true
+	print("deactivated " + name)
+	player = get_tree().get_first_node_in_group("Player")
 
 func set_data(meta_data):
 	data = meta_data
