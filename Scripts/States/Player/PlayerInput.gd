@@ -24,6 +24,9 @@ func Update(delta: float):
 	if interaction_timer > 0:
 		interaction_timer -= delta
 	
+	for ability in player.abilities.get_children():
+		ability.Update(delta)
+	
 	if Input.is_action_just_pressed("jump") and player.is_on_floor() and player.interactables.size() == 0:
 		player.jump(1.15 if player.CONDITIONS.SPRINTING in player.current_states else 1)
 	
@@ -101,20 +104,6 @@ func Update(delta: float):
 	
 	if not player.charged and Input.is_action_pressed('attack'):
 		player.time_since_charge += delta
-	
-	if player.data.Dash:
-		if Input.is_action_just_pressed('dash') and player.dash_timer < 0:
-			Transitioned.emit(self, "dash")
-		if Input.is_action_pressed("dash") and player.is_on_floor():
-				player.current_states.append(player.CONDITIONS.SPRINTING)
-		if Input.is_action_just_released("dash"):
-			player.current_states.erase(player.CONDITIONS.SPRINTING)
-	
-	if Input.is_action_just_released("dash"):
-		player.current_states.erase(player.CONDITIONS.SPRINTING)
-	
-	if player.CONDITIONS.SPRINTING in player.current_states and not Input.is_action_pressed("dash"):
-		player.current_states.erase(player.CONDITIONS.SPRINTING)
 	
 	if Input.is_action_just_pressed('heal') and player.current_ink < player.data.max_ink:
 		Transitioned.emit(self, "heal")

@@ -38,6 +38,7 @@ signal unlocked_spell()
 @onready var audio_in: AudioStreamPlayer2D = $AudioIn
 @onready var audio_out: AudioStreamPlayer2D = $AudioOut
 @onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
+@onready var abilities: Node = $Abilities
 
 @export_group("Overides")
 @export var unlock_abilities = false

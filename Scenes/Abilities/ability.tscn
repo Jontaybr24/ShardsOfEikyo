@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://oip84gu8i2mh"]
 
-[ext_resource type="Script" uid="uid://bk84emqiovylt" path="res://Scripts/Entities/ability.gd" id="1_bw04c"]
+[ext_resource type="Script" uid="uid://bk84emqiovylt" path="res://Scripts/Abilities/ability.gd" id="1_bw04c"]
 [ext_resource type="Shader" uid="uid://r2imtd7nb3kh" path="res://Shaders/transparent.gdshader" id="2_5w4nr"]
 [ext_resource type="Texture2D" uid="uid://2ehh2vnqxs7g" path="res://Temp Assets/shield.png" id="3_5w4nr"]
 

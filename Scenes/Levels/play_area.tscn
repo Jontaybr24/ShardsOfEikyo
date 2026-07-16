@@ -20,7 +20,7 @@
 [ext_resource type="PackedScene" uid="uid://bd53ynllc0vex" path="res://Scenes/Enemies/quick_inkling.tscn" id="20_x8neq"]
 [ext_resource type="PackedScene" uid="uid://dt2ly7hup1bs7" path="res://Scenes/World Items/vine.tscn" id="21_x8neq"]
 [ext_resource type="PackedScene" uid="uid://c54walp1wq66d" path="res://Scenes/Enemies/shooter.tscn" id="22_tyvsw"]
-[ext_resource type="PackedScene" uid="uid://oip84gu8i2mh" path="res://Scenes/Collectables/ability.tscn" id="22_yj43f"]
+[ext_resource type="PackedScene" uid="uid://oip84gu8i2mh" path="res://Scenes/Abilities/ability.tscn" id="22_yj43f"]
 [ext_resource type="PackedScene" uid="uid://jhs1sabjo6mp" path="res://Scenes/World Items/grass.tscn" id="23_hjuiu"]
 [ext_resource type="Texture2D" uid="uid://dvbl4snskov8h" path="res://Temp Assets/wood_shield.png" id="23_v5exg"]
 [ext_resource type="PackedScene" uid="uid://bi3luf7y5ub1p" path="res://Scenes/World Items/Tree_of_life.tscn" id="23_yj43f"]

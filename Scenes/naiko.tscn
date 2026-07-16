@@ -17,6 +17,7 @@
 [ext_resource type="Texture2D" uid="uid://q0ddc2f61u1k" path="res://Temp Assets/shard.png" id="6_rasi5"]
 [ext_resource type="Script" uid="uid://b6ige6s3rhrpe" path="res://Scripts/Attacks/shard.gd" id="7_05orf"]
 [ext_resource type="Script" uid="uid://djm45qu8y40qy" path="res://Scripts/States/state_machine.gd" id="9_54scy"]
+[ext_resource type="PackedScene" uid="uid://b1y8wp755tbud" path="res://Scenes/Abilities/dash.tscn" id="9_xbi4e"]
 [ext_resource type="Texture2D" uid="uid://dvbl4snskov8h" path="res://Temp Assets/wood_shield.png" id="10_a10wq"]
 [ext_resource type="Script" uid="uid://ct8hs7st5lo8i" path="res://Scripts/States/Player/PlayerInput.gd" id="10_mq2ws"]
 [ext_resource type="Script" uid="uid://ck6m3blj8q6qn" path="res://Scripts/States/Player/PlayerAttack.gd" id="11_hv8fm"]
@@ -294,7 +295,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_rkwv3")
 }],
-"loop": true,
+"loop": 1,
 "name": &"Block",
 "speed": 5.0
 }, {
@@ -302,7 +303,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_5x47v")
 }],
-"loop": true,
+"loop": 1,
 "name": &"Idle",
 "speed": 5.0
 }, {
@@ -493,7 +494,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_awxvu")
 }],
-"loop": true,
+"loop": 1,
 "name": &"Walk",
 "speed": 60.0
 }]
@@ -539,6 +540,10 @@ animation = &"Walk"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1257874269]
 position = Vector2(0, 4.5)
 shape = SubResource("RectangleShape2D_djy6i")
+
+[node name="Abilities" type="Node" parent="." unique_id=1588347626]
+
+[node name="Dash" parent="Abilities" unique_id=425630561 instance=ExtResource("9_xbi4e")]
 
 [node name="Attacks" type="Node2D" parent="." unique_id=1425637163]
 
