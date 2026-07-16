@@ -22,6 +22,14 @@ func _physics_process(delta):
 	if current_state:
 		current_state.Physics_Update(delta)
 
+func add_state(state):
+	states[state.name.to_lower()] = state
+	state.Transitioned.connect(on_child_transition)
+
+func remove_state(state):
+	states.erase(state.name.to_lower())
+	state.Transitioned.disconnect(on_child_transition)
+
 func on_child_transition(state, new_state_name):
 	if state != current_state:
 		return

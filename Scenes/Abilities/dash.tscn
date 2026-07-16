@@ -4,8 +4,9 @@
 [ext_resource type="Script" uid="uid://cxm8p7vm2upa5" path="res://Scripts/Abilities/dash.gd" id="2_72560"]
 [ext_resource type="Script" uid="uid://d3cbrly0lyegl" path="res://Scripts/States/Player/PlayerDash.gd" id="2_qlp1g"]
 
-[node name="Dash" unique_id=425630561 instance=ExtResource("1_5qpcw")]
+[node name="Dash" unique_id=425630561 node_paths=PackedStringArray("state") instance=ExtResource("1_5qpcw")]
 script = ExtResource("2_72560")
+state = NodePath("Dash")
 
 [node name="Dash" type="Node" parent="." index="2" unique_id=38814275]
 script = ExtResource("2_qlp1g")

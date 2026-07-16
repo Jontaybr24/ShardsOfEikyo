@@ -1,6 +1,5 @@
 extends Ability
 
-
 func Update(delta):
 	if player.data.Dash:
 		if Input.is_action_just_pressed('dash') and player.dash_timer < 0:

@@ -10,6 +10,9 @@ var tile_distance = 3
 var last = 0
 var dir = 0
 
+func _ready() -> void:
+	player = get_tree().get_first_node_in_group("Player")
+
 func Enter():
 	super.Enter()
 	if not dash_distance:

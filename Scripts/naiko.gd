@@ -190,6 +190,9 @@ func _ready():
 	max = position.y
 	tilemap = get_tree().get_first_node_in_group("TileMap")
 	current_tile = tilemap.get_cell_data(global_position)
+	for ability in abilities.get_children():
+		if ability.state != null:
+			state_machine.add_state(ability.state)
 
 #func _process(delta: float) -> void:
 	#print(sprinting)

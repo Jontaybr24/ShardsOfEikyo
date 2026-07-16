@@ -4,7 +4,7 @@ class_name Ability
 @export var ability_name: String
 @export_multiline var description: String
 @onready var collision_shape_2d: CollisionShape2D = $CollisionShape2D
-
+@export var state: State
 
 var player : Player
 var data = {}

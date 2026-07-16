@@ -23,7 +23,6 @@
 [ext_resource type="Script" uid="uid://ck6m3blj8q6qn" path="res://Scripts/States/Player/PlayerAttack.gd" id="11_hv8fm"]
 [ext_resource type="Script" uid="uid://ca3aw57sqboap" path="res://Scripts/States/Player/PlayerInvulnerable.gd" id="12_banwa"]
 [ext_resource type="Script" uid="uid://bcbnq5kja0eau" path="res://Scripts/States/Player/PlayerBlock.gd" id="13_13egm"]
-[ext_resource type="Script" uid="uid://d3cbrly0lyegl" path="res://Scripts/States/Player/PlayerDash.gd" id="14_hv8fm"]
 [ext_resource type="Script" uid="uid://bi37dy670y1hn" path="res://Scripts/States/Player/PlayerKnockback.gd" id="15_banwa"]
 [ext_resource type="Script" uid="uid://ds312yohc2c5w" path="res://Scripts/States/Player/PlayerHeal.gd" id="16_13egm"]
 [ext_resource type="Script" uid="uid://1da4ba3xj7n1" path="res://Scripts/States/Player/PlayerSlam.gd" id="18_0di8p"]
@@ -541,6 +540,50 @@ animation = &"Walk"
 position = Vector2(0, 4.5)
 shape = SubResource("RectangleShape2D_djy6i")
 
+[node name="State Machine" type="Node" parent="." unique_id=140511839 node_paths=PackedStringArray("initial_state")]
+script = ExtResource("9_54scy")
+initial_state = NodePath("Listen")
+
+[node name="Listen" type="Node" parent="State Machine" unique_id=1627742072 node_paths=PackedStringArray("player")]
+script = ExtResource("10_mq2ws")
+player = NodePath("../..")
+metadata/_custom_type_script = "uid://ct8hs7st5lo8i"
+
+[node name="Attack" type="Node" parent="State Machine" unique_id=192794551 node_paths=PackedStringArray("player")]
+script = ExtResource("11_hv8fm")
+player = NodePath("../..")
+metadata/_custom_type_script = "uid://ck6m3blj8q6qn"
+
+[node name="Invulnerable" type="Node" parent="State Machine" unique_id=253092865 node_paths=PackedStringArray("player")]
+script = ExtResource("12_banwa")
+player = NodePath("../..")
+metadata/_custom_type_script = "uid://ca3aw57sqboap"
+
+[node name="Block" type="Node" parent="State Machine" unique_id=446648502 node_paths=PackedStringArray("player")]
+script = ExtResource("13_13egm")
+player = NodePath("../..")
+metadata/_custom_type_script = "uid://bcbnq5kja0eau"
+
+[node name="Knockback" type="Node" parent="State Machine" unique_id=1980554075 node_paths=PackedStringArray("player")]
+script = ExtResource("15_banwa")
+player = NodePath("../..")
+metadata/_custom_type_script = "uid://bi37dy670y1hn"
+
+[node name="Heal" type="Node" parent="State Machine" unique_id=2137513481 node_paths=PackedStringArray("player")]
+script = ExtResource("16_13egm")
+player = NodePath("../..")
+metadata/_custom_type_script = "uid://ds312yohc2c5w"
+
+[node name="Slam" type="Node" parent="State Machine" unique_id=1912798029 node_paths=PackedStringArray("player")]
+script = ExtResource("18_0di8p")
+player = NodePath("../..")
+metadata/_custom_type_script = "uid://1da4ba3xj7n1"
+
+[node name="Climb" type="Node" parent="State Machine" unique_id=1050667817 node_paths=PackedStringArray("player")]
+script = ExtResource("21_1gk4c")
+player = NodePath("../..")
+metadata/_custom_type_script = "uid://blojh0cqgv23b"
+
 [node name="Abilities" type="Node" parent="." unique_id=1588347626]
 
 [node name="Dash" parent="Abilities" unique_id=425630561 instance=ExtResource("9_xbi4e")]
@@ -747,55 +790,6 @@ collision_mask = 13
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interaction" unique_id=875075972]
 position = Vector2(0, 4.5)
 shape = SubResource("RectangleShape2D_6xrbi")
-
-[node name="State Machine" type="Node" parent="." unique_id=140511839 node_paths=PackedStringArray("initial_state")]
-script = ExtResource("9_54scy")
-initial_state = NodePath("Listen")
-
-[node name="Listen" type="Node" parent="State Machine" unique_id=1627742072 node_paths=PackedStringArray("player")]
-script = ExtResource("10_mq2ws")
-player = NodePath("../..")
-metadata/_custom_type_script = "uid://ct8hs7st5lo8i"
-
-[node name="Attack" type="Node" parent="State Machine" unique_id=192794551 node_paths=PackedStringArray("player")]
-script = ExtResource("11_hv8fm")
-player = NodePath("../..")
-metadata/_custom_type_script = "uid://ck6m3blj8q6qn"
-
-[node name="Invulnerable" type="Node" parent="State Machine" unique_id=253092865 node_paths=PackedStringArray("player")]
-script = ExtResource("12_banwa")
-player = NodePath("../..")
-metadata/_custom_type_script = "uid://ca3aw57sqboap"
-
-[node name="Block" type="Node" parent="State Machine" unique_id=446648502 node_paths=PackedStringArray("player")]
-script = ExtResource("13_13egm")
-player = NodePath("../..")
-metadata/_custom_type_script = "uid://bcbnq5kja0eau"
-
-[node name="Dash" type="Node" parent="State Machine" unique_id=1151401482 node_paths=PackedStringArray("player")]
-script = ExtResource("14_hv8fm")
-player = NodePath("../..")
-metadata/_custom_type_script = "uid://d3cbrly0lyegl"
-
-[node name="Knockback" type="Node" parent="State Machine" unique_id=1980554075 node_paths=PackedStringArray("player")]
-script = ExtResource("15_banwa")
-player = NodePath("../..")
-metadata/_custom_type_script = "uid://bi37dy670y1hn"
-
-[node name="Heal" type="Node" parent="State Machine" unique_id=2137513481 node_paths=PackedStringArray("player")]
-script = ExtResource("16_13egm")
-player = NodePath("../..")
-metadata/_custom_type_script = "uid://ds312yohc2c5w"
-
-[node name="Slam" type="Node" parent="State Machine" unique_id=1912798029 node_paths=PackedStringArray("player")]
-script = ExtResource("18_0di8p")
-player = NodePath("../..")
-metadata/_custom_type_script = "uid://1da4ba3xj7n1"
-
-[node name="Climb" type="Node" parent="State Machine" unique_id=1050667817 node_paths=PackedStringArray("player")]
-script = ExtResource("21_1gk4c")
-player = NodePath("../..")
-metadata/_custom_type_script = "uid://blojh0cqgv23b"
 
 [node name="Type Indicator" parent="." unique_id=650235984 node_paths=PackedStringArray("parent") instance=ExtResource("19_36hgu")]
 position = Vector2(0, -60)
