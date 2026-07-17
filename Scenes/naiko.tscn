@@ -4,7 +4,6 @@
 [ext_resource type="Texture2D" uid="uid://0infi56aaey4" path="res://Temp Assets/paper_mario_spritesheet.png" id="1_pdjod"]
 [ext_resource type="AudioStream" uid="uid://cfthl3b7lb48c" path="res://Assets/Audio/BarkBreakFX.wav" id="2_jhgqk"]
 [ext_resource type="PackedScene" uid="uid://ctmsstd6uq73w" path="res://Scenes/Attacks/attack.tscn" id="3_6xrbi"]
-[ext_resource type="AudioStream" uid="uid://ciy8lyludvt2n" path="res://Assets/Audio/ChargeFX1.wav" id="3_c1lmw"]
 [ext_resource type="AudioStream" uid="uid://dg8phtqqvwxkc" path="res://Assets/Audio/ClickFX5.wav" id="3_pftav"]
 [ext_resource type="AudioStream" uid="uid://b5twufukswehh" path="res://Assets/Audio/ChargeFX2.wav" id="3_xhtb1"]
 [ext_resource type="Script" uid="uid://oryqcrbtfp66" path="res://Scripts/Attacks/player_attack.gd" id="4_0di8p"]
@@ -526,7 +525,6 @@ shield_break = ExtResource("2_jhgqk")
 damage_sound = ExtResource("3_pftav")
 death_sound = ExtResource("4_snsi3")
 charge_attack_sound = ExtResource("3_xhtb1")
-dash_recharge_sound = ExtResource("3_c1lmw")
 heal_sound = ExtResource("22_ablot")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=604031444]

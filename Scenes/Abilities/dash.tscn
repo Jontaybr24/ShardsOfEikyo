@@ -6,6 +6,8 @@
 
 [node name="Dash" unique_id=425630561 node_paths=PackedStringArray("state") instance=ExtResource("1_5qpcw")]
 script = ExtResource("2_72560")
+dash_sound = null
+dash_recharge_sound = null
 state = NodePath("Dash")
 
 [node name="Dash" type="Node" parent="." index="2" unique_id=38814275]

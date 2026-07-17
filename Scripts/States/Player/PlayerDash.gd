@@ -35,7 +35,7 @@ func Exit():
 	player.current_states.erase(player.CONDITIONS.INVULNERABLE)
 	player.set_collision_mask_value(3, true)
 	TypeManager.set_collision_mask_type(player, TypeManager.ELEMENTS.INK, false)
-	player.dash_timer = dash_cooldown
+	get_parent().dash_timer = dash_cooldown
 	player.type = TypeManager.ELEMENTS.WOOD
 	player.indicator.update()
 	player.current_tile = player.tilemap.get_cell_data(player.global_position)

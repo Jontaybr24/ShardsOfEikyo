@@ -57,8 +57,6 @@ signal unlocked_spell()
 @export var damage_sound : AudioStream
 @export var death_sound : AudioStream
 @export var charge_attack_sound : AudioStream
-@export var dash_sound : AudioStream
-@export var dash_recharge_sound : AudioStream
 @export var heal_sound : AudioStream
 
 var tilemap : TileMapLayer
@@ -132,7 +130,6 @@ var can_climb = false
 var boosting_jump = false
 
 # timers
-var dash_timer = 0
 var difficult_terrain_damage_tic = .3
 var difficult_terrain_timer = difficult_terrain_damage_tic
 var shard_vine_damage = 2
@@ -271,7 +268,6 @@ func _physics_process(delta):
 
 	attack_timer -= delta
 	reset_timer -= delta
-	dash_timer -= delta
 	if CONDITIONS.JUMPING in current_states:
 		jump_timer += delta
 		boost_timer -= delta
