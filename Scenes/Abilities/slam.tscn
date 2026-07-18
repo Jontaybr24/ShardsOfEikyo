@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://cm1sc7k7gey3c"]
+
+[ext_resource type="PackedScene" uid="uid://oip84gu8i2mh" path="res://Scenes/Abilities/ability.tscn" id="1_u5py8"]
+[ext_resource type="Script" uid="uid://1da4ba3xj7n1" path="res://Scripts/States/Player/PlayerSlam.gd" id="2_5w5uh"]
+
+[node name="Slam" unique_id=425630561 instance=ExtResource("1_u5py8")]
+
+[node name="Slam" type="Node" parent="." index="2" unique_id=284523760 node_paths=PackedStringArray("player")]
+script = ExtResource("2_5w5uh")
+player = NodePath("")
+metadata/_custom_type_script = "uid://1da4ba3xj7n1"

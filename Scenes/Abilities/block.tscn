@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://c2il7w5snnhlj"]
+
+[ext_resource type="PackedScene" uid="uid://oip84gu8i2mh" path="res://Scenes/Abilities/ability.tscn" id="1_82j0f"]
+[ext_resource type="Script" uid="uid://bcbnq5kja0eau" path="res://Scripts/States/Player/PlayerBlock.gd" id="2_3ur5i"]
+[ext_resource type="Script" uid="uid://d28sh3ecma7py" path="res://Scripts/Abilities/block.gd" id="2_ranb7"]
+
+[node name="Block" unique_id=425630561 instance=ExtResource("1_82j0f")]
+script = ExtResource("2_ranb7")
+
+[node name="Block" type="Node" parent="." index="2" unique_id=1937744726 node_paths=PackedStringArray("player")]
+script = ExtResource("2_3ur5i")
+player = NodePath("")
+metadata/_custom_type_script = "uid://bcbnq5kja0eau"

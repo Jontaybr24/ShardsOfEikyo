@@ -22,8 +22,9 @@
 [ext_resource type="Script" uid="uid://ca3aw57sqboap" path="res://Scripts/States/Player/PlayerInvulnerable.gd" id="12_banwa"]
 [ext_resource type="Script" uid="uid://bcbnq5kja0eau" path="res://Scripts/States/Player/PlayerBlock.gd" id="13_13egm"]
 [ext_resource type="Script" uid="uid://bi37dy670y1hn" path="res://Scripts/States/Player/PlayerKnockback.gd" id="15_banwa"]
+[ext_resource type="PackedScene" uid="uid://c2il7w5snnhlj" path="res://Scenes/Abilities/block.tscn" id="15_xhtb1"]
 [ext_resource type="Script" uid="uid://ds312yohc2c5w" path="res://Scripts/States/Player/PlayerHeal.gd" id="16_13egm"]
-[ext_resource type="Script" uid="uid://1da4ba3xj7n1" path="res://Scripts/States/Player/PlayerSlam.gd" id="18_0di8p"]
+[ext_resource type="PackedScene" uid="uid://b1y8wp755tbud" path="res://Scenes/Abilities/dash.tscn" id="16_pftav"]
 [ext_resource type="PackedScene" uid="uid://uducaxmreo5a" path="res://Scenes/type_indicator.tscn" id="19_36hgu"]
 [ext_resource type="Script" uid="uid://blojh0cqgv23b" path="res://Scripts/States/Player/PlayerClimb.gd" id="21_1gk4c"]
 [ext_resource type="AudioStream" uid="uid://62s2xm6lujxc" path="res://Assets/Audio/HealFX1.wav" id="22_ablot"]
@@ -556,11 +557,6 @@ script = ExtResource("12_banwa")
 player = NodePath("../..")
 metadata/_custom_type_script = "uid://ca3aw57sqboap"
 
-[node name="Block" type="Node" parent="State Machine" unique_id=446648502 node_paths=PackedStringArray("player")]
-script = ExtResource("13_13egm")
-player = NodePath("../..")
-metadata/_custom_type_script = "uid://bcbnq5kja0eau"
-
 [node name="Knockback" type="Node" parent="State Machine" unique_id=1980554075 node_paths=PackedStringArray("player")]
 script = ExtResource("15_banwa")
 player = NodePath("../..")
@@ -571,17 +567,20 @@ script = ExtResource("16_13egm")
 player = NodePath("../..")
 metadata/_custom_type_script = "uid://ds312yohc2c5w"
 
-[node name="Slam" type="Node" parent="State Machine" unique_id=1912798029 node_paths=PackedStringArray("player")]
-script = ExtResource("18_0di8p")
-player = NodePath("../..")
-metadata/_custom_type_script = "uid://1da4ba3xj7n1"
-
 [node name="Climb" type="Node" parent="State Machine" unique_id=1050667817 node_paths=PackedStringArray("player")]
 script = ExtResource("21_1gk4c")
 player = NodePath("../..")
 metadata/_custom_type_script = "uid://blojh0cqgv23b"
 
+[node name="Block" type="Node" parent="State Machine" unique_id=971395102]
+script = ExtResource("13_13egm")
+metadata/_custom_type_script = "uid://bcbnq5kja0eau"
+
 [node name="Abilities" type="Node" parent="." unique_id=1588347626]
+
+[node name="Block" parent="Abilities" unique_id=425630561 instance=ExtResource("15_xhtb1")]
+
+[node name="Dash" parent="Abilities" unique_id=1528786254 instance=ExtResource("16_pftav")]
 
 [node name="Attacks" type="Node2D" parent="." unique_id=1425637163]
 

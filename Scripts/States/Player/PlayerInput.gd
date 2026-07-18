@@ -60,7 +60,7 @@ func Update(delta: float):
 		player.jump()
 	
 	if Input.is_action_just_released("jump"): jump_ready = true
-	
+
 	if player.data.Shield and Input.is_action_just_pressed("block") \
 	and not player.shield_broke:
 		Transitioned.emit(self, "block")
