@@ -1,0 +1,28 @@
+# Log files
+*.log
+
+# Godot-specific text caches
+.godot/
+
+# Godot 4.3+ UID files (uncomment if you want to explicitly ignore them)
+# Note: Godot 4 uses .uid files to track resources. If they cause git conflicts, 
+# you can safely ignore them as Godot will recreate them automatically.
+*.uid
+
+# Godot 3.x specific cache
+.import/
+export_preset.cfg
+
+# Imported binary assets (Godot 3)
+*.import
+
+# Mono/C# specific builds
+.mono/
+data_*/
+mono_crash_*.json
+
+# System specific files
+.DS_Store
+
+
+

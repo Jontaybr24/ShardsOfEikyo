@@ -23,7 +23,7 @@ config/icon="res://icon.svg"
 [autoload]
 
 GameManager="*res://Scripts/Gameplay/game_manager.gd"
-TypeManager="*uid://cw01ctbbpk3b4"
+TypeManager="*uid://8np8oh3bhaxm"
 
 [display]
 
